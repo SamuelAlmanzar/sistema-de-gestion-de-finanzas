@@ -14,7 +14,7 @@ namespace ProyectoFinalMargarita
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Registro_Ingresos_Egresos());
+            Application.Run(new prueba());
 
 
         }

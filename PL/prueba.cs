@@ -8,7 +8,7 @@ namespace ProyectoFinalMargarita.PL
 
     public partial class prueba : Form
     {
-        private string connectionString = "Data Source=DESKTOP-K8E3C18;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
+        private string connectionString = "Data Source=Dylan;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
 
         public prueba()
         {
