@@ -31,13 +31,10 @@
             label6 = new Label();
             Eliminar = new Button();
             Editar = new Button();
-            agregar = new Button();
             Nuevo = new Button();
             monto = new TextBox();
             label4 = new Label();
             label2 = new Label();
-            Usuario = new TextBox();
-            label1 = new Label();
             fecha = new DateTimePicker();
             dataGridView1 = new DataGridView();
             label3 = new Label();
@@ -59,7 +56,7 @@
             // 
             // Eliminar
             // 
-            Eliminar.Location = new Point(805, 203);
+            Eliminar.Location = new Point(721, 292);
             Eliminar.Name = "Eliminar";
             Eliminar.Size = new Size(112, 34);
             Eliminar.TabIndex = 21;
@@ -69,7 +66,7 @@
             // 
             // Editar
             // 
-            Editar.Location = new Point(805, 137);
+            Editar.Location = new Point(805, 215);
             Editar.Name = "Editar";
             Editar.Size = new Size(112, 34);
             Editar.TabIndex = 20;
@@ -77,19 +74,9 @@
             Editar.UseVisualStyleBackColor = true;
             Editar.Click += Editar_Click;
             // 
-            // agregar
-            // 
-            agregar.Location = new Point(655, 203);
-            agregar.Name = "agregar";
-            agregar.Size = new Size(112, 34);
-            agregar.TabIndex = 19;
-            agregar.Text = "Agregar";
-            agregar.UseVisualStyleBackColor = true;
-            agregar.Click += agregar_Click;
-            // 
             // Nuevo
             // 
-            Nuevo.Location = new Point(655, 137);
+            Nuevo.Location = new Point(655, 215);
             Nuevo.Name = "Nuevo";
             Nuevo.Size = new Size(112, 34);
             Nuevo.TabIndex = 18;
@@ -103,7 +90,7 @@
             monto.Name = "monto";
             monto.Size = new Size(205, 31);
             monto.TabIndex = 14;
-            monto.TextChanged += numeroDeCuenta_TextChanged;
+      
             // 
             // label4
             // 
@@ -123,23 +110,6 @@
             label2.TabIndex = 7;
             label2.Text = "Fecha";
             // 
-            // Usuario
-            // 
-            Usuario.Location = new Point(401, 139);
-            Usuario.Name = "Usuario";
-            Usuario.Size = new Size(205, 31);
-            Usuario.TabIndex = 13;
-            Usuario.TextChanged += textPropietario_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(221, 146);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 25);
-            label1.TabIndex = 6;
-            label1.Text = "Usuario";
-            // 
             // fecha
             // 
             fecha.Format = DateTimePickerFormat.Short;
@@ -147,7 +117,6 @@
             fecha.Name = "fecha";
             fecha.Size = new Size(205, 31);
             fecha.TabIndex = 24;
-            fecha.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dataGridView1
             // 
@@ -157,7 +126,6 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1177, 569);
             dataGridView1.TabIndex = 27;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label3
             // 
@@ -174,7 +142,6 @@
             Meta.Name = "Meta";
             Meta.Size = new Size(205, 31);
             Meta.TabIndex = 23;
-            Meta.TextChanged += textBox1_TextChanged;
             // 
             // MontoAhorrado
             // 
@@ -182,7 +149,6 @@
             MontoAhorrado.Name = "MontoAhorrado";
             MontoAhorrado.Size = new Size(205, 31);
             MontoAhorrado.TabIndex = 29;
-            MontoAhorrado.TextChanged += MontoAhorrado_TextChanged;
             // 
             // label5
             // 
@@ -206,14 +172,11 @@
             Controls.Add(label6);
             Controls.Add(Eliminar);
             Controls.Add(Editar);
-            Controls.Add(agregar);
             Controls.Add(Nuevo);
             Controls.Add(monto);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(Usuario);
-            Controls.Add(label1);
             Name = "Ahorro";
             Text = "Ahorro";
             Load += Ahorro_Load;
@@ -227,13 +190,10 @@
         private Label label6;
         private Button Eliminar;
         private Button Editar;
-        private Button agregar;
         private Button Nuevo;
         private TextBox monto;
         private Label label4;
         private Label label2;
-        private TextBox Usuario;
-        private Label label1;
         private DateTimePicker fecha;
         private DataGridView dataGridView1;
         private Label label3;
