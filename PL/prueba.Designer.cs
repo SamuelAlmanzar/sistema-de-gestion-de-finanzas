@@ -52,7 +52,7 @@
             // DatosCuentas
             // 
             DatosCuentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DatosCuentas.Location = new Point(12, 279);
+            DatosCuentas.Location = new Point(28, 280);
             DatosCuentas.Name = "DatosCuentas";
             DatosCuentas.RowHeadersWidth = 62;
             DatosCuentas.Size = new Size(1208, 225);

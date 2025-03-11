@@ -14,7 +14,7 @@ namespace ProyectoFinalMargarita
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            Application.Run(new Ahorro());
+            Application.Run(new Login());
 
 
         }
