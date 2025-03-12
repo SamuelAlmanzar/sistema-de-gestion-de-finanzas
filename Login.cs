@@ -2,12 +2,14 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace ProyectoFinalMargarita
 {
     public partial class Login : Form
     {
         private Panel panelShadow;
+        private Button iconButton1; // Declaración del botón
 
         public Login()
         {
@@ -16,6 +18,9 @@ namespace ProyectoFinalMargarita
             panel1.Paint += Panel1_Paint;
             textBox1.Paint += TextBox_Paint;
             textBox2.Paint += TextBox_Paint;
+
+            // Inicialización de iconButton1
+           
         }
 
         private void ConfigurarPanelSombra()
@@ -98,19 +103,34 @@ namespace ProyectoFinalMargarita
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // Manejar el cambio de texto en textBox1
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            // Manejar el cambio de texto en textBox2
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void IconButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Crear un objeto ProcessStartInfo
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = "https://accounts.google.com/", // La URL que deseas abrir
+                    UseShellExecute = true // Usar el shell del sistema para abrir la URL
+                };
 
+                // Iniciar el proceso
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir
+                MessageBox.Show($"Error al abrir la URL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
 
         private void IconButton1_Paint(object sender, PaintEventArgs e)
         {
@@ -128,12 +148,17 @@ namespace ProyectoFinalMargarita
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-
+            // Manejar el clic en iconButton2
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
+            // Código que se ejecuta al cargar el formulario
+        }
 
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+            // Manejar el evento Paint del panel1
         }
     }
 }
