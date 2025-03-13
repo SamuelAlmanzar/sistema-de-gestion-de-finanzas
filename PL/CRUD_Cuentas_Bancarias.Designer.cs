@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalMargarita.PL
 {
-    partial class prueba
+    partial class CRUD_Cuentas_Bancarias
     {
         /// <summary>
         /// Required designer variable.

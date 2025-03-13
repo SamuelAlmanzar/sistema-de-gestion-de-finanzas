@@ -6,11 +6,12 @@ using ProyectoFinalMargarita;
 namespace ProyectoFinalMargarita.PL
 {
 
-    public partial class prueba : Form
+    public partial class CRUD_Cuentas_Bancarias : Form
     {
         private string connectionString = "Data Source=DESKTOP-K8E3C18;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
+        
 
-        public prueba()
+        public CRUD_Cuentas_Bancarias()
         {
             InitializeComponent();
         }
