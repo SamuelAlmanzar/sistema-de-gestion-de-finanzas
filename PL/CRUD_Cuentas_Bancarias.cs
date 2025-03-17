@@ -8,8 +8,12 @@ namespace ProyectoFinalMargarita.PL
 
     public partial class CRUD_Cuentas_Bancarias : Form
     {
+<<<<<<< HEAD:PL/CRUD_Cuentas_Bancarias.cs
         private string connectionString = "Data Source=DESKTOP-K8E3C18;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
         
+=======
+        private string connectionString = "Data Source=Dylan;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
+>>>>>>> a05dc71618f85b8a89567940752d947f67baccea:PL/prueba.cs
 
         public CRUD_Cuentas_Bancarias()
         {

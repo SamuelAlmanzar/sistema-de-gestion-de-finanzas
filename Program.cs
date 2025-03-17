@@ -14,8 +14,17 @@ namespace ProyectoFinalMargarita
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+<<<<<<< HEAD
             Application.Run(new CRUD_Cuentas_Bancarias());
         
+=======
+
+            Application.Run(new Registro());
+
+
+>>>>>>> a05dc71618f85b8a89567940752d947f67baccea
         }
+
     }
+
 }
