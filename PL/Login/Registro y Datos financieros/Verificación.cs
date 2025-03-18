@@ -31,5 +31,10 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Este contrato establece los términos de su tarjeta de crédito con Banco Virtual.
+La tasa de interés es del 18.99% para compras y 24.99% para adelantos en efectivo.
+El pago mínimo es el 3% del saldo o $25, lo que sea mayor.
+Los pagos vencen al menos 21 días después del cierre del ciclo de facturación.
+El titular es responsable de todos los cargos, incluidos los de usuarios autorizados.</value>
+  </data>
 </root>
