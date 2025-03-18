@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
 
+
 namespace ProyectoFinalMargarita
 {
     internal static class Program
@@ -26,7 +27,7 @@ namespace ProyectoFinalMargarita
             InitializeSignalR().ConfigureAwait(false);
 
             // Ejecutar el formulario principal
-            Application.Run(new Verificación());
+            Application.Run(new AsignacionTarjeta());
         }
 
         private static async Task InitializeSignalR()

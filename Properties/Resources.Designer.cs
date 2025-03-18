@@ -89,5 +89,36 @@ namespace ProyectoFinalMargarita.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_credit_card_logo_mastercard_computer_icons_mastercard_text_rectangle_photography {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-credit-card-logo-mastercard-computer-icons-mastercard-text-rectan" +
+                        "gle-photography", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tarjeta {
+            get {
+                object obj = ResourceManager.GetObject("Tarjeta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Tarjeta_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Tarjeta-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

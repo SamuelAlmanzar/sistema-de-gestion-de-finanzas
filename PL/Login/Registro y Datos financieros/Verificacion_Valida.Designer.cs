@@ -103,6 +103,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(835, 520);
             Controls.Add(roundButton2);
             Controls.Add(label1);

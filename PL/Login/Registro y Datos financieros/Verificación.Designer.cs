@@ -67,7 +67,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 16F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(625, 178);
+            label1.Location = new Point(635, 181);
             label1.Name = "label1";
             label1.Size = new Size(215, 45);
             label1.TabIndex = 25;
@@ -203,6 +203,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(1386, 730);
             Controls.Add(roundButton2);
             Controls.Add(label4);
@@ -214,6 +215,7 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(roundButton1);
+            ForeColor = Color.FromArgb(246, 248, 251);
             Name = "Verificación";
             Text = "Verificación";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
