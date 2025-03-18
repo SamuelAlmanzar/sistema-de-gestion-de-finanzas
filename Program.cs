@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoFinalMargarita;
 using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
 
 
@@ -27,7 +28,8 @@ namespace ProyectoFinalMargarita
             InitializeSignalR().ConfigureAwait(false);
 
             // Ejecutar el formulario principal
-            Application.Run(new AsignacionTarjeta());
+            //El Form de informacion personal se llama Registro
+            Application.Run(new CRUD_Cuentas_Bancarias());
         }
 
         private static async Task InitializeSignalR()

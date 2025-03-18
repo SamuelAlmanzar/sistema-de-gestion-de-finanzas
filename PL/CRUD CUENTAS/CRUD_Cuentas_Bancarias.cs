@@ -10,9 +10,9 @@ namespace ProyectoFinalMargarita.PL
     {
 
         private string connectionString = "Data Source=DESKTOP-K8E3C18;Initial Catalog=Sistema_Finanzas_Personales;Integrated Security=True";
-        
 
-       
+
+
 
 
         public CRUD_Cuentas_Bancarias()
@@ -115,7 +115,7 @@ namespace ProyectoFinalMargarita.PL
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                DatosCuentas.DataSource = dt;
+                
             }
         }
 
@@ -134,38 +134,26 @@ namespace ProyectoFinalMargarita.PL
         // Evento que se activa cuando se selecciona una fila en el DataGridView
         private void DatosCuentas_SelectionChanged_1(object sender, EventArgs e)
         {
-            if (DatosCuentas.SelectedRows.Count > 0)
-            {
-                DataGridViewRow fila = DatosCuentas.SelectedRows[0];
 
-                // Asigna los valores a los TextBox
-                textPropietario.Text = fila.Cells["Propietario"].Value.ToString();
-                textBanco.Text = fila.Cells["Banco"].Value.ToString();
-                textTipoCuenta.Text = fila.Cells["Tipo_cuenta"].Value.ToString();
-                numeroDeCuenta.Text = fila.Cells["Numero_cuenta"].Value.ToString();
-                textSaldo.Text = fila.Cells["Saldo"].Value.ToString();
-                textCreacion.Text = fila.Cells["Fecha_de_creacion"].Value.ToString();
-
-                // 🔹 Formatear saldo como dinero
-                decimal saldo = Convert.ToDecimal(fila.Cells["saldo"].Value);
-                textSaldo.Text = saldo.ToString("C", new CultureInfo("es-DO")); // Formato en pesos dominicanos
-
-            }
         }
 
         private void Nuevo_Click(object sender, EventArgs e)
         {
-            textPropietario.Text = "";
-            textBanco.Text = " ";
-            textTipoCuenta.Text = " ";
-            numeroDeCuenta.Text = " ";
-            textSaldo.Text = "";
-            textCreacion.Text = " ";
         }
 
         private void agregar_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Editar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }   

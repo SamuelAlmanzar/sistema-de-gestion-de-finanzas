@@ -41,7 +41,7 @@
             roundButton1.BackColor = Color.White;
             roundButton1.BackgroundColor = Color.White;
             roundButton1.BorderColor = Color.Black;
-            roundButton1.BorderRadius = 10;
+            roundButton1.BorderRadius = 20;
             roundButton1.BorderSize = 0;
             roundButton1.FlatAppearance.BorderColor = Color.White;
             roundButton1.FlatAppearance.BorderSize = 10;

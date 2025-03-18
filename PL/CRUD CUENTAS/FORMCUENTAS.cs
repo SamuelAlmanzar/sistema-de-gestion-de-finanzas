@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita.PL
+namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
 {
-    public partial class RegistroDeUsuario : Form
+    public partial class FORMCUENTAS : Form
     {
-        public RegistroDeUsuario()
+        public FORMCUENTAS()
         {
             InitializeComponent();
         }

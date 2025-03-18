@@ -52,7 +52,7 @@
             roundButton1.BackColor = Color.White;
             roundButton1.BackgroundColor = Color.White;
             roundButton1.BorderColor = Color.White;
-            roundButton1.BorderRadius = 10;
+            roundButton1.BorderRadius = 20;
             roundButton1.BorderSize = 0;
             roundButton1.FlatAppearance.BorderColor = Color.White;
             roundButton1.FlatAppearance.BorderSize = 10;
@@ -72,7 +72,7 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(670, 36);
+            pictureBox1.Location = new Point(694, 37);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(290, 188);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -151,6 +151,7 @@
             // comboBox2
             // 
             comboBox2.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox2.ForeColor = Color.Black;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Empleo", "Autónomo", " Negocios", " Otros" });
             comboBox2.Location = new Point(496, 548);
@@ -173,6 +174,7 @@
             // comboBox1
             // 
             comboBox1.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Tarjeta de crédito estándar", " Tarjeta de débito", " Tarjeta prepagada" });
             comboBox1.Location = new Point(496, 641);
@@ -238,7 +240,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(175, 175, 180);
-            label7.Location = new Point(496, 734);
+            label7.Location = new Point(496, 744);
             label7.Name = "label7";
             label7.Size = new Size(510, 26);
             label7.TabIndex = 40;
@@ -258,7 +260,7 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.Black;
-            roundButton2.Location = new Point(472, 895);
+            roundButton2.Location = new Point(431, 895);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(750, 54);
             roundButton2.TabIndex = 41;

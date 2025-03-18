@@ -51,13 +51,14 @@
             roundButton1.BackColor = Color.White;
             roundButton1.BackgroundColor = Color.White;
             roundButton1.BorderColor = Color.Black;
-            roundButton1.BorderRadius = 10;
+            roundButton1.BorderRadius = 20;
             roundButton1.BorderSize = 0;
             roundButton1.FlatAppearance.BorderColor = Color.White;
             roundButton1.FlatAppearance.BorderSize = 10;
             roundButton1.FlatAppearance.MouseDownBackColor = Color.White;
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
+            roundButton1.Font = new Font("Inter", 11F, FontStyle.Bold);
             roundButton1.ForeColor = Color.Black;
             roundButton1.Location = new Point(52, 12);
             roundButton1.Name = "roundButton1";
@@ -70,9 +71,9 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(320, 77);
+            pictureBox1.Location = new Point(320, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(262, 144);
+            pictureBox1.Size = new Size(262, 184);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
@@ -121,8 +122,8 @@
             rjTexbox1.BorderFocusColor = Color.HotPink;
             rjTexbox1.BorderRadius = 5;
             rjTexbox1.BorderSize = 2;
-            rjTexbox1.Font = new Font("Segoe UI", 9.5F);
-            rjTexbox1.ForeColor = Color.DimGray;
+            rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox1.ForeColor = Color.Black;
             rjTexbox1.Location = new Point(232, 391);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
@@ -155,7 +156,7 @@
             rjTexbox2.BorderFocusColor = Color.HotPink;
             rjTexbox2.BorderRadius = 5;
             rjTexbox2.BorderSize = 2;
-            rjTexbox2.Font = new Font("Segoe UI", 9.5F);
+            rjTexbox2.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox2.ForeColor = Color.DimGray;
             rjTexbox2.Location = new Point(232, 494);
             rjTexbox2.Multiline = true;
@@ -188,8 +189,8 @@
             rjTexbox3.BorderFocusColor = Color.HotPink;
             rjTexbox3.BorderRadius = 5;
             rjTexbox3.BorderSize = 2;
-            rjTexbox3.Font = new Font("Segoe UI", 9.5F);
-            rjTexbox3.ForeColor = Color.DimGray;
+            rjTexbox3.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox3.ForeColor = Color.Black;
             rjTexbox3.Location = new Point(232, 608);
             rjTexbox3.Multiline = true;
             rjTexbox3.Name = "rjTexbox3";
@@ -216,11 +217,11 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(232, 723);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(442, 32);
+            dateTimePicker1.Size = new Size(442, 34);
             dateTimePicker1.TabIndex = 33;
             // 
             // rjTexbox4
@@ -230,8 +231,8 @@
             rjTexbox4.BorderFocusColor = Color.HotPink;
             rjTexbox4.BorderRadius = 5;
             rjTexbox4.BorderSize = 2;
-            rjTexbox4.Font = new Font("Segoe UI", 9.5F);
-            rjTexbox4.ForeColor = Color.DimGray;
+            rjTexbox4.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox4.ForeColor = Color.Black;
             rjTexbox4.Location = new Point(232, 811);
             rjTexbox4.Multiline = true;
             rjTexbox4.Name = "rjTexbox4";

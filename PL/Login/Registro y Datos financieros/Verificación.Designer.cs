@@ -46,7 +46,7 @@
             roundButton1.BackColor = Color.White;
             roundButton1.BackgroundColor = Color.White;
             roundButton1.BorderColor = Color.Black;
-            roundButton1.BorderRadius = 10;
+            roundButton1.BorderRadius = 20;
             roundButton1.BorderSize = 0;
             roundButton1.FlatAppearance.BorderColor = Color.White;
             roundButton1.FlatAppearance.BorderSize = 10;
@@ -67,11 +67,11 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 16F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(635, 181);
+            label1.Location = new Point(607, 185);
             label1.Name = "label1";
-            label1.Size = new Size(215, 45);
+            label1.Size = new Size(253, 45);
             label1.TabIndex = 25;
-            label1.Text = "Verificación";
+            label1.Text = "VERIFICACIÓN";
             // 
             // label3
             // 
@@ -89,6 +89,7 @@
             // comboBox1
             // 
             comboBox1.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Pasaporte", "Cédula" });
             comboBox1.Location = new Point(538, 317);
@@ -100,9 +101,9 @@
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = Properties.Resources.logo;
-            pictureBox2.Location = new Point(607, 21);
+            pictureBox2.Location = new Point(607, 30);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(262, 144);
+            pictureBox2.Size = new Size(262, 152);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 31;
             pictureBox2.TabStop = false;
@@ -128,8 +129,8 @@
             rjTexbox1.BorderFocusColor = Color.HotPink;
             rjTexbox1.BorderRadius = 5;
             rjTexbox1.BorderSize = 2;
-            rjTexbox1.Font = new Font("Segoe UI", 9.5F);
-            rjTexbox1.ForeColor = Color.DimGray;
+            rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox1.ForeColor = Color.Black;
             rjTexbox1.Location = new Point(538, 410);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
@@ -149,8 +150,8 @@
             rjTexbox2.BorderFocusColor = Color.HotPink;
             rjTexbox2.BorderRadius = 5;
             rjTexbox2.BorderSize = 2;
-            rjTexbox2.Font = new Font("Segoe UI", 9.5F);
-            rjTexbox2.ForeColor = Color.DimGray;
+            rjTexbox2.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox2.ForeColor = Color.Black;
             rjTexbox2.Location = new Point(538, 519);
             rjTexbox2.Multiline = true;
             rjTexbox2.Name = "rjTexbox2";
@@ -171,9 +172,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(538, 485);
             label4.Name = "label4";
-            label4.Size = new Size(93, 31);
+            label4.Size = new Size(233, 31);
             label4.TabIndex = 35;
-            label4.Text = "Código";
+            label4.Text = "Código Verificación";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             label4.Click += label4_Click;
             // 
@@ -191,7 +192,7 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.Black;
-            roundButton2.Location = new Point(625, 597);
+            roundButton2.Location = new Point(617, 592);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(225, 77);
             roundButton2.TabIndex = 37;
