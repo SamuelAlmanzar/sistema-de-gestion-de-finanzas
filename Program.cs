@@ -1,30 +1,49 @@
 using ProyectoFinalMargarita.PL;
 using Microsoft.AspNetCore.SignalR.Client;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
+
 namespace ProyectoFinalMargarita
 {
     internal static class Program
     {
         private static HubConnection connection; // Conexión con el servidor SignalR
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static async System.Threading.Tasks.Task Main()
+        static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-<<<<<<< HEAD
-            Application.Run(new CRUD_Cuentas_Bancarias());
-        
-=======
+            // Configuración de la aplicación
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Registro());
+            // Iniciar la conexión SignalR
+            InitializeSignalR().ConfigureAwait(false);
 
-
->>>>>>> a05dc71618f85b8a89567940752d947f67baccea
+            // Ejecutar el formulario principal
+            Application.Run(new Verificación());
         }
 
-    }
+        private static async Task InitializeSignalR()
+        {
+            try
+            {
+                connection = new HubConnectionBuilder()
+                    .WithUrl("https://tuservidor.com/hub") // Reemplaza con la URL de tu servidor SignalR
+                    .Build();
 
+                await connection.StartAsync();
+                Console.WriteLine("Conectado al servidor SignalR.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al conectar con SignalR: {ex.Message}");
+            }
+        }
+    }
 }

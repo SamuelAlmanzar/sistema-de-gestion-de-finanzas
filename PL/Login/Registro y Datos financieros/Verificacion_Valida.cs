@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita
+namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
 {
-    public partial class Registro : Form
+    public partial class Verificacion_Valida : Form
     {
-        public Registro()
+        public Verificacion_Valida()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

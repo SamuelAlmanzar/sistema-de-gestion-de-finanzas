@@ -1,0 +1,326 @@
+﻿namespace ProyectoFinalMargarita
+{
+    partial class Registro
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            roundButton1 = new RoundButton();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            rjTexbox1 = new RJTexbox();
+            label4 = new Label();
+            rjTexbox2 = new RJTexbox();
+            label5 = new Label();
+            rjTexbox3 = new RJTexbox();
+            label6 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            rjTexbox4 = new RJTexbox();
+            label7 = new Label();
+            roundButton2 = new RoundButton();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // roundButton1
+            // 
+            roundButton1.BackColor = Color.White;
+            roundButton1.BackgroundColor = Color.White;
+            roundButton1.BorderColor = Color.Black;
+            roundButton1.BorderRadius = 10;
+            roundButton1.BorderSize = 0;
+            roundButton1.FlatAppearance.BorderColor = Color.White;
+            roundButton1.FlatAppearance.BorderSize = 10;
+            roundButton1.FlatAppearance.MouseDownBackColor = Color.White;
+            roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
+            roundButton1.FlatStyle = FlatStyle.Flat;
+            roundButton1.ForeColor = Color.Black;
+            roundButton1.Location = new Point(52, 12);
+            roundButton1.Name = "roundButton1";
+            roundButton1.Size = new Size(853, 1026);
+            roundButton1.TabIndex = 22;
+            roundButton1.TextColor = Color.Black;
+            roundButton1.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(320, 77);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(262, 144);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 23;
+            pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.White;
+            label1.Font = new Font("Inter Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(257, 240);
+            label1.Name = "label1";
+            label1.Size = new Size(408, 35);
+            label1.TabIndex = 24;
+            label1.Text = "Formulario Información Personal";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.White;
+            label2.Font = new Font("Inter", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Gray;
+            label2.Location = new Point(346, 290);
+            label2.Name = "label2";
+            label2.Size = new Size(211, 26);
+            label2.TabIndex = 25;
+            label2.Text = "Ingrese su Informacion";
+            label2.Click += label2_Click_1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(232, 357);
+            label3.Name = "label3";
+            label3.Size = new Size(216, 31);
+            label3.TabIndex = 26;
+            label3.Text = "Nombre completo ";
+            // 
+            // rjTexbox1
+            // 
+            rjTexbox1.BackColor = SystemColors.Window;
+            rjTexbox1.BorderColor = Color.Black;
+            rjTexbox1.BorderFocusColor = Color.HotPink;
+            rjTexbox1.BorderRadius = 5;
+            rjTexbox1.BorderSize = 2;
+            rjTexbox1.Font = new Font("Segoe UI", 9.5F);
+            rjTexbox1.ForeColor = Color.DimGray;
+            rjTexbox1.Location = new Point(232, 391);
+            rjTexbox1.Multiline = true;
+            rjTexbox1.Name = "rjTexbox1";
+            rjTexbox1.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox1.PasswordChar = false;
+            rjTexbox1.PlaceholderColor = Color.DarkGray;
+            rjTexbox1.PlaceholderText = "";
+            rjTexbox1.Size = new Size(442, 52);
+            rjTexbox1.TabIndex = 27;
+            rjTexbox1.Texts = "";
+            rjTexbox1.UnderlinedStyle = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.White;
+            label4.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(232, 460);
+            label4.Name = "label4";
+            label4.Size = new Size(222, 31);
+            label4.TabIndex = 28;
+            label4.Text = "Correo electrónico";
+            label4.Click += label4_Click;
+            // 
+            // rjTexbox2
+            // 
+            rjTexbox2.BackColor = SystemColors.Window;
+            rjTexbox2.BorderColor = Color.Black;
+            rjTexbox2.BorderFocusColor = Color.HotPink;
+            rjTexbox2.BorderRadius = 5;
+            rjTexbox2.BorderSize = 2;
+            rjTexbox2.Font = new Font("Segoe UI", 9.5F);
+            rjTexbox2.ForeColor = Color.DimGray;
+            rjTexbox2.Location = new Point(232, 494);
+            rjTexbox2.Multiline = true;
+            rjTexbox2.Name = "rjTexbox2";
+            rjTexbox2.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox2.PasswordChar = false;
+            rjTexbox2.PlaceholderColor = Color.DarkGray;
+            rjTexbox2.PlaceholderText = "";
+            rjTexbox2.Size = new Size(442, 52);
+            rjTexbox2.TabIndex = 29;
+            rjTexbox2.Texts = "";
+            rjTexbox2.UnderlinedStyle = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.White;
+            label5.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(232, 574);
+            label5.Name = "label5";
+            label5.Size = new Size(114, 31);
+            label5.TabIndex = 30;
+            label5.Text = "Teléfono ";
+            // 
+            // rjTexbox3
+            // 
+            rjTexbox3.BackColor = SystemColors.Window;
+            rjTexbox3.BorderColor = Color.Black;
+            rjTexbox3.BorderFocusColor = Color.HotPink;
+            rjTexbox3.BorderRadius = 5;
+            rjTexbox3.BorderSize = 2;
+            rjTexbox3.Font = new Font("Segoe UI", 9.5F);
+            rjTexbox3.ForeColor = Color.DimGray;
+            rjTexbox3.Location = new Point(232, 608);
+            rjTexbox3.Multiline = true;
+            rjTexbox3.Name = "rjTexbox3";
+            rjTexbox3.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox3.PasswordChar = false;
+            rjTexbox3.PlaceholderColor = Color.DarkGray;
+            rjTexbox3.PlaceholderText = "";
+            rjTexbox3.Size = new Size(442, 52);
+            rjTexbox3.TabIndex = 31;
+            rjTexbox3.Texts = "";
+            rjTexbox3.UnderlinedStyle = false;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.White;
+            label6.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(232, 689);
+            label6.Name = "label6";
+            label6.Size = new Size(243, 31);
+            label6.TabIndex = 32;
+            label6.Text = "Fecha de nacimiento ";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(232, 723);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(442, 32);
+            dateTimePicker1.TabIndex = 33;
+            // 
+            // rjTexbox4
+            // 
+            rjTexbox4.BackColor = SystemColors.Window;
+            rjTexbox4.BorderColor = Color.Black;
+            rjTexbox4.BorderFocusColor = Color.HotPink;
+            rjTexbox4.BorderRadius = 5;
+            rjTexbox4.BorderSize = 2;
+            rjTexbox4.Font = new Font("Segoe UI", 9.5F);
+            rjTexbox4.ForeColor = Color.DimGray;
+            rjTexbox4.Location = new Point(232, 811);
+            rjTexbox4.Multiline = true;
+            rjTexbox4.Name = "rjTexbox4";
+            rjTexbox4.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox4.PasswordChar = false;
+            rjTexbox4.PlaceholderColor = Color.DarkGray;
+            rjTexbox4.PlaceholderText = "";
+            rjTexbox4.Size = new Size(442, 52);
+            rjTexbox4.TabIndex = 34;
+            rjTexbox4.Texts = "";
+            rjTexbox4.UnderlinedStyle = false;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.White;
+            label7.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(232, 777);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 31);
+            label7.TabIndex = 35;
+            label7.Text = "Dirección ";
+            // 
+            // roundButton2
+            // 
+            roundButton2.BackColor = Color.FromArgb(4, 120, 87);
+            roundButton2.BackgroundColor = Color.FromArgb(4, 120, 87);
+            roundButton2.BorderColor = Color.Empty;
+            roundButton2.BorderRadius = 8;
+            roundButton2.BorderSize = 0;
+            roundButton2.FlatAppearance.BorderColor = Color.FromArgb(4, 120, 87);
+            roundButton2.FlatAppearance.BorderSize = 0;
+            roundButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
+            roundButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
+            roundButton2.FlatStyle = FlatStyle.Flat;
+            roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            roundButton2.ForeColor = Color.Black;
+            roundButton2.Location = new Point(320, 893);
+            roundButton2.Name = "roundButton2";
+            roundButton2.Size = new Size(225, 77);
+            roundButton2.TabIndex = 36;
+            roundButton2.Text = "Siguiente";
+            roundButton2.TextColor = Color.Black;
+            roundButton2.UseVisualStyleBackColor = false;
+            // 
+            // Registro
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(247, 249, 252);
+            ClientSize = new Size(931, 1050);
+            Controls.Add(roundButton2);
+            Controls.Add(label7);
+            Controls.Add(rjTexbox4);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(label6);
+            Controls.Add(rjTexbox3);
+            Controls.Add(label5);
+            Controls.Add(rjTexbox2);
+            Controls.Add(label4);
+            Controls.Add(rjTexbox1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Controls.Add(roundButton1);
+            Name = "Registro";
+            Text = "Registro";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+        private RoundButton roundButton1;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private RJTexbox rjTexbox1;
+        private Label label4;
+        private RJTexbox rjTexbox2;
+        private Label label5;
+        private RJTexbox rjTexbox3;
+        private Label label6;
+        private DateTimePicker dateTimePicker1;
+        private RJTexbox rjTexbox4;
+        private Label label7;
+        private RoundButton roundButton2;
+    }
+}
