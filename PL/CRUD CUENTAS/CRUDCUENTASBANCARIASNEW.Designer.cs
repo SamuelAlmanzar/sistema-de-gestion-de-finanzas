@@ -165,15 +165,15 @@
             // 
             // roundButton4
             // 
-            roundButton4.BackColor = Color.FromArgb(4, 120, 87);
-            roundButton4.BackgroundColor = Color.FromArgb(4, 120, 87);
-            roundButton4.BorderColor = Color.White;
+            roundButton4.BackColor = Color.FromArgb(220, 38, 38);
+            roundButton4.BackgroundColor = Color.FromArgb(220, 38, 38);
+            roundButton4.BorderColor = Color.FromArgb(220, 38, 38);
             roundButton4.BorderRadius = 5;
             roundButton4.BorderSize = 0;
-            roundButton4.FlatAppearance.BorderColor = Color.FromArgb(4, 120, 87);
+            roundButton4.FlatAppearance.BorderColor = Color.FromArgb(220, 38, 38);
             roundButton4.FlatAppearance.BorderSize = 10;
-            roundButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
-            roundButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
+            roundButton4.FlatAppearance.MouseDownBackColor = Color.FromArgb(220, 38, 38);
+            roundButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 38, 38);
             roundButton4.FlatStyle = FlatStyle.Flat;
             roundButton4.ForeColor = Color.Black;
             roundButton4.Location = new Point(1165, 307);
@@ -186,7 +186,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(4, 120, 87);
+            label1.BackColor = Color.FromArgb(220, 38, 38);
             label1.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
             label1.ForeColor = Color.White;
             label1.Location = new Point(1247, 330);
@@ -197,7 +197,7 @@
             // 
             // iconPictureBox2
             // 
-            iconPictureBox2.BackColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox2.BackColor = Color.FromArgb(220, 38, 38);
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             iconPictureBox2.IconColor = Color.White;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -212,6 +212,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(247, 249, 252);
             ClientSize = new Size(1924, 1050);
             Controls.Add(iconPictureBox2);
             Controls.Add(label1);
@@ -226,6 +227,7 @@
             Controls.Add(roundButton1);
             Name = "CRUDCUENTASBANCARIASNEW";
             Text = "CRUDCUENTASBANCARIASNEW";
+            Load += CRUDCUENTASBANCARIASNEW_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();

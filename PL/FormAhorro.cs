@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
+namespace ProyectoFinalMargarita.PL
 {
-    public partial class CRUDCUENTASBANCARIASNEW : Form
+    public partial class FormAhorro : Form
     {
-        public CRUDCUENTASBANCARIASNEW()
+        public FormAhorro()
         {
             InitializeComponent();
+        }
 
-
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -26,7 +27,7 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
 
         }
 
-        private void CRUDCUENTASBANCARIASNEW_Load(object sender, EventArgs e)
+        private void rjTexbox2__TextChanged(object sender, EventArgs e)
         {
 
         }

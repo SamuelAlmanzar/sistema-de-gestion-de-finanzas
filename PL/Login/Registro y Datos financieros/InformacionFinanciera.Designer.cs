@@ -72,7 +72,7 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(694, 37);
+            pictureBox1.Location = new Point(680, 38);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(290, 188);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;

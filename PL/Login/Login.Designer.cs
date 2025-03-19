@@ -228,8 +228,8 @@
             roundButton2.BorderSize = 0;
             roundButton2.FlatAppearance.BorderColor = Color.FromArgb(4, 120, 87);
             roundButton2.FlatAppearance.BorderSize = 0;
-            roundButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
-            roundButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
+            roundButton2.FlatAppearance.MouseDownBackColor = Color.Black;
+            roundButton2.FlatAppearance.MouseOverBackColor = Color.Black;
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
@@ -240,6 +240,7 @@
             roundButton2.Text = "Ingresar";
             roundButton2.TextColor = Color.White;
             roundButton2.UseVisualStyleBackColor = false;
+            roundButton2.Click += roundButton2_Click;
             // 
             // Login
             // 
