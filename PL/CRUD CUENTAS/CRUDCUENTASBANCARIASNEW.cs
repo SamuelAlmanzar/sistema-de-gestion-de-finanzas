@@ -30,5 +30,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
         {
 
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

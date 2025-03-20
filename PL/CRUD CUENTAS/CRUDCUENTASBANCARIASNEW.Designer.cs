@@ -49,7 +49,6 @@
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
@@ -219,6 +218,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
             guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            guna2DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -227,9 +227,9 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 35;
+            guna2DataGridView1.ColumnHeadersHeight = 45;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -252,6 +252,7 @@
             guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.RowHeadersWidth = 62;
+            guna2DataGridView1.RowTemplate.Height = 45;
             guna2DataGridView1.Size = new Size(1401, 310);
             guna2DataGridView1.TabIndex = 58;
             guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
@@ -266,57 +267,52 @@
             guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 35;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 45;
             guna2DataGridView1.ThemeStyle.ReadOnly = false;
             guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
             guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
             guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 33;
+            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 45;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Column1";
+            Column1.HeaderText = "Propietario";
             Column1.MinimumWidth = 8;
             Column1.Name = "Column1";
             // 
             // Column2
             // 
-            Column2.HeaderText = "Column2";
+            Column2.HeaderText = "Numero de Cuenta";
             Column2.MinimumWidth = 8;
             Column2.Name = "Column2";
             // 
             // Column3
             // 
-            Column3.HeaderText = "Column3";
+            Column3.HeaderText = "Tipo";
             Column3.MinimumWidth = 8;
             Column3.Name = "Column3";
             // 
             // Column4
             // 
-            Column4.HeaderText = "Column4";
+            Column4.HeaderText = "Banco";
             Column4.MinimumWidth = 8;
             Column4.Name = "Column4";
             // 
             // Column5
             // 
-            Column5.HeaderText = "Column5";
+            Column5.HeaderText = "Saldo";
             Column5.MinimumWidth = 8;
             Column5.Name = "Column5";
             // 
             // Column6
             // 
-            Column6.HeaderText = "Column6";
+            Column6.HeaderText = "Fecha";
             Column6.MinimumWidth = 8;
             Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Column7";
-            Column7.MinimumWidth = 8;
-            Column7.Name = "Column7";
             // 
             // CRUDCUENTASBANCARIASNEW
             // 
@@ -364,6 +360,5 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
     }
 }

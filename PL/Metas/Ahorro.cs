@@ -8,15 +8,15 @@ namespace ProyectoFinalMargarita
         public Ahorro()
         {
             InitializeComponent();
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+          guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void Ahorro_Load(object sender, EventArgs e)
         {
-            dataGridView1.Columns.Add("Monto", "Monto");
-            dataGridView1.Columns.Add("MontoAhorrado", "Monto Ahorrado");
-            dataGridView1.Columns.Add("Meta", "Meta");
-            dataGridView1.Columns.Add("Fecha", "Fecha");
+            guna2DataGridView1.Columns.Add("Monto", "Monto");
+            guna2DataGridView1.Columns.Add("MontoAhorrado", "Monto Ahorrado");
+            guna2DataGridView1.Columns.Add("Meta", "Meta");
+            guna2DataGridView1.Columns.Add("Fecha", "Fecha");
             //dataGridView1.Columns.Add("AhorroDiario", "Ahorro Diario");
             //dataGridView1.Columns.Add("AhorroSemanal", "Ahorro Semanal");
             //dataGridView1.Columns.Add("AhorroMensual", "Ahorro Mensual");
@@ -113,9 +113,9 @@ namespace ProyectoFinalMargarita
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+                guna2DataGridView1.Rows.Remove(guna2DataGridView1.SelectedRows[0]);
                 LimpiarControles();
             }
             else
@@ -146,5 +146,7 @@ namespace ProyectoFinalMargarita
         {
 
         }
+
+       
     }
 }

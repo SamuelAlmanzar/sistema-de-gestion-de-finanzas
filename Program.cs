@@ -31,7 +31,7 @@ namespace ProyectoFinalMargarita
 
             // Ejecutar el formulario principal
             //El Form de informacion personal se llama Registro
-            Application.Run(new CRUDCUENTASBANCARIASNEW());
+            Application.Run(new Main());
         }
 
         private static async Task InitializeSignalR()
