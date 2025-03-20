@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             roundButton1 = new RoundButton();
             label6 = new Label();
             roundButton2 = new RoundButton();
@@ -35,13 +39,20 @@
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             label10 = new Label();
             roundButton3 = new RoundButton();
-            dataGridView1 = new DataGridView();
             roundButton4 = new RoundButton();
             label1 = new Label();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
             // 
             // roundButton1
@@ -154,15 +165,6 @@
             roundButton3.TextColor = Color.Black;
             roundButton3.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(156, 421);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1475, 323);
-            dataGridView1.TabIndex = 54;
-            // 
             // roundButton4
             // 
             roundButton4.BackColor = Color.FromArgb(220, 38, 38);
@@ -208,16 +210,124 @@
             iconPictureBox2.TabIndex = 57;
             iconPictureBox2.TabStop = false;
             // 
+            // guna2DataGridView1
+            // 
+            guna2DataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            guna2DataGridView1.ColumnHeadersHeight = 35;
+            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.Location = new Point(212, 459);
+            guna2DataGridView1.Name = "guna2DataGridView1";
+            guna2DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            guna2DataGridView1.RowHeadersVisible = false;
+            guna2DataGridView1.RowHeadersWidth = 62;
+            guna2DataGridView1.Size = new Size(1401, 310);
+            guna2DataGridView1.TabIndex = 58;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = SystemColors.ControlText;
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 35;
+            guna2DataGridView1.ThemeStyle.ReadOnly = false;
+            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
+            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 33;
+            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "Column1";
+            Column1.MinimumWidth = 8;
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Column2";
+            Column2.MinimumWidth = 8;
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Column3";
+            Column3.MinimumWidth = 8;
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Column4";
+            Column4.MinimumWidth = 8;
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Column5";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Column6";
+            Column6.MinimumWidth = 8;
+            Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Column7";
+            Column7.MinimumWidth = 8;
+            Column7.Name = "Column7";
+            // 
             // CRUDCUENTASBANCARIASNEW
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(247, 249, 252);
             ClientSize = new Size(1924, 1050);
+            Controls.Add(guna2DataGridView1);
             Controls.Add(iconPictureBox2);
             Controls.Add(label1);
             Controls.Add(roundButton4);
-            Controls.Add(dataGridView1);
             Controls.Add(iconPictureBox1);
             Controls.Add(label10);
             Controls.Add(roundButton3);
@@ -229,8 +339,8 @@
             Text = "CRUDCUENTASBANCARIASNEW";
             Load += CRUDCUENTASBANCARIASNEW_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -244,9 +354,16 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private Label label10;
         private RoundButton roundButton3;
-        private DataGridView dataGridView1;
         private RoundButton roundButton4;
         private Label label1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
     }
 }

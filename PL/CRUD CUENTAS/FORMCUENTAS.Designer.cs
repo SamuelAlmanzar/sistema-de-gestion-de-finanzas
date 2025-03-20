@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roundButton1 = new RoundButton();
             label1 = new Label();
             label3 = new Label();
@@ -48,13 +50,13 @@
             iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             label8 = new Label();
             iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            dateTimePicker1 = new DateTimePicker();
             roundButton2 = new RoundButton();
             label9 = new Label();
             iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
             roundButton3 = new RoundButton();
             label10 = new Label();
-            iconPictureBox8 = new FontAwesome.Sharp.IconPictureBox();
+            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
@@ -78,7 +80,7 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(44, 12);
+            roundButton1.Location = new Point(47, -7);
             roundButton1.Name = "roundButton1";
             roundButton1.Size = new Size(853, 944);
             roundButton1.TabIndex = 23;
@@ -343,9 +345,9 @@
             label8.ForeColor = Color.Black;
             label8.Location = new Point(196, 720);
             label8.Name = "label8";
-            label8.Size = new Size(67, 28);
+            label8.Size = new Size(71, 28);
             label8.TabIndex = 62;
-            label8.Text = "Saldo";
+            label8.Text = "Fecha";
             // 
             // iconPictureBox6
             // 
@@ -360,15 +362,6 @@
             iconPictureBox6.Size = new Size(57, 52);
             iconPictureBox6.TabIndex = 64;
             iconPictureBox6.TabStop = false;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(352, 714);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(521, 34);
-            dateTimePicker1.TabIndex = 65;
             // 
             // roundButton2
             // 
@@ -408,24 +401,38 @@
             iconPictureBox7.IconChar = FontAwesome.Sharp.IconChar.Add;
             iconPictureBox7.IconColor = Color.White;
             iconPictureBox7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox7.IconSize = 52;
-            iconPictureBox7.Location = new Point(658, 869);
+            iconPictureBox7.IconSize = 35;
+            iconPictureBox7.Location = new Point(677, 871);
             iconPictureBox7.Name = "iconPictureBox7";
-            iconPictureBox7.Size = new Size(57, 52);
+            iconPictureBox7.Size = new Size(38, 35);
             iconPictureBox7.TabIndex = 68;
             iconPictureBox7.TabStop = false;
             // 
+            // iconPictureBox8
+            // 
+            iconPictureBox8.BackColor = Color.FromArgb(244, 244, 245);
+            iconPictureBox8.ForeColor = Color.Black;
+            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.X;
+            iconPictureBox8.IconColor = Color.Black;
+            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox8.IconSize = 37;
+            iconPictureBox8.Location = new Point(431, 871);
+            iconPictureBox8.Name = "iconPictureBox8";
+            iconPictureBox8.Size = new Size(39, 37);
+            iconPictureBox8.TabIndex = 71;
+            iconPictureBox8.TabStop = false;
+            // 
             // roundButton3
             // 
-            roundButton3.BackColor = Color.FromArgb(33, 162, 122);
-            roundButton3.BackgroundColor = Color.FromArgb(33, 162, 122);
-            roundButton3.BorderColor = Color.FromArgb(33, 162, 122);
+            roundButton3.BackColor = Color.FromArgb(244, 244, 245);
+            roundButton3.BackgroundColor = Color.FromArgb(244, 244, 245);
+            roundButton3.BorderColor = Color.FromArgb(244, 244, 245);
             roundButton3.BorderRadius = 5;
             roundButton3.BorderSize = 0;
-            roundButton3.FlatAppearance.BorderColor = Color.FromArgb(33, 162, 122);
+            roundButton3.FlatAppearance.BorderColor = Color.FromArgb(244, 244, 245);
             roundButton3.FlatAppearance.BorderSize = 10;
-            roundButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 162, 122);
-            roundButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(33, 162, 122);
+            roundButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(244, 244, 245);
+            roundButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(244, 244, 245);
             roundButton3.FlatStyle = FlatStyle.Flat;
             roundButton3.ForeColor = Color.Black;
             roundButton3.Location = new Point(401, 860);
@@ -438,27 +445,37 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(33, 162, 122);
+            label10.BackColor = Color.FromArgb(244, 244, 245);
             label10.Font = new Font("Inter Black", 12F, FontStyle.Bold);
-            label10.ForeColor = Color.White;
+            label10.ForeColor = Color.Black;
             label10.Location = new Point(476, 871);
             label10.Name = "label10";
             label10.Size = new Size(123, 35);
             label10.TabIndex = 70;
             label10.Text = "Cancelar";
             // 
-            // iconPictureBox8
+            // guna2DateTimePicker1
             // 
-            iconPictureBox8.BackColor = Color.FromArgb(33, 162, 122);
-            iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.X;
-            iconPictureBox8.IconColor = Color.White;
-            iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox8.IconSize = 52;
-            iconPictureBox8.Location = new Point(413, 869);
-            iconPictureBox8.Name = "iconPictureBox8";
-            iconPictureBox8.Size = new Size(57, 52);
-            iconPictureBox8.TabIndex = 71;
-            iconPictureBox8.TabStop = false;
+            guna2DateTimePicker1.Animated = true;
+            guna2DateTimePicker1.BackColor = Color.Transparent;
+            guna2DateTimePicker1.BorderColor = Color.White;
+            guna2DateTimePicker1.BorderRadius = 5;
+            guna2DateTimePicker1.Checked = true;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
+            guna2DateTimePicker1.FillColor = Color.White;
+            guna2DateTimePicker1.FocusedColor = Color.White;
+            guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
+            guna2DateTimePicker1.ForeColor = Color.Black;
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Short;
+            guna2DateTimePicker1.Location = new Point(352, 706);
+            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2DateTimePicker1.Size = new Size(521, 54);
+            guna2DateTimePicker1.TabIndex = 72;
+            guna2DateTimePicker1.UseTransparentBackground = true;
+            guna2DateTimePicker1.Value = new DateTime(2025, 3, 19, 15, 3, 36, 604);
             // 
             // FORMCUENTAS
             // 
@@ -466,13 +483,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(940, 1050);
+            Controls.Add(guna2DateTimePicker1);
             Controls.Add(iconPictureBox8);
             Controls.Add(label10);
             Controls.Add(roundButton3);
             Controls.Add(iconPictureBox7);
             Controls.Add(label9);
             Controls.Add(roundButton2);
-            Controls.Add(dateTimePicker1);
             Controls.Add(iconPictureBox6);
             Controls.Add(label8);
             Controls.Add(iconPictureBox5);
@@ -529,12 +546,12 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private Label label8;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
-        private DateTimePicker dateTimePicker1;
         private RoundButton roundButton2;
         private Label label9;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox7;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
         private RoundButton roundButton3;
         private Label label10;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox8;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }

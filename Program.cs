@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using ProyectoFinalMargarita;
 using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
 using ProyectoFinalMargarita.PL.CRUD_CUENTAS;
+using ProyectoFinalMargarita.PL.MainPage;
 
 
 namespace ProyectoFinalMargarita
@@ -30,7 +31,7 @@ namespace ProyectoFinalMargarita
 
             // Ejecutar el formulario principal
             //El Form de informacion personal se llama Registro
-            Application.Run(new AsignacionTarjeta1());
+            Application.Run(new CRUDCUENTASBANCARIASNEW());
         }
 
         private static async Task InitializeSignalR()

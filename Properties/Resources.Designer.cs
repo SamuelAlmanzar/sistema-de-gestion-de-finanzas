@@ -63,6 +63,16 @@ namespace ProyectoFinalMargarita.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bolsa_de_dinero {
+            get {
+                object obj = ResourceManager.GetObject("bolsa-de-dinero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap finance_track {
             get {
                 object obj = ResourceManager.GetObject("finance track", resourceCulture);

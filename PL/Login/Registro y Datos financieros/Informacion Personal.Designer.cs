@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roundButton1 = new RoundButton();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -39,10 +41,10 @@
             label5 = new Label();
             rjTexbox3 = new RJTexbox();
             label6 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             rjTexbox4 = new RJTexbox();
             label7 = new Label();
             roundButton2 = new RoundButton();
+            guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -209,20 +211,11 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(232, 689);
+            label6.Location = new Point(232, 686);
             label6.Name = "label6";
             label6.Size = new Size(243, 31);
             label6.TabIndex = 32;
             label6.Text = "Fecha de nacimiento ";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(232, 723);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(442, 34);
-            dateTimePicker1.TabIndex = 33;
             // 
             // rjTexbox4
             // 
@@ -279,16 +272,39 @@
             roundButton2.TextColor = Color.Black;
             roundButton2.UseVisualStyleBackColor = false;
             // 
+            // guna2DateTimePicker1
+            // 
+            guna2DateTimePicker1.Animated = true;
+            guna2DateTimePicker1.BackColor = Color.Transparent;
+            guna2DateTimePicker1.BorderColor = Color.White;
+            guna2DateTimePicker1.BorderRadius = 5;
+            guna2DateTimePicker1.Checked = true;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
+            guna2DateTimePicker1.FillColor = Color.White;
+            guna2DateTimePicker1.FocusedColor = Color.White;
+            guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
+            guna2DateTimePicker1.ForeColor = Color.Black;
+            guna2DateTimePicker1.Format = DateTimePickerFormat.Short;
+            guna2DateTimePicker1.Location = new Point(232, 720);
+            guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2DateTimePicker1.Size = new Size(442, 54);
+            guna2DateTimePicker1.TabIndex = 53;
+            guna2DateTimePicker1.UseTransparentBackground = true;
+            guna2DateTimePicker1.Value = new DateTime(2025, 3, 19, 15, 3, 36, 604);
+            // 
             // Registro
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(931, 1050);
+            Controls.Add(guna2DateTimePicker1);
             Controls.Add(roundButton2);
             Controls.Add(label7);
             Controls.Add(rjTexbox4);
-            Controls.Add(dateTimePicker1);
             Controls.Add(label6);
             Controls.Add(rjTexbox3);
             Controls.Add(label5);
@@ -319,9 +335,9 @@
         private Label label5;
         private RJTexbox rjTexbox3;
         private Label label6;
-        private DateTimePicker dateTimePicker1;
         private RJTexbox rjTexbox4;
         private Label label7;
         private RoundButton roundButton2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
     }
 }
