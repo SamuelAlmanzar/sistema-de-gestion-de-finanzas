@@ -80,9 +80,9 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(47, -7);
+            roundButton1.Location = new Point(47, 12);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(853, 944);
+            roundButton1.Size = new Size(853, 925);
             roundButton1.TabIndex = 23;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;

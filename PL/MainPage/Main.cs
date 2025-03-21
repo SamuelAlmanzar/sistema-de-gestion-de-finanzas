@@ -26,5 +26,10 @@ namespace ProyectoFinalMargarita.PL.MainPage
         {
 
         }
+
+        private void guna2CircleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
