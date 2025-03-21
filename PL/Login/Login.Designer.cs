@@ -41,7 +41,11 @@
             label2 = new Label();
             linkLabel4 = new LinkLabel();
             roundButton2 = new RoundButton();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             SuspendLayout();
             // 
             // roundButton1
@@ -242,12 +246,42 @@
             roundButton2.UseVisualStyleBackColor = false;
             roundButton2.Click += roundButton2_Click;
             // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.White;
+            iconPictureBox2.ForeColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            iconPictureBox2.IconColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 56;
+            iconPictureBox2.Location = new Point(457, 387);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(57, 56);
+            iconPictureBox2.TabIndex = 46;
+            iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.White;
+            iconPictureBox3.ForeColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            iconPictureBox3.IconColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 56;
+            iconPictureBox3.Location = new Point(457, 510);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(57, 56);
+            iconPictureBox3.TabIndex = 47;
+            iconPictureBox3.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(247, 249, 252);
             ClientSize = new Size(1419, 786);
+            Controls.Add(iconPictureBox3);
+            Controls.Add(iconPictureBox2);
             Controls.Add(roundButton2);
             Controls.Add(linkLabel4);
             Controls.Add(label2);
@@ -265,6 +299,8 @@
             Text = "Login";
             Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,5 +319,7 @@
         private Label label2;
         private LinkLabel linkLabel4;
         private RoundButton roundButton2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
     }
 }

@@ -31,7 +31,7 @@ namespace ProyectoFinalMargarita
 
             // Ejecutar el formulario principal
             //El Form de informacion personal se llama Registro
-            Application.Run(new Main());
+            Application.Run(new Registro());
         }
 
         private static async Task InitializeSignalR()

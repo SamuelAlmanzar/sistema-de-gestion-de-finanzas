@@ -44,7 +44,13 @@
             checkBox3 = new CheckBox();
             label7 = new Label();
             roundButton2 = new RoundButton();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // roundButton1
@@ -269,12 +275,57 @@
             roundButton2.UseVisualStyleBackColor = false;
             roundButton2.Click += roundButton2_Click;
             // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.White;
+            iconPictureBox3.ForeColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            iconPictureBox3.IconColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 36;
+            iconPictureBox3.Location = new Point(452, 392);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(38, 36);
+            iconPictureBox3.TabIndex = 75;
+            iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox4
+            // 
+            iconPictureBox4.BackColor = Color.White;
+            iconPictureBox4.ForeColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.HandHoldingUsd;
+            iconPictureBox4.IconColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox4.IconSize = 36;
+            iconPictureBox4.Location = new Point(452, 509);
+            iconPictureBox4.Name = "iconPictureBox4";
+            iconPictureBox4.Size = new Size(38, 36);
+            iconPictureBox4.TabIndex = 76;
+            iconPictureBox4.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.White;
+            iconPictureBox2.ForeColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Pager;
+            iconPictureBox2.IconColor = Color.FromArgb(33, 162, 122);
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            iconPictureBox2.IconSize = 36;
+            iconPictureBox2.Location = new Point(452, 602);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(38, 36);
+            iconPictureBox2.TabIndex = 77;
+            iconPictureBox2.TabStop = false;
+            // 
             // InformacionFinanciera
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(1308, 1050);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox4);
+            Controls.Add(iconPictureBox3);
             Controls.Add(roundButton2);
             Controls.Add(label7);
             Controls.Add(checkBox3);
@@ -295,6 +346,9 @@
             Name = "InformacionFinanciera";
             Text = "InformacionFinanciera";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -317,5 +371,8 @@
         private CheckBox checkBox3;
         private Label label7;
         private RoundButton roundButton2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

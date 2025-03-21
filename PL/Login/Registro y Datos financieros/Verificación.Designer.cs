@@ -38,7 +38,13 @@
             rjTexbox2 = new RJTexbox();
             label4 = new Label();
             roundButton2 = new RoundButton();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // roundButton1
@@ -60,6 +66,7 @@
             roundButton1.TabIndex = 23;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
+            roundButton1.Click += roundButton1_Click;
             // 
             // label1
             // 
@@ -201,12 +208,57 @@
             roundButton2.TextColor = Color.White;
             roundButton2.UseVisualStyleBackColor = false;
             // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.White;
+            iconPictureBox3.ForeColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            iconPictureBox3.IconColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 36;
+            iconPictureBox3.Location = new Point(494, 376);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(38, 36);
+            iconPictureBox3.TabIndex = 76;
+            iconPictureBox3.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            iconPictureBox1.BackColor = Color.White;
+            iconPictureBox1.ForeColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardQuestion;
+            iconPictureBox1.IconColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox1.IconSize = 36;
+            iconPictureBox1.Location = new Point(494, 283);
+            iconPictureBox1.Name = "iconPictureBox1";
+            iconPictureBox1.Size = new Size(38, 36);
+            iconPictureBox1.TabIndex = 77;
+            iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            iconPictureBox2.BackColor = Color.White;
+            iconPictureBox2.ForeColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
+            iconPictureBox2.IconColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox2.IconSize = 36;
+            iconPictureBox2.Location = new Point(494, 485);
+            iconPictureBox2.Name = "iconPictureBox2";
+            iconPictureBox2.Size = new Size(38, 36);
+            iconPictureBox2.TabIndex = 78;
+            iconPictureBox2.TabStop = false;
+            // 
             // Verificación
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(1386, 730);
+            Controls.Add(iconPictureBox2);
+            Controls.Add(iconPictureBox1);
+            Controls.Add(iconPictureBox3);
             Controls.Add(roundButton2);
             Controls.Add(label4);
             Controls.Add(rjTexbox2);
@@ -221,6 +273,9 @@
             Name = "Verificación";
             Text = "Verificación";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,5 +292,8 @@
         private RJTexbox rjTexbox2;
         private Label label4;
         private RoundButton roundButton2;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

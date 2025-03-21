@@ -31,5 +31,15 @@ namespace ProyectoFinalMargarita.PL.MainPage
         {
 
         }
+
+        private void roundButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

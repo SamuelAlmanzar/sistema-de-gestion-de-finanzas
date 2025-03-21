@@ -36,5 +36,10 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
         {
 
         }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
