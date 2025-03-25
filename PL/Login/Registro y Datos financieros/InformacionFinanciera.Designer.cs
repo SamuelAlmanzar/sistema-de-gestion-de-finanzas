@@ -66,9 +66,9 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(223, 12);
+            roundButton1.Location = new Point(114, 12);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(1067, 958);
+            roundButton1.Size = new Size(1067, 992);
             roundButton1.TabIndex = 25;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
@@ -265,13 +265,13 @@
             roundButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            roundButton2.ForeColor = Color.Black;
-            roundButton2.Location = new Point(431, 895);
+            roundButton2.ForeColor = Color.White;
+            roundButton2.Location = new Point(295, 908);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(750, 54);
             roundButton2.TabIndex = 41;
             roundButton2.Text = "Siguiente";
-            roundButton2.TextColor = Color.Black;
+            roundButton2.TextColor = Color.White;
             roundButton2.UseVisualStyleBackColor = false;
             roundButton2.Click += roundButton2_Click;
             // 

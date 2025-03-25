@@ -88,7 +88,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter Medium", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(175, 175, 180);
-            label3.Location = new Point(542, 140);
+            label3.Location = new Point(542, 151);
             label3.Name = "label3";
             label3.Size = new Size(375, 28);
             label3.TabIndex = 38;
@@ -100,7 +100,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(542, 84);
+            label1.Location = new Point(565, 95);
             label1.Name = "label1";
             label1.Size = new Size(333, 40);
             label1.TabIndex = 37;
@@ -170,9 +170,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(473, 397);
             label4.Name = "label4";
-            label4.Size = new Size(74, 28);
+            label4.Size = new Size(160, 28);
             label4.TabIndex = 46;
-            label4.Text = "Monto";
+            label4.Text = "Monto Objetivo";
             // 
             // rjTexbox3
             // 
@@ -300,10 +300,10 @@
             iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.X;
             iconPictureBox8.IconColor = Color.Black;
             iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox8.IconSize = 28;
+            iconPictureBox8.IconSize = 26;
             iconPictureBox8.Location = new Point(633, 900);
             iconPictureBox8.Name = "iconPictureBox8";
-            iconPictureBox8.Size = new Size(38, 28);
+            iconPictureBox8.Size = new Size(26, 28);
             iconPictureBox8.TabIndex = 72;
             iconPictureBox8.TabStop = false;
             // 

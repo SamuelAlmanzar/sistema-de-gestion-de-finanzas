@@ -236,7 +236,7 @@
             comboBox1.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Ahorro", "Corriente", "Nómina", "Inversión" });
+            comboBox1.Items.AddRange(new object[] { "Ahorro", "Corriente", "Nómina", "Inversión", "Otro" });
             comboBox1.Location = new Point(352, 405);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(521, 39);

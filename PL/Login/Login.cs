@@ -2,121 +2,90 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using System.Diagnostics;
+using System.Data.SqlClient;
+using ProyectoFinalMargarita.PL.MainPage;
 
 namespace ProyectoFinalMargarita
 {
     public partial class Login : Form
     {
-        private Panel panelShadow;
-        private Button iconButton1; // Declaración del botón
+        // Cadena de conexión a tu base de datos
+        string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
+
+        // Variable para almacenar el ID del cliente
+        public static int ClienteID { get; private set; }
 
         public Login()
         {
             InitializeComponent();
-
-
-            // Inicialización de iconButton1
-
-        }
-
-
-
-
-
-
-
-
-
-        private GraphicsPath RoundedRectangle(Rectangle bounds, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int diameter = radius * 2;
-
-            if (radius > 0)
-            {
-                path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
-                path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
-                path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
-                path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
-                path.CloseFigure();
-            }
-            else
-            {
-                path.AddRectangle(bounds);
-            }
-
-            return path;
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            // Manejar el cambio de texto en textBox1
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            // Manejar el cambio de texto en textBox2
-        }
-
-        private void IconButton1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Crear un objeto ProcessStartInfo
-                ProcessStartInfo psi = new ProcessStartInfo
-                {
-                    FileName = "https://accounts.google.com/", // La URL que deseas abrir
-                    UseShellExecute = true // Usar el shell del sistema para abrir la URL
-                };
-
-                // Iniciar el proceso
-                Process.Start(psi);
-            }
-            catch (Exception ex)
-            {
-                // Manejar cualquier excepción que pueda ocurrir
-                MessageBox.Show($"Error al abrir la URL: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void IconButton1_Paint(object sender, PaintEventArgs e)
-        {
-            int borderRadius = 15; // Ajusta el radio según tu diseño
-            using (GraphicsPath path = RoundedRectangle(iconButton1.ClientRectangle, borderRadius))
-            {
-                iconButton1.Region = new Region(path);
-                using (Pen pen = new Pen(Color.Gray, 1)) // Puedes cambiar el color del borde
-                {
-                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    e.Graphics.DrawPath(pen, path);
-                }
-            }
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            // Manejar el clic en iconButton2
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            // Código que se ejecuta al cargar el formulario
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-            // Manejar el evento Paint del panel1
-        }
-
-        private void roundButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
+            string nombreCompleto = rjTexbox1.Texts; // Cambiado de "usuario" a "nombreCompleto"
+            string contraseña = rjTexbox2.Texts;
 
+            if (string.IsNullOrEmpty(nombreCompleto) || string.IsNullOrEmpty(contraseña))
+            {
+                MessageBox.Show("Por favor ingrese nombre completo y contraseña", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ValidarCliente(nombreCompleto, contraseña))
+            {
+                MessageBox.Show("Inicio de sesión exitoso", "Éxito",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Abrir formulario principal
+                Main mainForm = new Main();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Nombre completo o contraseña incorrectos", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        private bool ValidarCliente(string nombreCompleto, string contraseña)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta directa a la tabla Cliente
+                    string query = @"
+                    SELECT ID 
+                    FROM Cliente
+                    WHERE NombreCompleto = @NombreCompleto 
+                    AND Contrasena = @Contraseña";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
+                        cmd.Parameters.AddWithValue("@Contraseña", contraseña);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            ClienteID = Convert.ToInt32(result);
+                            return true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error de conexión: " + ex.Message, "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return false;
+        }
+
+        
     }
 }

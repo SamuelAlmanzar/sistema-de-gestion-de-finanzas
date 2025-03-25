@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             roundButton1 = new RoundButton();
             label3 = new Label();
             label6 = new Label();
@@ -43,9 +43,13 @@
             label1 = new Label();
             roundButton4 = new RoundButton();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            label2 = new Label();
+            roundButton5 = new RoundButton();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             SuspendLayout();
             // 
             // roundButton1
@@ -120,7 +124,7 @@
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 48;
-            iconPictureBox1.Location = new Point(1483, 381);
+            iconPictureBox1.Location = new Point(1220, 346);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(48, 48);
             iconPictureBox1.TabIndex = 56;
@@ -132,11 +136,11 @@
             label10.BackColor = Color.FromArgb(4, 120, 87);
             label10.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
             label10.ForeColor = Color.White;
-            label10.Location = new Point(1546, 384);
+            label10.Location = new Point(1283, 349);
             label10.Name = "label10";
-            label10.Size = new Size(92, 31);
+            label10.Size = new Size(83, 31);
             label10.TabIndex = 55;
-            label10.Text = "NUEVO";
+            label10.Text = "Nuevo";
             // 
             // roundButton3
             // 
@@ -151,7 +155,7 @@
             roundButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
             roundButton3.FlatStyle = FlatStyle.Flat;
             roundButton3.ForeColor = Color.Black;
-            roundButton3.Location = new Point(1446, 362);
+            roundButton3.Location = new Point(1183, 327);
             roundButton3.Name = "roundButton3";
             roundButton3.Size = new Size(222, 77);
             roundButton3.TabIndex = 54;
@@ -165,7 +169,7 @@
             iconPictureBox2.IconColor = Color.White;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 48;
-            iconPictureBox2.Location = new Point(1232, 381);
+            iconPictureBox2.Location = new Point(969, 346);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(48, 48);
             iconPictureBox2.TabIndex = 60;
@@ -177,11 +181,11 @@
             label1.BackColor = Color.FromArgb(220, 38, 38);
             label1.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1286, 385);
+            label1.Location = new Point(1023, 350);
             label1.Name = "label1";
-            label1.Size = new Size(118, 31);
+            label1.Size = new Size(99, 31);
             label1.TabIndex = 59;
-            label1.Text = "ELIMINAR";
+            label1.Text = "Eliminar";
             // 
             // roundButton4
             // 
@@ -196,7 +200,7 @@
             roundButton4.FlatAppearance.MouseOverBackColor = Color.FromArgb(220, 38, 38);
             roundButton4.FlatStyle = FlatStyle.Flat;
             roundButton4.ForeColor = Color.Black;
-            roundButton4.Location = new Point(1204, 362);
+            roundButton4.Location = new Point(941, 327);
             roundButton4.Name = "roundButton4";
             roundButton4.Size = new Size(222, 77);
             roundButton4.TabIndex = 58;
@@ -206,43 +210,42 @@
             // guna2DataGridView1
             // 
             guna2DataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            guna2DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             guna2DataGridView1.ColumnHeadersHeight = 45;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.Location = new Point(213, 505);
             guna2DataGridView1.Name = "guna2DataGridView1";
             guna2DataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.RowHeadersWidth = 62;
             guna2DataGridView1.RowTemplate.Height = 45;
@@ -270,12 +273,60 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.FromArgb(4, 120, 87);
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            iconPictureBox3.IconColor = Color.White;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 48;
+            iconPictureBox3.Location = new Point(1489, 346);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(48, 48);
+            iconPictureBox3.TabIndex = 64;
+            iconPictureBox3.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(4, 120, 87);
+            label2.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(1543, 350);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 31);
+            label2.TabIndex = 63;
+            label2.Text = "Editar";
+            // 
+            // roundButton5
+            // 
+            roundButton5.BackColor = Color.FromArgb(4, 120, 87);
+            roundButton5.BackgroundColor = Color.FromArgb(4, 120, 87);
+            roundButton5.BorderColor = Color.White;
+            roundButton5.BorderRadius = 5;
+            roundButton5.BorderSize = 0;
+            roundButton5.FlatAppearance.BorderColor = Color.FromArgb(4, 120, 87);
+            roundButton5.FlatAppearance.BorderSize = 10;
+            roundButton5.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
+            roundButton5.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
+            roundButton5.FlatStyle = FlatStyle.Flat;
+            roundButton5.ForeColor = Color.Black;
+            roundButton5.Location = new Point(1443, 328);
+            roundButton5.Name = "roundButton5";
+            roundButton5.Size = new Size(222, 77);
+            roundButton5.TabIndex = 62;
+            roundButton5.TextColor = Color.Black;
+            roundButton5.UseVisualStyleBackColor = false;
+            // 
             // Ahorro
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(247, 249, 252);
             ClientSize = new Size(1924, 1050);
+            Controls.Add(iconPictureBox3);
+            Controls.Add(label2);
+            Controls.Add(roundButton5);
             Controls.Add(guna2DataGridView1);
             Controls.Add(iconPictureBox2);
             Controls.Add(label1);
@@ -293,6 +344,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,5 +362,8 @@
         private Label label1;
         private RoundButton roundButton4;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private Label label2;
+        private RoundButton roundButton5;
     }
 }

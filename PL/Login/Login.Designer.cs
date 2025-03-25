@@ -61,13 +61,12 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(413, 98);
+            roundButton1.Location = new Point(397, 97);
             roundButton1.Name = "roundButton1";
             roundButton1.Size = new Size(780, 664);
             roundButton1.TabIndex = 28;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
-            roundButton1.Click += roundButton1_Click;
             // 
             // label1
             // 
@@ -169,7 +168,7 @@
             iconPictureBox1.IconSize = 153;
             iconPictureBox1.Location = new Point(744, 213);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(411, 153);
+            iconPictureBox1.Size = new Size(161, 153);
             iconPictureBox1.TabIndex = 39;
             iconPictureBox1.TabStop = false;
             // 
@@ -237,7 +236,7 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
-            roundButton2.Location = new Point(710, 620);
+            roundButton2.Location = new Point(710, 608);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(225, 77);
             roundButton2.TabIndex = 45;
@@ -297,7 +296,6 @@
             Controls.Add(roundButton1);
             Name = "Login";
             Text = "Login";
-            Load += Login_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();

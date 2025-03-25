@@ -180,7 +180,7 @@
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = Properties.Resources.logo;
-            pictureBox2.Location = new Point(25, 2);
+            pictureBox2.Location = new Point(4, 22);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(1048, 176);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -433,7 +433,7 @@
             roundButton4.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton4.FlatStyle = FlatStyle.Flat;
             roundButton4.ForeColor = Color.Black;
-            roundButton4.Location = new Point(-535, -53);
+            roundButton4.Location = new Point(-376, 12);
             roundButton4.Name = "roundButton4";
             roundButton4.Size = new Size(2298, 1237);
             roundButton4.TabIndex = 54;
