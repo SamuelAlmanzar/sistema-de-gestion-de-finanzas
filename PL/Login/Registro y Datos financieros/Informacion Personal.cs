@@ -10,6 +10,7 @@ namespace ProyectoFinalMargarita
 {
     public partial class Registro : Form
     {
+        // Cadena de conexión a la base de datos
         string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
 
         public Registro()
@@ -37,6 +38,7 @@ namespace ProyectoFinalMargarita
                 {
                     connection.Open();
 
+                    // Verificar si el correo ya existe
                     string checkQuery = "SELECT COUNT(1) FROM Cliente WHERE CorreoElectronico = @CorreoElectronico";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
@@ -50,10 +52,12 @@ namespace ProyectoFinalMargarita
                         }
                     }
 
+                    // Iniciar transacción para asegurar la integridad de los datos
                     using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
+                            // Query que inserta y devuelve el ID generado automáticamente
                             string insertQuery = @"INSERT INTO Cliente 
                                                 (NombreCompleto, CorreoElectronico, Telefono, FechaNacimiento, Direccion, Contrasena) 
                                                 VALUES 
@@ -62,6 +66,7 @@ namespace ProyectoFinalMargarita
 
                             using (SqlCommand command = new SqlCommand(insertQuery, connection, transaction))
                             {
+                                // Parámetros para evitar SQL injection
                                 command.Parameters.Add("@NombreCompleto", SqlDbType.NVarChar, 100).Value = rjTexbox1.Texts.Trim();
                                 command.Parameters.Add("@CorreoElectronico", SqlDbType.NVarChar, 100).Value = rjTexbox2.Texts.Trim();
                                 command.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = rjTexbox3.Texts.Trim();
@@ -69,6 +74,7 @@ namespace ProyectoFinalMargarita
                                 command.Parameters.Add("@Direccion", SqlDbType.NVarChar, 200).Value = rjTexbox4.Texts.Trim();
                                 command.Parameters.Add("@Contrasena", SqlDbType.NVarChar, 100).Value = rjTexbox5.Texts.Trim();
 
+                                // Ejecutar y obtener el ID generado automáticamente
                                 int nuevoId = Convert.ToInt32(command.ExecuteScalar());
                                 transaction.Commit();
 
@@ -77,9 +83,10 @@ namespace ProyectoFinalMargarita
                                               MessageBoxButtons.OK,
                                               MessageBoxIcon.Information);
 
+                                // Abrir siguiente formulario
                                 new InformacionFinanciera().Show();
-                                
 
+                                // Limpiar campos
                                 LimpiarCampos();
                             }
                         }
@@ -96,11 +103,6 @@ namespace ProyectoFinalMargarita
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-        
-
 
         private bool CamposCompletos()
         {
@@ -146,7 +148,7 @@ namespace ProyectoFinalMargarita
                 return false;
             }
 
-            if (!Regex.IsMatch(rjTexbox3.Texts, @"^\d{8,15}$")) // Validación mejorada para teléfono
+            if (!Regex.IsMatch(rjTexbox3.Texts, @"^\d{8,15}$"))
             {
                 MostrarError("El teléfono debe contener entre 8 y 15 dígitos", rjTexbox3);
                 return false;
@@ -231,25 +233,17 @@ namespace ProyectoFinalMargarita
             {
                 MessageBox.Show($"Error de conexión:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
-           
-            
-            
-            
             }
-
         }
-
-
-        
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
-
+            // Código para el botón de cancelar/regresar si es necesario
         }
 
         private void rjTexbox5__TextChanged(object sender, EventArgs e)
         {
-
+            // Evento de cambio de texto en la contraseña si es necesario
         }
     }
 }
