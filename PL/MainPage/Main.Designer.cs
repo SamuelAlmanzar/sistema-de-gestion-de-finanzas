@@ -370,7 +370,6 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Panel2.Size = new Size(397, 235);
             guna2Panel2.TabIndex = 64;
-            guna2Panel2.Paint += guna2Panel2_Paint;
             // 
             // iconPictureBox1
             // 
@@ -440,7 +439,6 @@
             roundButton4.Text = " ";
             roundButton4.TextColor = Color.Black;
             roundButton4.UseVisualStyleBackColor = false;
-            roundButton4.Click += roundButton4_Click;
             // 
             // guna2Panel1
             // 
