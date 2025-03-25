@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roundButton1 = new RoundButton();
             label1 = new Label();
             label3 = new Label();
@@ -41,7 +41,6 @@
             rjTexbox2 = new RJTexbox();
             label5 = new Label();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
-            comboBox1 = new ComboBox();
             label6 = new Label();
             rjTexbox3 = new RJTexbox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -57,6 +56,7 @@
             roundButton3 = new RoundButton();
             label10 = new Label();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
@@ -230,18 +230,6 @@
             iconPictureBox3.Size = new Size(57, 52);
             iconPictureBox3.TabIndex = 54;
             iconPictureBox3.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox1.ForeColor = Color.Black;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Ahorro", "Corriente", "Nómina", "Inversión", "Otro" });
-            comboBox1.Location = new Point(352, 405);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(521, 39);
-            comboBox1.TabIndex = 55;
-            comboBox1.Text = "Seleccione Tipo de Cuenta";
             // 
             // label6
             // 
@@ -461,7 +449,7 @@
             guna2DateTimePicker1.BorderColor = Color.White;
             guna2DateTimePicker1.BorderRadius = 5;
             guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges5;
             guna2DateTimePicker1.FillColor = Color.White;
             guna2DateTimePicker1.FocusedColor = Color.White;
             guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
@@ -471,11 +459,22 @@
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2DateTimePicker1.Size = new Size(521, 54);
             guna2DateTimePicker1.TabIndex = 72;
             guna2DateTimePicker1.UseTransparentBackground = true;
             guna2DateTimePicker1.Value = new DateTime(2025, 3, 19, 15, 3, 36, 604);
+            // 
+            // comboBox2
+            // 
+            comboBox2.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox2.ForeColor = Color.Black;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Ahorro", "Corriente", "Nómina", "Otros" });
+            comboBox2.Location = new Point(352, 410);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(521, 39);
+            comboBox2.TabIndex = 73;
             // 
             // FORMCUENTAS
             // 
@@ -483,6 +482,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(940, 1050);
+            Controls.Add(comboBox2);
             Controls.Add(guna2DateTimePicker1);
             Controls.Add(iconPictureBox8);
             Controls.Add(label10);
@@ -498,7 +498,6 @@
             Controls.Add(iconPictureBox4);
             Controls.Add(rjTexbox3);
             Controls.Add(label6);
-            Controls.Add(comboBox1);
             Controls.Add(iconPictureBox3);
             Controls.Add(label5);
             Controls.Add(rjTexbox2);
@@ -537,7 +536,6 @@
         private RJTexbox rjTexbox2;
         private Label label5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
-        private ComboBox comboBox1;
         private Label label6;
         private RJTexbox rjTexbox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
@@ -553,5 +551,6 @@
         private RoundButton roundButton3;
         private Label label10;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private ComboBox comboBox2;
     }
 }

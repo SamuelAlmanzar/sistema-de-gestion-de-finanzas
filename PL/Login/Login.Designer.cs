@@ -67,6 +67,7 @@
             roundButton1.TabIndex = 28;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
+            roundButton1.Click += roundButton1_Click;
             // 
             // label1
             // 
@@ -221,6 +222,7 @@
             linkLabel4.TabIndex = 44;
             linkLabel4.TabStop = true;
             linkLabel4.Text = "Registrate";
+            linkLabel4.LinkClicked += linkLabel4_LinkClicked;
             // 
             // roundButton2
             // 

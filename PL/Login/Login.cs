@@ -86,6 +86,17 @@ namespace ProyectoFinalMargarita
             return false;
         }
 
-        
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registro Rgister = new Registro();
+            Rgister.Show();
+            this.Hide();
+
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
         {
             InitializeComponent();
         }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -66,9 +66,9 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(114, 12);
+            roundButton1.Location = new Point(149, 12);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(1067, 992);
+            roundButton1.Size = new Size(1030, 992);
             roundButton1.TabIndex = 25;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(680, 38);
+            pictureBox1.Location = new Point(563, 31);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(290, 188);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -91,7 +91,7 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(654, 248);
+            label1.Location = new Point(537, 222);
             label1.Name = "label1";
             label1.Size = new Size(341, 40);
             label1.TabIndex = 27;
@@ -103,7 +103,7 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(175, 175, 180);
-            label2.Location = new Point(487, 306);
+            label2.Location = new Point(370, 280);
             label2.Name = "label2";
             label2.Size = new Size(646, 26);
             label2.TabIndex = 28;
@@ -115,7 +115,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(496, 397);
+            label3.Location = new Point(379, 371);
             label3.Name = "label3";
             label3.Size = new Size(305, 31);
             label3.TabIndex = 29;
@@ -130,7 +130,7 @@
             rjTexbox1.BorderSize = 2;
             rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox1.ForeColor = Color.Black;
-            rjTexbox1.Location = new Point(496, 431);
+            rjTexbox1.Location = new Point(379, 405);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
             rjTexbox1.Padding = new Padding(10, 7, 10, 7);
@@ -141,6 +141,7 @@
             rjTexbox1.TabIndex = 30;
             rjTexbox1.Texts = "";
             rjTexbox1.UnderlinedStyle = false;
+            rjTexbox1._TextChanged += rjTexbox1__TextChanged;
             // 
             // label4
             // 
@@ -148,7 +149,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(496, 514);
+            label4.Location = new Point(379, 488);
             label4.Name = "label4";
             label4.Size = new Size(209, 31);
             label4.TabIndex = 31;
@@ -160,10 +161,11 @@
             comboBox2.ForeColor = Color.Black;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Empleo", "Autónomo", " Negocios", " Otros" });
-            comboBox2.Location = new Point(496, 548);
+            comboBox2.Location = new Point(379, 522);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(613, 39);
             comboBox2.TabIndex = 33;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label5
             // 
@@ -171,7 +173,7 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(496, 607);
+            label5.Location = new Point(379, 581);
             label5.Name = "label5";
             label5.Size = new Size(279, 31);
             label5.TabIndex = 34;
@@ -183,10 +185,11 @@
             comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Tarjeta de crédito estándar", " Tarjeta de débito", " Tarjeta prepagada" });
-            comboBox1.Location = new Point(496, 641);
+            comboBox1.Location = new Point(379, 615);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(613, 39);
             comboBox1.TabIndex = 35;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -194,7 +197,7 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(496, 703);
+            label6.Location = new Point(379, 677);
             label6.Name = "label6";
             label6.Size = new Size(279, 31);
             label6.TabIndex = 36;
@@ -207,7 +210,7 @@
             checkBox1.BackColor = Color.White;
             checkBox1.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             checkBox1.ForeColor = Color.Black;
-            checkBox1.Location = new Point(496, 789);
+            checkBox1.Location = new Point(379, 763);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(237, 30);
             checkBox1.TabIndex = 37;
@@ -220,7 +223,7 @@
             checkBox2.BackColor = Color.White;
             checkBox2.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             checkBox2.ForeColor = Color.Black;
-            checkBox2.Location = new Point(496, 824);
+            checkBox2.Location = new Point(379, 798);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(166, 30);
             checkBox2.TabIndex = 38;
@@ -233,7 +236,7 @@
             checkBox3.BackColor = Color.White;
             checkBox3.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             checkBox3.ForeColor = Color.Black;
-            checkBox3.Location = new Point(496, 859);
+            checkBox3.Location = new Point(379, 833);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(196, 30);
             checkBox3.TabIndex = 39;
@@ -246,7 +249,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
             label7.ForeColor = Color.FromArgb(175, 175, 180);
-            label7.Location = new Point(496, 744);
+            label7.Location = new Point(379, 718);
             label7.Name = "label7";
             label7.Size = new Size(510, 26);
             label7.TabIndex = 40;
@@ -266,7 +269,7 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
-            roundButton2.Location = new Point(295, 908);
+            roundButton2.Location = new Point(284, 883);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(750, 54);
             roundButton2.TabIndex = 41;
@@ -283,7 +286,7 @@
             iconPictureBox3.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox3.IconSize = 36;
-            iconPictureBox3.Location = new Point(452, 392);
+            iconPictureBox3.Location = new Point(335, 366);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(38, 36);
             iconPictureBox3.TabIndex = 75;
@@ -297,7 +300,7 @@
             iconPictureBox4.IconColor = Color.FromArgb(33, 162, 122);
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox4.IconSize = 36;
-            iconPictureBox4.Location = new Point(452, 509);
+            iconPictureBox4.Location = new Point(335, 483);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(38, 36);
             iconPictureBox4.TabIndex = 76;
@@ -311,7 +314,7 @@
             iconPictureBox2.IconColor = Color.FromArgb(33, 162, 122);
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconPictureBox2.IconSize = 36;
-            iconPictureBox2.Location = new Point(452, 602);
+            iconPictureBox2.Location = new Point(335, 576);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(38, 36);
             iconPictureBox2.TabIndex = 77;

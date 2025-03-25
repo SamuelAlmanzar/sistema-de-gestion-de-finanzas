@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
+using ProyectoFinalMargarita.PL.MainPage;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
@@ -35,7 +37,6 @@ namespace ProyectoFinalMargarita
                 {
                     connection.Open();
 
-                    // Verificar si el correo ya existe
                     string checkQuery = "SELECT COUNT(1) FROM Cliente WHERE CorreoElectronico = @CorreoElectronico";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
@@ -53,7 +54,6 @@ namespace ProyectoFinalMargarita
                     {
                         try
                         {
-                            // Query modificada para usar IDENTITY
                             string insertQuery = @"INSERT INTO Cliente 
                                                 (NombreCompleto, CorreoElectronico, Telefono, FechaNacimiento, Direccion, Contrasena) 
                                                 VALUES 
@@ -62,7 +62,6 @@ namespace ProyectoFinalMargarita
 
                             using (SqlCommand command = new SqlCommand(insertQuery, connection, transaction))
                             {
-                                // Parámetros mejor tipados
                                 command.Parameters.Add("@NombreCompleto", SqlDbType.NVarChar, 100).Value = rjTexbox1.Texts.Trim();
                                 command.Parameters.Add("@CorreoElectronico", SqlDbType.NVarChar, 100).Value = rjTexbox2.Texts.Trim();
                                 command.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = rjTexbox3.Texts.Trim();
@@ -77,6 +76,9 @@ namespace ProyectoFinalMargarita
                                               "Éxito",
                                               MessageBoxButtons.OK,
                                               MessageBoxIcon.Information);
+
+                                new InformacionFinanciera().Show();
+                                
 
                                 LimpiarCampos();
                             }
@@ -94,6 +96,11 @@ namespace ProyectoFinalMargarita
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+        
+
 
         private bool CamposCompletos()
         {
@@ -224,10 +231,23 @@ namespace ProyectoFinalMargarita
             {
                 MessageBox.Show($"Error de conexión:\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+           
+            
+            
+            
             }
+
         }
 
+
+        
+
         private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjTexbox5__TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roundButton1 = new RoundButton();
             label1 = new Label();
             label2 = new Label();
@@ -45,9 +43,9 @@
             roundButton2 = new RoundButton();
             label9 = new Label();
             guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            label8 = new Label();
-            label10 = new Label();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
+            comboBox2 = new ComboBox();
             SuspendLayout();
             // 
             // roundButton1
@@ -65,7 +63,7 @@
             roundButton1.ForeColor = Color.Black;
             roundButton1.Location = new Point(364, 22);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(853, 1016);
+            roundButton1.Size = new Size(760, 1016);
             roundButton1.TabIndex = 24;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
@@ -74,11 +72,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.White;
-            label1.Font = new Font("Inter Black", 16F, FontStyle.Bold);
+            label1.Font = new Font("Inter Black", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(592, 75);
+            label1.Location = new Point(612, 67);
             label1.Name = "label1";
-            label1.Size = new Size(379, 45);
+            label1.Size = new Size(332, 40);
             label1.TabIndex = 34;
             label1.Text = "Registrar Transaccion ";
             // 
@@ -86,11 +84,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.White;
-            label2.Font = new Font("Inter Black", 8F, FontStyle.Bold);
-            label2.ForeColor = Color.DarkGray;
-            label2.Location = new Point(623, 120);
+            label2.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
+            label2.ForeColor = Color.FromArgb(175, 175, 180);
+            label2.Location = new Point(596, 125);
             label2.Name = "label2";
-            label2.Size = new Size(308, 23);
+            label2.Size = new Size(367, 28);
             label2.TabIndex = 35;
             label2.Text = "Ingresa los detalles de tu transaccion";
             // 
@@ -98,11 +96,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.White;
-            label3.Font = new Font("Inter Black", 10F, FontStyle.Bold);
+            label3.Font = new Font("Inter", 11F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(493, 206);
             label3.Name = "label3";
-            label3.Size = new Size(212, 28);
+            label3.Size = new Size(227, 31);
             label3.TabIndex = 36;
             label3.Text = "Tipo de transaccion";
             // 
@@ -110,7 +108,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.White;
-            label4.Font = new Font("Inter Black", 10F, FontStyle.Bold);
+            label4.Font = new Font("Inter Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(495, 311);
             label4.Name = "label4";
@@ -235,73 +233,82 @@
             guna2DateTimePicker1.BorderColor = Color.White;
             guna2DateTimePicker1.BorderRadius = 5;
             guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges3;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
             guna2DateTimePicker1.FillColor = Color.White;
             guna2DateTimePicker1.FocusedColor = Color.White;
-            guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
+            guna2DateTimePicker1.Font = new Font("Inter Black", 10F, FontStyle.Bold);
             guna2DateTimePicker1.ForeColor = Color.Black;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Short;
             guna2DateTimePicker1.Location = new Point(495, 760);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2DateTimePicker1.Size = new Size(521, 54);
             guna2DateTimePicker1.TabIndex = 73;
             guna2DateTimePicker1.UseTransparentBackground = true;
             guna2DateTimePicker1.Value = new DateTime(2025, 3, 19, 15, 3, 36, 604);
             // 
-            // label8
+            // guna2CheckBox1
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.White;
-            label8.Font = new Font("Inter Black", 10F, FontStyle.Bold);
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(495, 257);
-            label8.Name = "label8";
-            label8.Size = new Size(94, 28);
-            label8.TabIndex = 74;
-            label8.Text = "Ingreso ";
+            guna2CheckBox1.AutoSize = true;
+            guna2CheckBox1.BackColor = Color.White;
+            guna2CheckBox1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2CheckBox1.CheckedState.BorderRadius = 0;
+            guna2CheckBox1.CheckedState.BorderThickness = 0;
+            guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            guna2CheckBox1.Font = new Font("Inter", 10F, FontStyle.Bold);
+            guna2CheckBox1.Location = new Point(484, 257);
+            guna2CheckBox1.Name = "guna2CheckBox1";
+            guna2CheckBox1.Size = new Size(106, 32);
+            guna2CheckBox1.TabIndex = 77;
+            guna2CheckBox1.Text = "Egreso";
+            guna2CheckBox1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            guna2CheckBox1.UncheckedState.BorderRadius = 0;
+            guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            guna2CheckBox1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            guna2CheckBox1.UseVisualStyleBackColor = false;
             // 
-            // label10
+            // guna2CheckBox2
             // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.White;
-            label10.Font = new Font("Inter Black", 10F, FontStyle.Bold);
-            label10.ForeColor = Color.Black;
-            label10.Location = new Point(664, 257);
-            label10.Name = "label10";
-            label10.Size = new Size(83, 28);
-            label10.TabIndex = 75;
-            label10.Text = "Egreso";
+            guna2CheckBox2.AutoSize = true;
+            guna2CheckBox2.BackColor = Color.White;
+            guna2CheckBox2.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2CheckBox2.CheckedState.BorderRadius = 0;
+            guna2CheckBox2.CheckedState.BorderThickness = 0;
+            guna2CheckBox2.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            guna2CheckBox2.Font = new Font("Inter", 10F, FontStyle.Bold);
+            guna2CheckBox2.Location = new Point(667, 257);
+            guna2CheckBox2.Name = "guna2CheckBox2";
+            guna2CheckBox2.Size = new Size(112, 32);
+            guna2CheckBox2.TabIndex = 78;
+            guna2CheckBox2.Text = "Ingreso";
+            guna2CheckBox2.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            guna2CheckBox2.UncheckedState.BorderRadius = 0;
+            guna2CheckBox2.UncheckedState.BorderThickness = 0;
+            guna2CheckBox2.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            guna2CheckBox2.UseVisualStyleBackColor = false;
             // 
-            // guna2ComboBox1
+            // comboBox2
             // 
-            guna2ComboBox1.BackColor = Color.Transparent;
-            guna2ComboBox1.BorderColor = Color.Black;
-            guna2ComboBox1.BorderRadius = 5;
-            guna2ComboBox1.CustomizableEdges = customizableEdges5;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
-            guna2ComboBox1.ForeColor = Color.Black;
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(493, 642);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ComboBox1.Size = new Size(521, 36);
-            guna2ComboBox1.TabIndex = 76;
+            comboBox2.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            comboBox2.ForeColor = Color.Black;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Salario", "Inversiones", "Regalos", "Otros" });
+            comboBox2.Location = new Point(493, 640);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(521, 39);
+            comboBox2.TabIndex = 79;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // Ingreso_Egreso
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1050);
-            Controls.Add(guna2ComboBox1);
-            Controls.Add(label10);
-            Controls.Add(label8);
+            Controls.Add(comboBox2);
+            Controls.Add(guna2CheckBox2);
+            Controls.Add(guna2CheckBox1);
             Controls.Add(guna2DateTimePicker1);
             Controls.Add(label9);
             Controls.Add(roundButton2);
@@ -336,8 +343,8 @@
         private RoundButton roundButton2;
         private Label label9;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Label label8;
-        private Label label10;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
+        private ComboBox comboBox2;
     }
 }

@@ -16,5 +16,10 @@ namespace ProyectoFinalMargarita.PL.Ingreso_Egreso
         {
             InitializeComponent();
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

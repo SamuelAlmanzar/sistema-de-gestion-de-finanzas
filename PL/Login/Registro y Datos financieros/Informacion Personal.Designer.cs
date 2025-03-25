@@ -172,7 +172,7 @@
             rjTexbox2.BorderRadius = 5;
             rjTexbox2.BorderSize = 2;
             rjTexbox2.Font = new Font("Inter", 11F, FontStyle.Bold);
-            rjTexbox2.ForeColor = Color.DimGray;
+            rjTexbox2.ForeColor = Color.Black;
             rjTexbox2.Location = new Point(232, 471);
             rjTexbox2.Multiline = true;
             rjTexbox2.Name = "rjTexbox2";
@@ -399,6 +399,7 @@
             rjTexbox5.TabIndex = 79;
             rjTexbox5.Texts = "";
             rjTexbox5.UnderlinedStyle = false;
+            rjTexbox5._TextChanged += rjTexbox5__TextChanged;
             // 
             // label8
             // 
