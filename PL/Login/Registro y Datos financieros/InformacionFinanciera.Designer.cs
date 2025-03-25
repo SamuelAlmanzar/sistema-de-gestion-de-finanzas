@@ -33,7 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            rjTexbox1 = new RJTexbox();
+            ñemon = new RJTexbox();
             label4 = new Label();
             comboBox2 = new ComboBox();
             label5 = new Label();
@@ -47,6 +47,7 @@
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            rjTexbox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox4).BeginInit();
@@ -93,7 +94,7 @@
             label1.ForeColor = Color.Black;
             label1.Location = new Point(537, 222);
             label1.Name = "label1";
-            label1.Size = new Size(341, 40);
+            label1.Size = new Size(339, 34);
             label1.TabIndex = 27;
             label1.Text = "Información Financiera";
             // 
@@ -105,7 +106,7 @@
             label2.ForeColor = Color.FromArgb(175, 175, 180);
             label2.Location = new Point(370, 280);
             label2.Name = "label2";
-            label2.Size = new Size(646, 26);
+            label2.Size = new Size(710, 21);
             label2.TabIndex = 28;
             label2.Text = "Por favor proporcione su información financiera para evaluar su solicitud";
             // 
@@ -117,31 +118,30 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(379, 371);
             label3.Name = "label3";
-            label3.Size = new Size(305, 31);
+            label3.Size = new Size(302, 26);
             label3.TabIndex = 29;
             label3.Text = "Ingreso mensual estimado";
             // 
-            // rjTexbox1
+            // ñemon
             // 
-            rjTexbox1.BackColor = SystemColors.Window;
-            rjTexbox1.BorderColor = Color.Black;
-            rjTexbox1.BorderFocusColor = Color.HotPink;
-            rjTexbox1.BorderRadius = 5;
-            rjTexbox1.BorderSize = 2;
-            rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
-            rjTexbox1.ForeColor = Color.Black;
-            rjTexbox1.Location = new Point(379, 405);
-            rjTexbox1.Multiline = true;
-            rjTexbox1.Name = "rjTexbox1";
-            rjTexbox1.Padding = new Padding(10, 7, 10, 7);
-            rjTexbox1.PasswordChar = false;
-            rjTexbox1.PlaceholderColor = Color.DarkGray;
-            rjTexbox1.PlaceholderText = "";
-            rjTexbox1.Size = new Size(613, 52);
-            rjTexbox1.TabIndex = 30;
-            rjTexbox1.Texts = "";
-            rjTexbox1.UnderlinedStyle = false;
-            rjTexbox1._TextChanged += rjTexbox1__TextChanged;
+            ñemon.BackColor = SystemColors.Window;
+            ñemon.BorderColor = Color.Black;
+            ñemon.BorderFocusColor = Color.HotPink;
+            ñemon.BorderRadius = 5;
+            ñemon.BorderSize = 2;
+            ñemon.Font = new Font("Inter", 11F, FontStyle.Bold);
+            ñemon.ForeColor = Color.Black;
+            ñemon.Location = new Point(22, 31);
+            ñemon.Multiline = true;
+            ñemon.Name = "ñemon";
+            ñemon.Padding = new Padding(10, 7, 10, 7);
+            ñemon.PasswordChar = false;
+            ñemon.PlaceholderColor = Color.DarkGray;
+            ñemon.PlaceholderText = "";
+            ñemon.Size = new Size(613, 52);
+            ñemon.TabIndex = 30;
+            ñemon.Texts = "";
+            ñemon.UnderlinedStyle = false;
             // 
             // label4
             // 
@@ -151,7 +151,7 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(379, 488);
             label4.Name = "label4";
-            label4.Size = new Size(209, 31);
+            label4.Size = new Size(206, 26);
             label4.TabIndex = 31;
             label4.Text = "Fuente de ingreso";
             // 
@@ -163,7 +163,7 @@
             comboBox2.Items.AddRange(new object[] { "Empleo", "Autónomo", " Negocios", " Otros" });
             comboBox2.Location = new Point(379, 522);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(613, 39);
+            comboBox2.Size = new Size(613, 34);
             comboBox2.TabIndex = 33;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
@@ -175,7 +175,7 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(379, 581);
             label5.Name = "label5";
-            label5.Size = new Size(279, 31);
+            label5.Size = new Size(277, 26);
             label5.TabIndex = 34;
             label5.Text = "Tipo de tarjeta preferida";
             // 
@@ -187,7 +187,7 @@
             comboBox1.Items.AddRange(new object[] { "Tarjeta de crédito estándar", " Tarjeta de débito", " Tarjeta prepagada" });
             comboBox1.Location = new Point(379, 615);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(613, 39);
+            comboBox1.Size = new Size(613, 34);
             comboBox1.TabIndex = 35;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -199,7 +199,7 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(379, 677);
             label6.Name = "label6";
-            label6.Size = new Size(279, 31);
+            label6.Size = new Size(277, 26);
             label6.TabIndex = 36;
             label6.Text = "Tipo de tarjeta preferida";
             label6.Click += label6_Click;
@@ -212,7 +212,7 @@
             checkBox1.ForeColor = Color.Black;
             checkBox1.Location = new Point(379, 763);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(237, 30);
+            checkBox1.Size = new Size(256, 25);
             checkBox1.TabIndex = 37;
             checkBox1.Text = "Transferencia bancaria";
             checkBox1.UseVisualStyleBackColor = false;
@@ -225,7 +225,7 @@
             checkBox2.ForeColor = Color.Black;
             checkBox2.Location = new Point(379, 798);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(166, 30);
+            checkBox2.Size = new Size(176, 25);
             checkBox2.TabIndex = 38;
             checkBox2.Text = "Pagos en línea";
             checkBox2.UseVisualStyleBackColor = false;
@@ -238,7 +238,7 @@
             checkBox3.ForeColor = Color.Black;
             checkBox3.Location = new Point(379, 833);
             checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(196, 30);
+            checkBox3.Size = new Size(211, 25);
             checkBox3.TabIndex = 39;
             checkBox3.Text = "Cajero automático";
             checkBox3.UseVisualStyleBackColor = false;
@@ -251,7 +251,7 @@
             label7.ForeColor = Color.FromArgb(175, 175, 180);
             label7.Location = new Point(379, 718);
             label7.Name = "label7";
-            label7.Size = new Size(510, 26);
+            label7.Size = new Size(559, 21);
             label7.TabIndex = 40;
             label7.Text = "Seleccione los métodos que prefiere para realizar pagos.";
             // 
@@ -320,12 +320,21 @@
             iconPictureBox2.TabIndex = 77;
             iconPictureBox2.TabStop = false;
             // 
+            // rjTexbox1
+            // 
+            rjTexbox1.Location = new Point(379, 409);
+            rjTexbox1.Name = "rjTexbox1";
+            rjTexbox1.Size = new Size(613, 31);
+            rjTexbox1.TabIndex = 78;
+            rjTexbox1.TextChanged += rjTexbox1_TextChanged;
+            // 
             // InformacionFinanciera
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
             ClientSize = new Size(1308, 1050);
+            Controls.Add(rjTexbox1);
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox4);
             Controls.Add(iconPictureBox3);
@@ -339,7 +348,7 @@
             Controls.Add(label5);
             Controls.Add(comboBox2);
             Controls.Add(label4);
-            Controls.Add(rjTexbox1);
+            Controls.Add(ñemon);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -363,7 +372,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private RJTexbox rjTexbox1;
+        private RJTexbox ñemon;
         private Label label4;
         private ComboBox comboBox2;
         private Label label5;
@@ -377,5 +386,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private TextBox rjTexbox1;
     }
 }

@@ -19,6 +19,7 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
 
         private void ConfigureControls()
         {
+
             // Configurar eventos para el campo de ingreso mensual
             rjTexbox1.Leave += rjTexbox1_Leave;
             rjTexbox1.Enter += rjTexbox1_Enter;
@@ -220,7 +221,12 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
         private void label6_Click(object sender, EventArgs e) { }
         private void roundButton1_Click(object sender, EventArgs e) { }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
-        private void rjTexbox1__TextChanged(object sender, EventArgs e) { }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
+
+        private void rjTexbox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
