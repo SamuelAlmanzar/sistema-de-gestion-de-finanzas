@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
+namespace ProyectoFinalMargarita
 {
     public partial class InformacionFinanciera : Form
     {
@@ -108,7 +108,11 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
             {
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+           
+            
             }
+
+            //new Verificación().Show();
         }
 
         private bool ValidarCampos()

@@ -36,7 +36,6 @@
             label5 = new Label();
             rjTexbox2 = new RJTexbox();
             iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            checkBox2 = new CheckBox();
             linkLabel3 = new LinkLabel();
             label2 = new Label();
             linkLabel4 = new LinkLabel();
@@ -61,7 +60,7 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(397, 97);
+            roundButton1.Location = new Point(403, 83);
             roundButton1.Name = "roundButton1";
             roundButton1.Size = new Size(780, 664);
             roundButton1.TabIndex = 28;
@@ -173,19 +172,6 @@
             iconPictureBox1.TabIndex = 39;
             iconPictureBox1.TabStop = false;
             // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.BackColor = Color.White;
-            checkBox2.Font = new Font("Inter", 9F, FontStyle.Bold | FontStyle.Italic);
-            checkBox2.ForeColor = Color.Black;
-            checkBox2.Location = new Point(550, 572);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(226, 30);
-            checkBox2.TabIndex = 41;
-            checkBox2.Text = "Recordar Contraseña";
-            checkBox2.UseVisualStyleBackColor = false;
-            // 
             // linkLabel3
             // 
             linkLabel3.AutoSize = true;
@@ -238,7 +224,7 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
-            roundButton2.Location = new Point(710, 608);
+            roundButton2.Location = new Point(680, 598);
             roundButton2.Name = "roundButton2";
             roundButton2.Size = new Size(225, 77);
             roundButton2.TabIndex = 45;
@@ -287,7 +273,6 @@
             Controls.Add(linkLabel4);
             Controls.Add(label2);
             Controls.Add(linkLabel3);
-            Controls.Add(checkBox2);
             Controls.Add(iconPictureBox1);
             Controls.Add(label5);
             Controls.Add(rjTexbox2);
@@ -314,7 +299,6 @@
         private Label label5;
         private RJTexbox rjTexbox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private CheckBox checkBox2;
         private LinkLabel linkLabel3;
         private Label label2;
         private LinkLabel linkLabel4;

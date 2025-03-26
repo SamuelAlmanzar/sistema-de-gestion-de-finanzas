@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
+namespace ProyectoFinalMargarita
 {
     public partial class AsignacionTarjeta1 : Form
     {
@@ -19,7 +19,7 @@ namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
 
         private void roundButton3_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

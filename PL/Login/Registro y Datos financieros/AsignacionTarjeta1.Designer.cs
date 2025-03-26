@@ -1,4 +1,4 @@
-﻿namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
+﻿namespace ProyectoFinalMargarita
 {
     partial class AsignacionTarjeta1
     {

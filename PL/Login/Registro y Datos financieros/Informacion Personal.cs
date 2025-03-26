@@ -1,8 +1,7 @@
-﻿using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
-using ProyectoFinalMargarita.PL.MainPage;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -10,8 +9,9 @@ namespace ProyectoFinalMargarita
 {
     public partial class Registro : Form
     {
-        // Cadena de conexión a la base de datos
-        string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
+        private string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
+        private string _codigoVerificacion;
+        private int _idClienteTemporal;
 
         public Registro()
         {
@@ -38,7 +38,6 @@ namespace ProyectoFinalMargarita
                 {
                     connection.Open();
 
-                    // Verificar si el correo ya existe
                     string checkQuery = "SELECT COUNT(1) FROM Cliente WHERE CorreoElectronico = @CorreoElectronico";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
@@ -52,21 +51,22 @@ namespace ProyectoFinalMargarita
                         }
                     }
 
-                    // Iniciar transacción para asegurar la integridad de los datos
+                    // Generar código de verificación de 6 dígitos
+                    Random random = new Random();
+                    _codigoVerificacion = random.Next(100000, 999999).ToString();
+
                     using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
-                            // Query que inserta y devuelve el ID generado automáticamente
                             string insertQuery = @"INSERT INTO Cliente 
-                                                (NombreCompleto, CorreoElectronico, Telefono, FechaNacimiento, Direccion, Contrasena) 
+                                                (NombreCompleto, CorreoElectronico, Telefono, FechaNacimiento, Direccion, Contrasena, Verificado) 
                                                 VALUES 
-                                                (@NombreCompleto, @CorreoElectronico, @Telefono, @FechaNacimiento, @Direccion, @Contrasena);
+                                                (@NombreCompleto, @CorreoElectronico, @Telefono, @FechaNacimiento, @Direccion, @Contrasena, 0);
                                                 SELECT SCOPE_IDENTITY();";
 
                             using (SqlCommand command = new SqlCommand(insertQuery, connection, transaction))
                             {
-                                // Parámetros para evitar SQL injection
                                 command.Parameters.Add("@NombreCompleto", SqlDbType.NVarChar, 100).Value = rjTexbox1.Texts.Trim();
                                 command.Parameters.Add("@CorreoElectronico", SqlDbType.NVarChar, 100).Value = rjTexbox2.Texts.Trim();
                                 command.Parameters.Add("@Telefono", SqlDbType.NVarChar, 20).Value = rjTexbox3.Texts.Trim();
@@ -74,20 +74,43 @@ namespace ProyectoFinalMargarita
                                 command.Parameters.Add("@Direccion", SqlDbType.NVarChar, 200).Value = rjTexbox4.Texts.Trim();
                                 command.Parameters.Add("@Contrasena", SqlDbType.NVarChar, 100).Value = rjTexbox5.Texts.Trim();
 
-                                // Ejecutar y obtener el ID generado automáticamente
-                                int nuevoId = Convert.ToInt32(command.ExecuteScalar());
+                                _idClienteTemporal = Convert.ToInt32(command.ExecuteScalar());
+
+                                // Guardar código de verificación en la tabla Verificacion
+                                string insertVerificacion = @"INSERT INTO Verificacion 
+                                                            (ID_Cliente, TipoDocumento, CodigoVerificacion, Estado) 
+                                                            VALUES 
+                                                            (@ID_Cliente, 'Código Verificación', @CodigoVerificacion, 'Pendiente')";
+
+                                using (SqlCommand cmdVerificacion = new SqlCommand(insertVerificacion, connection, transaction))
+                                {
+                                    cmdVerificacion.Parameters.AddWithValue("@ID_Cliente", _idClienteTemporal);
+                                    cmdVerificacion.Parameters.AddWithValue("@CodigoVerificacion", _codigoVerificacion);
+                                    cmdVerificacion.ExecuteNonQuery();
+                                }
+
                                 transaction.Commit();
 
-                                MessageBox.Show($"Registro exitoso!",
-                                              "Éxito",
+                                // Mostrar mensaje con el código de verificación
+                                MessageBox.Show($"¡Registro exitoso!\n\nTu código de verificación es: {_codigoVerificacion}\n\nPor favor ingrésalo en la siguiente ventana para completar tu registro.",
+                                              "Código de Verificación",
                                               MessageBoxButtons.OK,
                                               MessageBoxIcon.Information);
 
-                                // Abrir siguiente formulario
-                                new InformacionFinanciera().Show();
+                                // Mostrar formulario de verificación
+                                Verificación formVerificacion = new Verificación(_idClienteTemporal);
+                                this.Hide();
 
-                                // Limpiar campos
-                                LimpiarCampos();
+                                if (formVerificacion.ShowDialog() == DialogResult.OK)
+                                {
+                                    MessageBox.Show("¡Verificación completada con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    new InformacionFinanciera().Show();
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    this.Show();
+                                }
                             }
                         }
                         catch (Exception ex)
@@ -173,7 +196,7 @@ namespace ProyectoFinalMargarita
         {
             try
             {
-                var addr = new System.Net.Mail.MailAddress(email);
+                var addr = new MailAddress(email);
                 return addr.Address == email;
             }
             catch
@@ -238,12 +261,12 @@ namespace ProyectoFinalMargarita
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
-            // Código para el botón de cancelar/regresar si es necesario
+            this.Close();
         }
 
         private void rjTexbox5__TextChanged(object sender, EventArgs e)
         {
-            // Evento de cambio de texto en la contraseña si es necesario
+            // Validación de fortaleza de contraseña opcional
         }
     }
 }

@@ -1,25 +1,19 @@
 using ProyectoFinalMargarita.PL;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using ProyectoFinalMargarita;
-using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
-using ProyectoFinalMargarita.PL.CRUD_CUENTAS;
-using ProyectoFinalMargarita.PL.MainPage;
-using ProyectoFinalMargarita.PL.Ingreso_Egreso;
-
-
 
 namespace ProyectoFinalMargarita
 {
     internal static class Program
     {
         private static HubConnection connection; // Conexión con el servidor SignalR
+        private static readonly string filePath = "Relogin.json"; // Archivo JSON para sesión
 
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -31,9 +25,39 @@ namespace ProyectoFinalMargarita
             // Iniciar la conexión SignalR
             InitializeSignalR().ConfigureAwait(false);
 
-            // Ejecutar el formulario principal
-            //El Form de informacion personal se llama Registro
-            Application.Run(new Registro());
+            // Verificar si hay una sesión guardada
+            if (SesionActiva())
+            {
+                string usuarioGuardado = ObtenerUsuarioGuardado();
+                Application.Run(new Main(usuarioGuardado)); // Abre el formulario principal
+            }
+            else
+            {
+                Application.Run(new Registro()); // Si no hay sesión, muestra el login
+            }
+        }
+
+        private static bool SesionActiva()
+        {
+            return File.Exists(filePath) && !string.IsNullOrEmpty(ObtenerUsuarioGuardado());
+        }
+
+        private static string ObtenerUsuarioGuardado()
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    var data = JsonConvert.DeserializeObject<dynamic>(json);
+                    return data.Usuario;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al leer el archivo de sesión: " + ex.Message);
+            }
+            return null;
         }
 
         private static async Task InitializeSignalR()

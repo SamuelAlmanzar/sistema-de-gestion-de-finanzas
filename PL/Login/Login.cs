@@ -1,28 +1,51 @@
 ﻿using System;
-using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.IO;
+using Newtonsoft.Json;
 using System.Windows.Forms;
+using ProyectoFinalMargarita;
 using System.Data.SqlClient;
-using ProyectoFinalMargarita.PL.MainPage;
 
 namespace ProyectoFinalMargarita
 {
     public partial class Login : Form
     {
-        // Cadena de conexión a tu base de datos
         string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
-
-        // Variable para almacenar el ID del cliente
-        public static int ClienteID { get; private set; }
+        private static readonly string filePath = "Relogin.json"; // Archivo JSON
 
         public Login()
         {
             InitializeComponent();
+            VerificarSesionGuardada(); // Verifica si hay una sesión guardada
+        }
+
+        private void VerificarSesionGuardada()
+        {
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    string json = File.ReadAllText(filePath);
+                    var data = JsonConvert.DeserializeObject<dynamic>(json);
+                    string usuarioGuardado = data.Usuario;
+
+                    if (!string.IsNullOrEmpty(usuarioGuardado))
+                    {
+                        Main mainForm = new Main(usuarioGuardado);
+                        mainForm.Show();
+                        this.Hide(); // Oculta el Login
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar la sesión: " + ex.Message, "Error",
+                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
-            string nombreCompleto = rjTexbox1.Texts; // Cambiado de "usuario" a "nombreCompleto"
+            string nombreCompleto = rjTexbox1.Texts;
             string contraseña = rjTexbox2.Texts;
 
             if (string.IsNullOrEmpty(nombreCompleto) || string.IsNullOrEmpty(contraseña))
@@ -36,8 +59,9 @@ namespace ProyectoFinalMargarita
             {
                 MessageBox.Show("Inicio de sesión exitoso", "Éxito",
                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Abrir formulario principal
-                Main mainForm = new Main();
+
+                GuardarUsuario(nombreCompleto); // Guarda el usuario en JSON
+                Main mainForm = new Main(nombreCompleto);
                 mainForm.Show();
                 this.Hide();
             }
@@ -55,13 +79,7 @@ namespace ProyectoFinalMargarita
                 try
                 {
                     connection.Open();
-
-                    // Consulta directa a la tabla Cliente
-                    string query = @"
-                    SELECT ID 
-                    FROM Cliente
-                    WHERE NombreCompleto = @NombreCompleto 
-                    AND Contrasena = @Contraseña";
+                    string query = "SELECT NombreCompleto FROM Cliente WHERE NombreCompleto = @NombreCompleto AND Contrasena = @Contraseña";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -69,34 +87,39 @@ namespace ProyectoFinalMargarita
                         cmd.Parameters.AddWithValue("@Contraseña", contraseña);
 
                         object result = cmd.ExecuteScalar();
-
-                        if (result != null)
-                        {
-                            ClienteID = Convert.ToInt32(result);
-                            return true;
-                        }
+                        return result != null;
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error de conexión: " + ex.Message, "Error",
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
-            return false;
         }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void GuardarUsuario(string nombreUsuario)
         {
-            Registro Rgister = new Registro();
-            Rgister.Show();
-            this.Hide();
-
+            try
+            {
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(new { Usuario = nombreUsuario }));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar la sesión: " + ex.Message, "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Registro().Show();
         }
     }
 }

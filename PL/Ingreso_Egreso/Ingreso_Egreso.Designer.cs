@@ -46,6 +46,8 @@
             guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
             comboBox2 = new ComboBox();
+            rjTexbox3 = new RJTexbox();
+            label8 = new Label();
             SuspendLayout();
             // 
             // roundButton1
@@ -98,7 +100,7 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter", 11F, FontStyle.Bold);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(493, 206);
+            label3.Location = new Point(495, 181);
             label3.Name = "label3";
             label3.Size = new Size(227, 31);
             label3.TabIndex = 36;
@@ -165,7 +167,7 @@
             rjTexbox2.PasswordChar = false;
             rjTexbox2.PlaceholderColor = Color.DarkGray;
             rjTexbox2.PlaceholderText = "";
-            rjTexbox2.Size = new Size(521, 108);
+            rjTexbox2.Size = new Size(521, 57);
             rjTexbox2.TabIndex = 44;
             rjTexbox2.Texts = "";
             rjTexbox2.UnderlinedStyle = false;
@@ -176,7 +178,7 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Inter Black", 10F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(493, 593);
+            label6.Location = new Point(495, 634);
             label6.Name = "label6";
             label6.Size = new Size(112, 28);
             label6.TabIndex = 45;
@@ -188,7 +190,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Inter Black", 10F, FontStyle.Bold);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(493, 712);
+            label7.Location = new Point(495, 729);
             label7.Name = "label7";
             label7.Size = new Size(72, 28);
             label7.TabIndex = 47;
@@ -258,7 +260,7 @@
             guna2CheckBox1.CheckedState.BorderThickness = 0;
             guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2CheckBox1.Font = new Font("Inter", 10F, FontStyle.Bold);
-            guna2CheckBox1.Location = new Point(484, 257);
+            guna2CheckBox1.Location = new Point(495, 236);
             guna2CheckBox1.Name = "guna2CheckBox1";
             guna2CheckBox1.Size = new Size(106, 32);
             guna2CheckBox1.TabIndex = 77;
@@ -278,7 +280,7 @@
             guna2CheckBox2.CheckedState.BorderThickness = 0;
             guna2CheckBox2.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2CheckBox2.Font = new Font("Inter", 10F, FontStyle.Bold);
-            guna2CheckBox2.Location = new Point(667, 257);
+            guna2CheckBox2.Location = new Point(666, 236);
             guna2CheckBox2.Name = "guna2CheckBox2";
             guna2CheckBox2.Size = new Size(112, 32);
             guna2CheckBox2.TabIndex = 78;
@@ -295,17 +297,52 @@
             comboBox2.ForeColor = Color.Black;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Salario", "Inversiones", "Regalos", "Otros" });
-            comboBox2.Location = new Point(493, 640);
+            comboBox2.Location = new Point(495, 665);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(521, 39);
             comboBox2.TabIndex = 79;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
+            // rjTexbox3
+            // 
+            rjTexbox3.BackColor = SystemColors.Window;
+            rjTexbox3.BorderColor = Color.Black;
+            rjTexbox3.BorderFocusColor = Color.HotPink;
+            rjTexbox3.BorderRadius = 5;
+            rjTexbox3.BorderSize = 2;
+            rjTexbox3.Font = new Font("Inter", 11F, FontStyle.Bold);
+            rjTexbox3.ForeColor = Color.Black;
+            rjTexbox3.Location = new Point(495, 569);
+            rjTexbox3.Multiline = true;
+            rjTexbox3.Name = "rjTexbox3";
+            rjTexbox3.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox3.PasswordChar = false;
+            rjTexbox3.PlaceholderColor = Color.DarkGray;
+            rjTexbox3.PlaceholderText = "";
+            rjTexbox3.Size = new Size(521, 52);
+            rjTexbox3.TabIndex = 81;
+            rjTexbox3.Texts = "";
+            rjTexbox3.UnderlinedStyle = false;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.White;
+            label8.Font = new Font("Inter Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Black;
+            label8.Location = new Point(495, 538);
+            label8.Name = "label8";
+            label8.Size = new Size(199, 28);
+            label8.TabIndex = 80;
+            label8.Text = "Número de Cuenta";
             // 
             // Ingreso_Egreso
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1050);
+            Controls.Add(rjTexbox3);
+            Controls.Add(label8);
             Controls.Add(comboBox2);
             Controls.Add(guna2CheckBox2);
             Controls.Add(guna2CheckBox1);
@@ -346,5 +383,7 @@
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
         private ComboBox comboBox2;
+        private RJTexbox rjTexbox3;
+        private Label label8;
     }
 }

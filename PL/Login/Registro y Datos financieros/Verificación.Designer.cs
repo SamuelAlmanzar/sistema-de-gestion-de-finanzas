@@ -1,4 +1,4 @@
-﻿namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
+﻿namespace ProyectoFinalMargarita
 {
     partial class Verificación
     {
@@ -128,7 +128,6 @@
             label2.TabIndex = 32;
             label2.Text = "Documento de Identidad";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
             // 
             // rjTexbox1
             // 
@@ -184,7 +183,6 @@
             label4.TabIndex = 35;
             label4.Text = "Código Verificación";
             label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.Click += label4_Click;
             // 
             // roundButton2
             // 
@@ -207,6 +205,7 @@
             roundButton2.Text = "Siguiente";
             roundButton2.TextColor = Color.White;
             roundButton2.UseVisualStyleBackColor = false;
+            roundButton2.Click += roundButton2_Click;
             // 
             // iconPictureBox3
             // 

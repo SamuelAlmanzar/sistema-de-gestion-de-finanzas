@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros
+namespace ProyectoFinalMargarita
 {
     public partial class Verificacion_Invalida : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace ProyectoFinalMargarita.PL.MainPage
+﻿namespace ProyectoFinalMargarita
 {
     partial class Main
     {
@@ -175,6 +175,7 @@
             roundButton6.Text = "Cerrar sesión";
             roundButton6.TextColor = Color.White;
             roundButton6.UseVisualStyleBackColor = false;
+            roundButton6.Click += roundButton6_Click;
             // 
             // pictureBox2
             // 
@@ -406,6 +407,7 @@
             roundButton1.Text = "Ir a Gestión Financiera";
             roundButton1.TextColor = Color.White;
             roundButton1.UseVisualStyleBackColor = false;
+            roundButton1.Click += roundButton1_Click;
             // 
             // label2
             // 
@@ -432,13 +434,14 @@
             roundButton4.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton4.FlatStyle = FlatStyle.Flat;
             roundButton4.ForeColor = Color.Black;
-            roundButton4.Location = new Point(-376, 12);
+            roundButton4.Location = new Point(-386, 22);
             roundButton4.Name = "roundButton4";
             roundButton4.Size = new Size(2298, 1237);
             roundButton4.TabIndex = 54;
             roundButton4.Text = " ";
             roundButton4.TextColor = Color.Black;
             roundButton4.UseVisualStyleBackColor = false;
+            roundButton4.Click += roundButton4_Click;
             // 
             // guna2Panel1
             // 

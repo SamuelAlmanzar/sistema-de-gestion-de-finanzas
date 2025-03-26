@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             roundButton1 = new RoundButton();
             label1 = new Label();
             label3 = new Label();
@@ -449,7 +449,7 @@
             guna2DateTimePicker1.BorderColor = Color.White;
             guna2DateTimePicker1.BorderRadius = 5;
             guna2DateTimePicker1.Checked = true;
-            guna2DateTimePicker1.CustomizableEdges = customizableEdges5;
+            guna2DateTimePicker1.CustomizableEdges = customizableEdges1;
             guna2DateTimePicker1.FillColor = Color.White;
             guna2DateTimePicker1.FocusedColor = Color.White;
             guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
@@ -459,7 +459,7 @@
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2DateTimePicker1.Size = new Size(521, 54);
             guna2DateTimePicker1.TabIndex = 72;
             guna2DateTimePicker1.UseTransparentBackground = true;
