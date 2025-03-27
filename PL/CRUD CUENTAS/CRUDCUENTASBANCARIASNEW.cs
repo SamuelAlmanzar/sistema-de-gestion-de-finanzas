@@ -55,7 +55,6 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             guna2DataGridView1.EnableHeadersVisualStyles = false;
             guna2DataGridView1.ColumnHeadersHeight = 35;
 
-            // Evento para selección de filas
             guna2DataGridView1.SelectionChanged += (s, e) =>
             {
                 if (guna2DataGridView1.SelectedRows.Count > 0)
@@ -65,8 +64,68 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             };
         }
 
-        private void roundButton4_Click(object sender, EventArgs e)
+        //private void roundButton4_Click(object sender, EventArgs e)
+        //{
+        //    if (selectedId == -1)
+        //    {
+        //        MessageBox.Show("Seleccione una cuenta para eliminar", "Advertencia",
+        //                      MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    if (MessageBox.Show("¿Está seguro que desea eliminar esta cuenta?", "Confirmar",
+        //                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            using (SqlConnection connection = new SqlConnection(connectionString))
+        //            {
+        //                connection.Open();
+        //                string query = "DELETE FROM CUENTAS WHERE id = @Id";
+
+        //                using (SqlCommand cmd = new SqlCommand(query, connection))
+        //                {
+        //                    cmd.Parameters.AddWithValue("@Id", selectedId);
+        //                    int rowsAffected = cmd.ExecuteNonQuery();
+
+        //                    if (rowsAffected > 0)
+        //                    {
+        //                        MessageBox.Show("Cuenta eliminada correctamente", "Éxito",
+        //                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                        CargarDatos();
+        //                        selectedId = -1;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show($"Error al eliminar: {ex.Message}", "Error",
+        //                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //    }
+        //}
+
+        private void roundButton3_Click(object sender, EventArgs e)
         {
+            using (var formCuentas = new FORMCUENTAS())
+            {
+                if (formCuentas.ShowDialog() == DialogResult.OK)
+                {
+                    CargarDatos(); // Actualiza el DataGridView después de insertar
+                }
+            }
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void roundButton4_Click_1(object sender, EventArgs e)
+        {
+
+
             if (selectedId == -1)
             {
                 MessageBox.Show("Seleccione una cuenta para eliminar", "Advertencia",
@@ -93,8 +152,8 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
                             {
                                 MessageBox.Show("Cuenta eliminada correctamente", "Éxito",
                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                CargarDatos(); // Refrescar los datos
-                                selectedId = -1; // Resetear el ID seleccionado
+                                CargarDatos();
+                                selectedId = -1;
                             }
                         }
                     }
@@ -105,13 +164,33 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
 
-        private void roundButton3_Click(object sender, EventArgs e)
-        {
-            new FORMCUENTAS().Show();
-        }
 
-        // ... (mantén el resto de tus métodos existentes igual)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
     }
 }

@@ -122,11 +122,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 38;
-            iconPictureBox1.Location = new Point(1166, 261);
+            iconPictureBox1.IconSize = 31;
+            iconPictureBox1.Location = new Point(1166, 263);
             iconPictureBox1.Margin = new Padding(2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(38, 38);
+            iconPictureBox1.Size = new Size(47, 31);
             iconPictureBox1.TabIndex = 53;
             iconPictureBox1.TabStop = false;
             // 
@@ -185,7 +185,7 @@
             roundButton4.TabIndex = 55;
             roundButton4.TextColor = Color.Black;
             roundButton4.UseVisualStyleBackColor = false;
-            roundButton4.Click += roundButton4_Click;
+            roundButton4.Click += roundButton4_Click_1;
             // 
             // label1
             // 
@@ -193,7 +193,7 @@
             label1.BackColor = Color.FromArgb(220, 38, 38);
             label1.Font = new Font("Inter Medium", 11F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(998, 264);
+            label1.Location = new Point(998, 263);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(100, 27);
@@ -206,11 +206,11 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             iconPictureBox2.IconColor = Color.White;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 38;
-            iconPictureBox2.Location = new Point(954, 261);
+            iconPictureBox2.IconSize = 29;
+            iconPictureBox2.Location = new Point(965, 263);
             iconPictureBox2.Margin = new Padding(2);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(38, 38);
+            iconPictureBox2.Size = new Size(38, 29);
             iconPictureBox2.TabIndex = 57;
             iconPictureBox2.TabStop = false;
             // 

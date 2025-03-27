@@ -15,6 +15,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             guna2DateTimePicker1.Value = DateTime.Today;
             CargarTiposCuenta();
             rjTexbox1.Focus();
+
+            // Asignar el mismo manejador de eventos a ambos botones
+            roundButton2.Click += roundButton2_Click;
+            roundButton2.Click += roundButton2_Click_1;
         }
 
         private void CargarTiposCuenta()
@@ -24,7 +28,6 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
 
         private void SeleccionarTodoTexto(Control control)
         {
-            // Solución universal para seleccionar texto
             if (control is TextBox textBox)
             {
                 textBox.SelectionStart = 0;
@@ -32,13 +35,22 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             }
             else if (control.GetType().GetProperty("SelectionStart") != null)
             {
-                // Para controles personalizados como RJTextBox
                 control.GetType().GetProperty("SelectionStart").SetValue(control, 0);
                 control.GetType().GetProperty("SelectionLength").SetValue(control, control.Text.Length);
             }
         }
 
         private void roundButton2_Click(object sender, EventArgs e)
+        {
+            ProcesarGuardado();
+        }
+
+        private void roundButton2_Click_1(object sender, EventArgs e)
+        {
+            ProcesarGuardado();
+        }
+
+        private void ProcesarGuardado()
         {
             if (!ValidarCampos()) return;
 
@@ -73,13 +85,6 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
                         }
                     }
                 }
-            }
-            catch (SqlException ex) when (ex.Number == 2627)
-            {
-                MessageBox.Show("Error: El número de cuenta ya existe", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-                rjTexbox2.Focus();
-                SeleccionarTodoTexto(rjTexbox2); // Usamos la solución universal
             }
             catch (FormatException)
             {
@@ -142,12 +147,8 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        private void roundButton1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
