@@ -34,7 +34,7 @@ namespace ProyectoFinalMargarita
             }
             else
             {
-                Application.Run(new CRUDCUENTASBANCARIASNEW()); // Si no hay sesión, muestra el login
+                Application.Run(new Login()); // Si no hay sesión, muestra el login
             }
         }
 
