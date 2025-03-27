@@ -38,6 +38,7 @@ namespace ProyectoFinalMargarita
                 {
                     connection.Open();
 
+                    // Verificar si el correo ya existe
                     string checkQuery = "SELECT COUNT(1) FROM Cliente WHERE CorreoElectronico = @CorreoElectronico";
                     using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                     {
@@ -59,6 +60,7 @@ namespace ProyectoFinalMargarita
                     {
                         try
                         {
+                            // Insertar nuevo cliente
                             string insertQuery = @"INSERT INTO Cliente 
                                                 (NombreCompleto, CorreoElectronico, Telefono, FechaNacimiento, Direccion, Contrasena, Verificado) 
                                                 VALUES 
@@ -76,7 +78,7 @@ namespace ProyectoFinalMargarita
 
                                 _idClienteTemporal = Convert.ToInt32(command.ExecuteScalar());
 
-                                // Guardar código de verificación en la tabla Verificacion
+                                // Guardar código de verificación
                                 string insertVerificacion = @"INSERT INTO Verificacion 
                                                             (ID_Cliente, TipoDocumento, CodigoVerificacion, Estado) 
                                                             VALUES 
@@ -91,14 +93,14 @@ namespace ProyectoFinalMargarita
 
                                 transaction.Commit();
 
-                                // Mostrar mensaje con el código de verificación
+                                // Mostrar código al usuario
                                 MessageBox.Show($"¡Registro exitoso!\n\nTu código de verificación es: {_codigoVerificacion}\n\nPor favor ingrésalo en la siguiente ventana para completar tu registro.",
                                               "Código de Verificación",
                                               MessageBoxButtons.OK,
                                               MessageBoxIcon.Information);
 
                                 // Mostrar formulario de verificación
-                                Verificación formVerificacion = new Verificación(_idClienteTemporal);
+                                Verificación formVerificacion = new Verificación(_idClienteTemporal, _codigoVerificacion);
                                 this.Hide();
 
                                 if (formVerificacion.ShowDialog() == DialogResult.OK)
@@ -205,16 +207,6 @@ namespace ProyectoFinalMargarita
             }
         }
 
-        private void LimpiarCampos()
-        {
-            rjTexbox1.Texts = "";
-            rjTexbox2.Texts = "";
-            rjTexbox3.Texts = "";
-            rjTexbox4.Texts = "";
-            rjTexbox5.Texts = "";
-            guna2DateTimePicker1.Value = DateTime.Now.AddYears(-18);
-        }
-
         private void rjTexbox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -262,11 +254,6 @@ namespace ProyectoFinalMargarita
         private void roundButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void rjTexbox5__TextChanged(object sender, EventArgs e)
-        {
-            // Validación de fortaleza de contraseña opcional
         }
     }
 }

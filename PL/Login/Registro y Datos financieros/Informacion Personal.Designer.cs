@@ -399,7 +399,6 @@
             rjTexbox5.TabIndex = 79;
             rjTexbox5.Texts = "";
             rjTexbox5.UnderlinedStyle = false;
-            rjTexbox5._TextChanged += rjTexbox5__TextChanged;
             // 
             // label8
             // 

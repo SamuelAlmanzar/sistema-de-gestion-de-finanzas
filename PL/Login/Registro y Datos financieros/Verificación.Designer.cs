@@ -60,9 +60,10 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(383, 12);
+            roundButton1.Location = new Point(306, 10);
+            roundButton1.Margin = new Padding(2);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(673, 682);
+            roundButton1.Size = new Size(538, 546);
             roundButton1.TabIndex = 23;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
@@ -74,9 +75,10 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 16F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(607, 185);
+            label1.Location = new Point(486, 148);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(253, 45);
+            label1.Size = new Size(214, 39);
             label1.TabIndex = 25;
             label1.Text = "VERIFICACIÓN";
             // 
@@ -86,9 +88,10 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(538, 283);
+            label3.Location = new Point(430, 226);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(335, 31);
+            label3.Size = new Size(293, 27);
             label3.TabIndex = 27;
             label3.Text = "Tipo Documento de Identidad";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -99,9 +102,10 @@
             comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Pasaporte", "Cédula" });
-            comboBox1.Location = new Point(538, 317);
+            comboBox1.Location = new Point(430, 254);
+            comboBox1.Margin = new Padding(2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(420, 39);
+            comboBox1.Size = new Size(337, 34);
             comboBox1.TabIndex = 29;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -109,9 +113,10 @@
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = Properties.Resources.logo;
-            pictureBox2.Location = new Point(607, 30);
+            pictureBox2.Location = new Point(486, 24);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(262, 152);
+            pictureBox2.Size = new Size(210, 122);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 31;
             pictureBox2.TabStop = false;
@@ -122,9 +127,10 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(538, 376);
+            label2.Location = new Point(430, 301);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(281, 31);
+            label2.Size = new Size(246, 27);
             label2.TabIndex = 32;
             label2.Text = "Documento de Identidad";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -138,14 +144,15 @@
             rjTexbox1.BorderSize = 2;
             rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox1.ForeColor = Color.Black;
-            rjTexbox1.Location = new Point(538, 410);
+            rjTexbox1.Location = new Point(430, 328);
+            rjTexbox1.Margin = new Padding(2);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
-            rjTexbox1.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox1.Padding = new Padding(8, 6, 8, 6);
             rjTexbox1.PasswordChar = false;
             rjTexbox1.PlaceholderColor = Color.DarkGray;
             rjTexbox1.PlaceholderText = "";
-            rjTexbox1.Size = new Size(420, 52);
+            rjTexbox1.Size = new Size(336, 42);
             rjTexbox1.TabIndex = 33;
             rjTexbox1.Texts = "";
             rjTexbox1.UnderlinedStyle = false;
@@ -159,14 +166,15 @@
             rjTexbox2.BorderSize = 2;
             rjTexbox2.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox2.ForeColor = Color.Black;
-            rjTexbox2.Location = new Point(538, 519);
+            rjTexbox2.Location = new Point(430, 415);
+            rjTexbox2.Margin = new Padding(2);
             rjTexbox2.Multiline = true;
             rjTexbox2.Name = "rjTexbox2";
-            rjTexbox2.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox2.Padding = new Padding(8, 6, 8, 6);
             rjTexbox2.PasswordChar = false;
             rjTexbox2.PlaceholderColor = Color.DarkGray;
             rjTexbox2.PlaceholderText = "";
-            rjTexbox2.Size = new Size(420, 52);
+            rjTexbox2.Size = new Size(336, 42);
             rjTexbox2.TabIndex = 34;
             rjTexbox2.Texts = "";
             rjTexbox2.UnderlinedStyle = false;
@@ -177,9 +185,10 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(538, 485);
+            label4.Location = new Point(430, 388);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(233, 31);
+            label4.Size = new Size(201, 27);
             label4.TabIndex = 35;
             label4.Text = "Código Verificación";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -198,9 +207,10 @@
             roundButton2.FlatStyle = FlatStyle.Flat;
             roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
-            roundButton2.Location = new Point(617, 592);
+            roundButton2.Location = new Point(494, 474);
+            roundButton2.Margin = new Padding(2);
             roundButton2.Name = "roundButton2";
-            roundButton2.Size = new Size(225, 77);
+            roundButton2.Size = new Size(180, 62);
             roundButton2.TabIndex = 37;
             roundButton2.Text = "Siguiente";
             roundButton2.TextColor = Color.White;
@@ -214,10 +224,11 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             iconPictureBox3.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 36;
-            iconPictureBox3.Location = new Point(494, 376);
+            iconPictureBox3.IconSize = 29;
+            iconPictureBox3.Location = new Point(395, 301);
+            iconPictureBox3.Margin = new Padding(2);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(38, 36);
+            iconPictureBox3.Size = new Size(30, 29);
             iconPictureBox3.TabIndex = 76;
             iconPictureBox3.TabStop = false;
             // 
@@ -228,10 +239,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ClipboardQuestion;
             iconPictureBox1.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 36;
-            iconPictureBox1.Location = new Point(494, 283);
+            iconPictureBox1.IconSize = 29;
+            iconPictureBox1.Location = new Point(395, 226);
+            iconPictureBox1.Margin = new Padding(2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(38, 36);
+            iconPictureBox1.Size = new Size(30, 29);
             iconPictureBox1.TabIndex = 77;
             iconPictureBox1.TabStop = false;
             // 
@@ -242,19 +254,20 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ClockFour;
             iconPictureBox2.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 36;
-            iconPictureBox2.Location = new Point(494, 485);
+            iconPictureBox2.IconSize = 29;
+            iconPictureBox2.Location = new Point(395, 388);
+            iconPictureBox2.Margin = new Padding(2);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(38, 36);
+            iconPictureBox2.Size = new Size(30, 29);
             iconPictureBox2.TabIndex = 78;
             iconPictureBox2.TabStop = false;
             // 
             // Verificación
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(246, 248, 251);
-            ClientSize = new Size(1386, 730);
+            ClientSize = new Size(1109, 584);
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
             Controls.Add(iconPictureBox3);
@@ -269,8 +282,10 @@
             Controls.Add(label1);
             Controls.Add(roundButton1);
             ForeColor = Color.FromArgb(246, 248, 251);
+            Margin = new Padding(2);
             Name = "Verificación";
             Text = "Verificación";
+            Load += Verificación_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();

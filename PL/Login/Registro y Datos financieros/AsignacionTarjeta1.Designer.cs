@@ -68,9 +68,10 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(369, 9);
+            roundButton1.Location = new Point(295, 7);
+            roundButton1.Margin = new Padding(2);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(1316, 989);
+            roundButton1.Size = new Size(1053, 791);
             roundButton1.TabIndex = 27;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
@@ -79,9 +80,10 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(823, 32);
+            pictureBox1.Location = new Point(658, 26);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(262, 147);
+            pictureBox1.Size = new Size(210, 118);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;
@@ -92,9 +94,10 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Inter Medium", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(175, 175, 180);
-            label2.Location = new Point(568, 222);
+            label2.Location = new Point(454, 178);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(836, 28);
+            label2.Size = new Size(720, 24);
             label2.TabIndex = 32;
             label2.Text = "Basado en su información financiera, le hemos asignado la siguiente tarjeta de crédito.";
             // 
@@ -104,9 +107,10 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(726, 182);
+            label1.Location = new Point(581, 146);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(474, 40);
+            label1.Size = new Size(406, 35);
             label1.TabIndex = 31;
             label1.Text = "Asignación de Tarjeta de Crédito";
             // 
@@ -117,10 +121,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Pager;
             iconPictureBox1.IconColor = Color.FromArgb(232, 215, 251);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox1.IconSize = 68;
-            iconPictureBox1.Location = new Point(524, 11);
+            iconPictureBox1.IconSize = 54;
+            iconPictureBox1.Location = new Point(419, 9);
+            iconPictureBox1.Margin = new Padding(2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(97, 68);
+            iconPictureBox1.Size = new Size(78, 54);
             iconPictureBox1.TabIndex = 49;
             iconPictureBox1.TabStop = false;
             // 
@@ -130,9 +135,10 @@
             label11.BackColor = Color.White;
             label11.Font = new Font("Inter Black", 10F, FontStyle.Bold);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(452, 557);
+            label11.Location = new Point(362, 446);
+            label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
-            label11.Size = new Size(257, 28);
+            label11.Size = new Size(216, 24);
             label11.TabIndex = 50;
             label11.Text = "Términos y Condiciones";
             // 
@@ -145,14 +151,15 @@
             rjTexbox1.BorderSize = 2;
             rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox1.ForeColor = Color.Black;
-            rjTexbox1.Location = new Point(452, 588);
+            rjTexbox1.Location = new Point(362, 470);
+            rjTexbox1.Margin = new Padding(2);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
-            rjTexbox1.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox1.Padding = new Padding(8, 6, 8, 6);
             rjTexbox1.PasswordChar = false;
             rjTexbox1.PlaceholderColor = Color.DarkGray;
             rjTexbox1.PlaceholderText = "";
-            rjTexbox1.Size = new Size(1212, 198);
+            rjTexbox1.Size = new Size(970, 158);
             rjTexbox1.TabIndex = 51;
             rjTexbox1.Texts = "";
             rjTexbox1.UnderlinedStyle = false;
@@ -162,9 +169,10 @@
             label12.AutoSize = true;
             label12.BackColor = Color.White;
             label12.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(533, 616);
+            label12.Location = new Point(426, 493);
+            label12.Margin = new Padding(2, 0, 2, 0);
             label12.Name = "label12";
-            label12.Size = new Size(840, 140);
+            label12.Size = new Size(715, 120);
             label12.TabIndex = 53;
             label12.Text = resources.GetString("label12.Text");
             // 
@@ -174,12 +182,14 @@
             checkBox2.BackColor = Color.White;
             checkBox2.Font = new Font("Inter", 9F, FontStyle.Bold | FontStyle.Italic);
             checkBox2.ForeColor = Color.Black;
-            checkBox2.Location = new Point(452, 804);
+            checkBox2.Location = new Point(362, 643);
+            checkBox2.Margin = new Padding(2);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(543, 30);
+            checkBox2.Size = new Size(454, 26);
             checkBox2.TabIndex = 54;
             checkBox2.Text = "Acepto los términos y condiciones de la tarjeta de crédito";
             checkBox2.UseVisualStyleBackColor = false;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // roundButton3
             // 
@@ -195,9 +205,10 @@
             roundButton3.FlatStyle = FlatStyle.Flat;
             roundButton3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton3.ForeColor = Color.White;
-            roundButton3.Location = new Point(411, 840);
+            roundButton3.Location = new Point(329, 672);
+            roundButton3.Margin = new Padding(2);
             roundButton3.Name = "roundButton3";
-            roundButton3.Size = new Size(1212, 53);
+            roundButton3.Size = new Size(970, 42);
             roundButton3.TabIndex = 55;
             roundButton3.Text = "Confirmar y Solicitar Tarjeta";
             roundButton3.TextColor = Color.White;
@@ -221,10 +232,11 @@
             guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(72, 84, 235);
             guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(130, 58, 234);
             guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(130, 58, 234);
-            guna2CustomGradientPanel1.Location = new Point(646, 273);
+            guna2CustomGradientPanel1.Location = new Point(545, 220);
+            guna2CustomGradientPanel1.Margin = new Padding(2);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2CustomGradientPanel1.Size = new Size(630, 258);
+            guna2CustomGradientPanel1.Size = new Size(504, 206);
             guna2CustomGradientPanel1.TabIndex = 56;
             // 
             // label20
@@ -233,9 +245,10 @@
             label20.BackColor = Color.FromArgb(103, 69, 234);
             label20.Font = new Font("Inter Medium", 12F, FontStyle.Bold);
             label20.ForeColor = Color.White;
-            label20.Location = new Point(380, 214);
+            label20.Location = new Point(304, 171);
+            label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
-            label20.Size = new Size(241, 35);
+            label20.Size = new Size(198, 28);
             label20.TabIndex = 57;
             label20.Text = "NOMBRE APELLIDO";
             // 
@@ -245,9 +258,10 @@
             label19.BackColor = Color.FromArgb(97, 72, 234);
             label19.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
             label19.ForeColor = Color.FromArgb(195, 205, 249);
-            label19.Location = new Point(446, 175);
+            label19.Location = new Point(357, 140);
+            label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
-            label19.Size = new Size(96, 28);
+            label19.Size = new Size(83, 24);
             label19.TabIndex = 57;
             label19.Text = "TITULAR";
             // 
@@ -257,9 +271,10 @@
             label18.BackColor = Color.FromArgb(88, 76, 234);
             label18.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
             label18.ForeColor = Color.White;
-            label18.Location = new Point(229, 226);
+            label18.Location = new Point(183, 181);
+            label18.Margin = new Padding(2, 0, 2, 0);
             label18.Name = "label18";
-            label18.Size = new Size(42, 28);
+            label18.Size = new Size(37, 24);
             label18.TabIndex = 57;
             label18.Text = "***";
             // 
@@ -269,9 +284,10 @@
             label17.BackColor = Color.FromArgb(92, 74, 234);
             label17.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
             label17.ForeColor = Color.White;
-            label17.Location = new Point(229, 186);
+            label17.Location = new Point(183, 149);
+            label17.Margin = new Padding(2, 0, 2, 0);
             label17.Name = "label17";
-            label17.Size = new Size(55, 28);
+            label17.Size = new Size(46, 24);
             label17.TabIndex = 57;
             label17.Text = "CVV";
             // 
@@ -281,9 +297,10 @@
             label16.BackColor = Color.FromArgb(85, 77, 234);
             label16.Font = new Font("Inter Medium", 14F, FontStyle.Bold);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(25, 214);
+            label16.Location = new Point(21, 168);
+            label16.Margin = new Padding(2, 0, 2, 0);
             label16.Name = "label16";
-            label16.Size = new Size(96, 40);
+            label16.Size = new Size(83, 35);
             label16.TabIndex = 57;
             label16.Text = "03/27";
             // 
@@ -293,9 +310,10 @@
             label15.BackColor = Color.FromArgb(90, 75, 234);
             label15.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
             label15.ForeColor = Color.FromArgb(195, 205, 249);
-            label15.Location = new Point(15, 186);
+            label15.Location = new Point(12, 147);
+            label15.Margin = new Padding(2, 0, 2, 0);
             label15.Name = "label15";
-            label15.Size = new Size(129, 28);
+            label15.Size = new Size(113, 24);
             label15.TabIndex = 57;
             label15.Text = "Válida Hasta";
             // 
@@ -305,9 +323,10 @@
             label14.BackColor = Color.FromArgb(106, 68, 234);
             label14.Font = new Font("Inter Medium", 10F, FontStyle.Bold);
             label14.ForeColor = Color.FromArgb(195, 205, 249);
-            label14.Location = new Point(15, 11);
+            label14.Location = new Point(12, 9);
+            label14.Margin = new Padding(2, 0, 2, 0);
             label14.Name = "label14";
-            label14.Size = new Size(139, 28);
+            label14.Size = new Size(119, 24);
             label14.TabIndex = 57;
             label14.Text = "Banco Virtual";
             // 
@@ -317,17 +336,18 @@
             label13.BackColor = Color.FromArgb(98, 71, 234);
             label13.Font = new Font("Inter Medium", 14F, FontStyle.Bold);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(111, 86);
+            label13.Location = new Point(89, 69);
+            label13.Margin = new Padding(2, 0, 2, 0);
             label13.Name = "label13";
-            label13.Size = new Size(284, 40);
+            label13.Size = new Size(243, 35);
             label13.TabIndex = 57;
             label13.Text = "45325747xxxx2279";
             // 
             // AsignacionTarjeta1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1050);
+            ClientSize = new Size(1539, 840);
             Controls.Add(guna2CustomGradientPanel1);
             Controls.Add(roundButton3);
             Controls.Add(checkBox2);
@@ -338,8 +358,9 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(roundButton1);
+            Margin = new Padding(2);
             Name = "AsignacionTarjeta1";
-            Text = "AsignacionTarjeta1";
+            Load += AsignacionTarjeta1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             guna2CustomGradientPanel1.ResumeLayout(false);

@@ -78,6 +78,9 @@ namespace ProyectoFinalMargarita
                                                           MessageBoxButtons.YesNo,
                                                           MessageBoxIcon.Question);
 
+                new AsignacionTarjeta1().Show();
+
+
                 if (confirmacion != DialogResult.Yes)
                     return;
 

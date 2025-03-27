@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using ProyectoFinalMargarita;
+using ProyectoFinalMargarita.PL.CRUD_CUENTAS;
 
 namespace ProyectoFinalMargarita
 {
@@ -33,7 +34,7 @@ namespace ProyectoFinalMargarita
             }
             else
             {
-                Application.Run(new Registro()); // Si no hay sesión, muestra el login
+                Application.Run(new CRUDCUENTASBANCARIASNEW()); // Si no hay sesión, muestra el login
             }
         }
 

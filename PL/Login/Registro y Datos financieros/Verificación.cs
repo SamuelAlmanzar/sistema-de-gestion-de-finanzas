@@ -8,13 +8,18 @@ namespace ProyectoFinalMargarita
     public partial class Verificación : Form
     {
         private int _idCliente;
+        private string _codigoCorrecto;
         private string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
 
-        public Verificación(int idCliente)
+        public Verificación(int idCliente, string codigoCorrecto)
         {
             InitializeComponent();
             _idCliente = idCliente;
+            _codigoCorrecto = codigoCorrecto;
             CargarTiposDocumento();
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.ControlBox = false;
         }
 
         private void CargarTiposDocumento()
@@ -69,54 +74,59 @@ namespace ProyectoFinalMargarita
 
         private void VerificarCodigo()
         {
+            // Validación inicial del código
+            if (rjTexbox1.Texts.Trim() != _codigoCorrecto)
+            {
+                MessageBox.Show("El código de verificación ingresado no es correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    // Iniciar transacción
+                    // Primero verificar si el código existe y está pendiente
+                    string checkQuery = @"SELECT COUNT(1) FROM Verificacion 
+                                       WHERE ID_Cliente = @ID_Cliente 
+                                       AND CodigoVerificacion = @Codigo
+                                       AND Estado = 'Pendiente'";
+
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCmd.Parameters.AddWithValue("@ID_Cliente", _idCliente);
+                        checkCmd.Parameters.AddWithValue("@Codigo", rjTexbox1.Texts.Trim());
+
+                        if ((int)checkCmd.ExecuteScalar() == 0)
+                        {
+                            MessageBox.Show("Este código ya ha sido utilizado o no es válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // Si pasa la validación, proceder con la transacción
                     using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
-                            // 1. Verificar el código
-                            string queryVerificacion = @"SELECT COUNT(1) FROM Verificacion 
-                                                      WHERE ID_Cliente = @ID_Cliente 
-                                                      AND CodigoVerificacion = @Codigo
-                                                      AND Estado = 'Pendiente'";
+                            // Actualizar la verificación
+                            string updateQuery = @"UPDATE Verificacion 
+                                                SET Estado = 'Completado', 
+                                                    FechaVerificacion = GETDATE(),
+                                                    TipoDocumento = @TipoDocumento
+                                                WHERE ID_Cliente = @ID_Cliente 
+                                                AND CodigoVerificacion = @Codigo";
 
-                            using (SqlCommand command = new SqlCommand(queryVerificacion, connection, transaction))
-                            {
-                                command.Parameters.AddWithValue("@ID_Cliente", _idCliente);
-                                command.Parameters.AddWithValue("@Codigo", rjTexbox1.Texts.Trim());
-
-                                if ((int)command.ExecuteScalar() == 0)
-                                {
-                                    transaction.Rollback();
-                                    MessageBox.Show("Código de verificación incorrecto o ya utilizado",
-                                                "Error",
-                                                MessageBoxButtons.OK,
-                                                MessageBoxIcon.Error);
-                                    return;
-                                }
-                            }
-
-                            // 2. Actualizar el estado de verificación
-                            string updateVerificacion = @"UPDATE Verificacion 
-                                                       SET Estado = 'Completado', 
-                                                           FechaVerificacion = GETDATE()
-                                                       WHERE ID_Cliente = @ID_Cliente 
-                                                       AND CodigoVerificacion = @Codigo";
-
-                            using (SqlCommand cmdUpdate = new SqlCommand(updateVerificacion, connection, transaction))
+                            using (SqlCommand cmdUpdate = new SqlCommand(updateQuery, connection, transaction))
                             {
                                 cmdUpdate.Parameters.AddWithValue("@ID_Cliente", _idCliente);
                                 cmdUpdate.Parameters.AddWithValue("@Codigo", rjTexbox1.Texts.Trim());
+                                cmdUpdate.Parameters.AddWithValue("@TipoDocumento", comboBox1.SelectedItem.ToString());
                                 cmdUpdate.ExecuteNonQuery();
                             }
 
-                            // 3. Marcar al cliente como verificado
+                            // Marcar cliente como verificado
                             string updateCliente = @"UPDATE Cliente 
                                                    SET Verificado = 1 
                                                    WHERE ID = @ID_Cliente";
@@ -127,38 +137,22 @@ namespace ProyectoFinalMargarita
                                 cmdCliente.ExecuteNonQuery();
                             }
 
-                            // Confirmar transacción si todo fue bien
                             transaction.Commit();
-
-                            MessageBox.Show("Verificación exitosa", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("¡Verificación exitosa!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
+                            new InformacionFinanciera().Show();
                         }
                         catch (Exception ex)
                         {
-                            // Intentar hacer rollback en caso de error
-                            try
-                            {
-                                transaction.Rollback();
-                            }
-                            catch (Exception rollbackEx)
-                            {
-                                Console.WriteLine("Error al hacer rollback: " + rollbackEx.Message);
-                            }
-
-                            MessageBox.Show($"Error durante la verificación: {ex.Message}",
-                                          "Error",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Error);
+                            try { transaction.Rollback(); } catch { }
+                            MessageBox.Show($"Error durante la verificación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al conectar a la base de datos: {ex.Message}",
-                                  "Error",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
+                    MessageBox.Show($"Error de conexión: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -171,12 +165,25 @@ namespace ProyectoFinalMargarita
                 {
                     connection.Open();
 
-                    // Iniciar transacción
                     using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
-                            // Marcar al cliente como verificado
+                            // Registrar la verificación por documento
+                            string insertQuery = @"INSERT INTO Verificacion 
+                                                (ID_Cliente, TipoDocumento, CodigoVerificacion, FechaVerificacion, Estado)
+                                                VALUES 
+                                                (@ID_Cliente, @TipoDocumento, @Codigo, GETDATE(), 'Completado')";
+
+                            using (SqlCommand cmdInsert = new SqlCommand(insertQuery, connection, transaction))
+                            {
+                                cmdInsert.Parameters.AddWithValue("@ID_Cliente", _idCliente);
+                                cmdInsert.Parameters.AddWithValue("@TipoDocumento", comboBox1.SelectedItem.ToString());
+                                cmdInsert.Parameters.AddWithValue("@Codigo", rjTexbox2.Texts.Trim());
+                                cmdInsert.ExecuteNonQuery();
+                            }
+
+                            // Marcar cliente como verificado
                             string updateCliente = @"UPDATE Cliente 
                                                    SET Verificado = 1 
                                                    WHERE ID = @ID_Cliente";
@@ -187,38 +194,23 @@ namespace ProyectoFinalMargarita
                                 cmdCliente.ExecuteNonQuery();
                             }
 
-                            // Confirmar transacción
                             transaction.Commit();
-
                             MessageBox.Show("Verificación por documento exitosa", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.DialogResult = DialogResult.OK;
                             this.Close();
+
+                            new AsignacionTarjeta1().Show();
                         }
                         catch (Exception ex)
                         {
-                            // Intentar hacer rollback en caso de error
-                            try
-                            {
-                                transaction.Rollback();
-                            }
-                            catch (Exception rollbackEx)
-                            {
-                                Console.WriteLine("Error al hacer rollback: " + rollbackEx.Message);
-                            }
-
-                            MessageBox.Show($"Error durante la verificación: {ex.Message}",
-                                          "Error",
-                                          MessageBoxButtons.OK,
-                                          MessageBoxIcon.Error);
+                            try { transaction.Rollback(); } catch { }
+                            MessageBox.Show($"Error durante la verificación: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al conectar a la base de datos: {ex.Message}",
-                                  "Error",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
+                    MessageBox.Show($"Error de conexión: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -227,6 +219,11 @@ namespace ProyectoFinalMargarita
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void Verificación_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

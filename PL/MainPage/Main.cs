@@ -3,6 +3,8 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ProyectoFinalMargarita.PL.CRUD_CUENTAS;
+using ProyectoFinalMargarita.PL.Ingreso_Egreso;
 
 
 namespace ProyectoFinalMargarita
@@ -102,7 +104,17 @@ namespace ProyectoFinalMargarita
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
+            new CRUDCUENTASBANCARIASNEW().Show();
+        }
 
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            new Ingreso_Egreso().Show();
+        }
+
+        private void roundButton3_Click(object sender, EventArgs e)
+        {
+            new Ahorro().Show();
         }
     }
 }
