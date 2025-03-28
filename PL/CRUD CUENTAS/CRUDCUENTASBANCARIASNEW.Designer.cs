@@ -163,6 +163,7 @@
             roundButton3.TabIndex = 51;
             roundButton3.TextColor = Color.Black;
             roundButton3.UseVisualStyleBackColor = false;
+            roundButton3.Click += roundButton3_Click_2;
             // 
             // roundButton4
             // 

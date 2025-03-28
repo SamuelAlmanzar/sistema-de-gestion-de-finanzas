@@ -218,9 +218,11 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             }
         }
 
-        private void roundButton3_Click_1(object sender, EventArgs e)
+
+        private void roundButton3_Click_2(object sender, EventArgs e)
         {
             new CRUDUSUARIOS().Show();
+
         }
     }
 }
