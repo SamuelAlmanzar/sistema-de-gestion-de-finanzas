@@ -74,13 +74,13 @@
             roundButton1.FlatAppearance.MouseOverBackColor = Color.White;
             roundButton1.FlatStyle = FlatStyle.Flat;
             roundButton1.ForeColor = Color.Black;
-            roundButton1.Location = new Point(351, 27);
+            roundButton1.Location = new Point(281, 22);
+            roundButton1.Margin = new Padding(2);
             roundButton1.Name = "roundButton1";
-            roundButton1.Size = new Size(729, 944);
+            roundButton1.Size = new Size(583, 755);
             roundButton1.TabIndex = 24;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
-            roundButton1.Click += roundButton1_Click;
             // 
             // label3
             // 
@@ -88,9 +88,10 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Inter Medium", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(175, 175, 180);
-            label3.Location = new Point(542, 151);
+            label3.Location = new Point(434, 121);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(375, 28);
+            label3.Size = new Size(326, 24);
             label3.TabIndex = 38;
             label3.Text = "Crea una nueva meta para tus ahorros";
             // 
@@ -100,9 +101,10 @@
             label1.BackColor = Color.White;
             label1.Font = new Font("Inter Black", 14F, FontStyle.Bold);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(565, 95);
+            label1.Location = new Point(452, 76);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(333, 40);
+            label1.Size = new Size(285, 35);
             label1.TabIndex = 37;
             label1.Text = "Nueva Meta de Ahorro";
             // 
@@ -115,14 +117,15 @@
             rjTexbox1.BorderSize = 2;
             rjTexbox1.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox1.ForeColor = Color.Black;
-            rjTexbox1.Location = new Point(473, 287);
+            rjTexbox1.Location = new Point(378, 230);
+            rjTexbox1.Margin = new Padding(2);
             rjTexbox1.Multiline = true;
             rjTexbox1.Name = "rjTexbox1";
-            rjTexbox1.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox1.Padding = new Padding(8, 6, 8, 6);
             rjTexbox1.PasswordChar = false;
             rjTexbox1.PlaceholderColor = Color.DarkGray;
             rjTexbox1.PlaceholderText = "";
-            rjTexbox1.Size = new Size(521, 52);
+            rjTexbox1.Size = new Size(417, 42);
             rjTexbox1.TabIndex = 44;
             rjTexbox1.Texts = "";
             rjTexbox1.UnderlinedStyle = false;
@@ -133,12 +136,12 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(473, 256);
+            label2.Location = new Point(378, 205);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(62, 28);
+            label2.Size = new Size(52, 24);
             label2.TabIndex = 42;
             label2.Text = "Meta";
-            label2.Click += label2_Click;
             // 
             // rjTexbox2
             // 
@@ -149,14 +152,15 @@
             rjTexbox2.BorderSize = 2;
             rjTexbox2.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox2.ForeColor = Color.Black;
-            rjTexbox2.Location = new Point(473, 428);
+            rjTexbox2.Location = new Point(378, 342);
+            rjTexbox2.Margin = new Padding(2);
             rjTexbox2.Multiline = true;
             rjTexbox2.Name = "rjTexbox2";
-            rjTexbox2.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox2.Padding = new Padding(8, 6, 8, 6);
             rjTexbox2.PasswordChar = false;
             rjTexbox2.PlaceholderColor = Color.DarkGray;
             rjTexbox2.PlaceholderText = "";
-            rjTexbox2.Size = new Size(521, 52);
+            rjTexbox2.Size = new Size(417, 42);
             rjTexbox2.TabIndex = 47;
             rjTexbox2.Texts = "";
             rjTexbox2.UnderlinedStyle = false;
@@ -168,9 +172,10 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(473, 397);
+            label4.Location = new Point(378, 318);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(160, 28);
+            label4.Size = new Size(137, 24);
             label4.TabIndex = 46;
             label4.Text = "Monto Objetivo";
             // 
@@ -183,17 +188,19 @@
             rjTexbox3.BorderSize = 2;
             rjTexbox3.Font = new Font("Inter", 11F, FontStyle.Bold);
             rjTexbox3.ForeColor = Color.Black;
-            rjTexbox3.Location = new Point(473, 562);
+            rjTexbox3.Location = new Point(378, 450);
+            rjTexbox3.Margin = new Padding(2);
             rjTexbox3.Multiline = true;
             rjTexbox3.Name = "rjTexbox3";
-            rjTexbox3.Padding = new Padding(10, 7, 10, 7);
+            rjTexbox3.Padding = new Padding(8, 6, 8, 6);
             rjTexbox3.PasswordChar = false;
             rjTexbox3.PlaceholderColor = Color.DarkGray;
             rjTexbox3.PlaceholderText = "";
-            rjTexbox3.Size = new Size(521, 52);
+            rjTexbox3.Size = new Size(417, 42);
             rjTexbox3.TabIndex = 49;
             rjTexbox3.Texts = "";
             rjTexbox3.UnderlinedStyle = false;
+            rjTexbox3._TextChanged += rjTexbox3__TextChanged;
             // 
             // label5
             // 
@@ -201,9 +208,10 @@
             label5.BackColor = Color.White;
             label5.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(473, 531);
+            label5.Location = new Point(378, 425);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(171, 28);
+            label5.Size = new Size(146, 24);
             label5.TabIndex = 50;
             label5.Text = "Monto Ahorrado";
             // 
@@ -220,12 +228,13 @@
             guna2DateTimePicker1.Font = new Font("Inter", 11F, FontStyle.Bold);
             guna2DateTimePicker1.ForeColor = Color.Black;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Short;
-            guna2DateTimePicker1.Location = new Point(473, 682);
+            guna2DateTimePicker1.Location = new Point(378, 546);
+            guna2DateTimePicker1.Margin = new Padding(2);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
             guna2DateTimePicker1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2DateTimePicker1.Size = new Size(521, 54);
+            guna2DateTimePicker1.Size = new Size(417, 43);
             guna2DateTimePicker1.TabIndex = 52;
             guna2DateTimePicker1.UseTransparentBackground = true;
             guna2DateTimePicker1.Value = new DateTime(2025, 3, 19, 15, 3, 36, 604);
@@ -236,9 +245,10 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Inter", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(473, 651);
+            label7.Location = new Point(378, 521);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(71, 28);
+            label7.Size = new Size(60, 24);
             label7.TabIndex = 55;
             label7.Text = "Fecha";
             // 
@@ -253,12 +263,14 @@
             guna2Button1.FillColor = Color.FromArgb(4, 120, 87);
             guna2Button1.Font = new Font("Inter", 10F, FontStyle.Bold);
             guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(842, 884);
+            guna2Button1.Location = new Point(674, 707);
+            guna2Button1.Margin = new Padding(2);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Button1.Size = new Size(197, 61);
+            guna2Button1.Size = new Size(158, 49);
             guna2Button1.TabIndex = 57;
             guna2Button1.Text = "Guardar";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2Button2
             // 
@@ -271,12 +283,13 @@
             guna2Button2.FillColor = Color.FromArgb(244, 244, 245);
             guna2Button2.Font = new Font("Inter", 10F, FontStyle.Bold);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Location = new Point(618, 884);
+            guna2Button2.Location = new Point(494, 707);
+            guna2Button2.Margin = new Padding(2);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Button2.Size = new Size(197, 61);
+            guna2Button2.Size = new Size(158, 49);
             guna2Button2.TabIndex = 58;
-            guna2Button2.Text = "Guardar";
+            guna2Button2.Text = "Cancelar";
             guna2Button2.Click += guna2Button2_Click;
             // 
             // iconPictureBox2
@@ -286,10 +299,11 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Crosshairs;
             iconPictureBox2.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 36;
-            iconPictureBox2.Location = new Point(429, 256);
+            iconPictureBox2.IconSize = 29;
+            iconPictureBox2.Location = new Point(343, 205);
+            iconPictureBox2.Margin = new Padding(2);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(38, 36);
+            iconPictureBox2.Size = new Size(30, 29);
             iconPictureBox2.TabIndex = 60;
             iconPictureBox2.TabStop = false;
             // 
@@ -300,10 +314,11 @@
             iconPictureBox8.IconChar = FontAwesome.Sharp.IconChar.X;
             iconPictureBox8.IconColor = Color.Black;
             iconPictureBox8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox8.IconSize = 26;
-            iconPictureBox8.Location = new Point(633, 900);
+            iconPictureBox8.IconSize = 21;
+            iconPictureBox8.Location = new Point(506, 720);
+            iconPictureBox8.Margin = new Padding(2);
             iconPictureBox8.Name = "iconPictureBox8";
-            iconPictureBox8.Size = new Size(26, 28);
+            iconPictureBox8.Size = new Size(21, 22);
             iconPictureBox8.TabIndex = 72;
             iconPictureBox8.TabStop = false;
             // 
@@ -313,10 +328,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Save;
             iconPictureBox1.IconColor = Color.White;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 28;
-            iconPictureBox1.Location = new Point(867, 900);
+            iconPictureBox1.IconSize = 22;
+            iconPictureBox1.Location = new Point(694, 720);
+            iconPictureBox1.Margin = new Padding(2);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Size = new Size(31, 28);
+            iconPictureBox1.Size = new Size(25, 22);
             iconPictureBox1.TabIndex = 73;
             iconPictureBox1.TabStop = false;
             // 
@@ -327,10 +343,11 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
             iconPictureBox3.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 36;
-            iconPictureBox3.Location = new Point(429, 397);
+            iconPictureBox3.IconSize = 29;
+            iconPictureBox3.Location = new Point(343, 318);
+            iconPictureBox3.Margin = new Padding(2);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(38, 36);
+            iconPictureBox3.Size = new Size(30, 29);
             iconPictureBox3.TabIndex = 74;
             iconPictureBox3.TabStop = false;
             // 
@@ -341,10 +358,11 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.PiggyBank;
             iconPictureBox4.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 36;
-            iconPictureBox4.Location = new Point(429, 531);
+            iconPictureBox4.IconSize = 29;
+            iconPictureBox4.Location = new Point(343, 425);
+            iconPictureBox4.Margin = new Padding(2);
             iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Size = new Size(38, 36);
+            iconPictureBox4.Size = new Size(30, 29);
             iconPictureBox4.TabIndex = 75;
             iconPictureBox4.TabStop = false;
             // 
@@ -355,18 +373,19 @@
             iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.CalendarDays;
             iconPictureBox5.IconColor = Color.FromArgb(4, 120, 87);
             iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox5.IconSize = 36;
-            iconPictureBox5.Location = new Point(429, 651);
+            iconPictureBox5.IconSize = 29;
+            iconPictureBox5.Location = new Point(343, 521);
+            iconPictureBox5.Margin = new Padding(2);
             iconPictureBox5.Name = "iconPictureBox5";
-            iconPictureBox5.Size = new Size(38, 36);
+            iconPictureBox5.Size = new Size(30, 29);
             iconPictureBox5.TabIndex = 76;
             iconPictureBox5.TabStop = false;
             // 
             // FormAhorro
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1244, 1050);
+            ClientSize = new Size(995, 840);
             Controls.Add(iconPictureBox5);
             Controls.Add(iconPictureBox4);
             Controls.Add(iconPictureBox3);
@@ -386,6 +405,7 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Controls.Add(roundButton1);
+            Margin = new Padding(2);
             Name = "FormAhorro";
             Text = "FormAhorro";
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();

@@ -82,7 +82,7 @@
             iconPictureBox2.IconColor = SystemColors.ControlText;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 30;
-            iconPictureBox2.Location = new Point(1050, 63);
+            iconPictureBox2.Location = new Point(1017, 63);
             iconPictureBox2.Margin = new Padding(2);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(30, 32);
@@ -103,10 +103,10 @@
             roundButton5.FlatStyle = FlatStyle.Flat;
             roundButton5.Font = new Font("Inter Black", 10F, FontStyle.Bold);
             roundButton5.ForeColor = Color.White;
-            roundButton5.Location = new Point(1027, 50);
+            roundButton5.Location = new Point(989, 50);
             roundButton5.Margin = new Padding(2);
             roundButton5.Name = "roundButton5";
-            roundButton5.Size = new Size(204, 56);
+            roundButton5.Size = new Size(242, 56);
             roundButton5.TabIndex = 57;
             roundButton5.Text = "Mi Cuenta";
             roundButton5.TextColor = Color.White;
@@ -141,7 +141,7 @@
             roundButton6.Location = new Point(1256, 50);
             roundButton6.Margin = new Padding(2);
             roundButton6.Name = "roundButton6";
-            roundButton6.Size = new Size(204, 56);
+            roundButton6.Size = new Size(221, 56);
             roundButton6.TabIndex = 55;
             roundButton6.Text = "Cerrar sesión";
             roundButton6.TextColor = Color.White;

@@ -38,5 +38,10 @@ namespace ProyectoFinalMargarita
         {
             // Puedes añadir lógica adicional cuando cambia el estado del checkbox si es necesario
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

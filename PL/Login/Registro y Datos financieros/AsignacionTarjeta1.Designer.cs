@@ -342,6 +342,7 @@
             label13.Size = new Size(243, 35);
             label13.TabIndex = 57;
             label13.Text = "45325747xxxx2279";
+            label13.Click += label13_Click;
             // 
             // AsignacionTarjeta1
             // 

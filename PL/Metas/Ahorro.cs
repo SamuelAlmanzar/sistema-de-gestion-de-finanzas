@@ -1,152 +1,257 @@
-﻿using System;
+﻿using ProyectoFinalMargarita.PL;
+using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ProyectoFinalMargarita
 {
     public partial class Ahorro : Form
     {
+        private FormAhorro formAhorro;
+        private readonly string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;";
+
         public Ahorro()
         {
             InitializeComponent();
-          guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void Ahorro_Load(object sender, EventArgs e)
         {
-            guna2DataGridView1.Columns.Add("Monto", "Monto");
-            guna2DataGridView1.Columns.Add("MontoAhorrado", "Monto Ahorrado");
-            guna2DataGridView1.Columns.Add("Meta", "Meta");
-            guna2DataGridView1.Columns.Add("Fecha", "Fecha");
-            //dataGridView1.Columns.Add("AhorroDiario", "Ahorro Diario");
-            //dataGridView1.Columns.Add("AhorroSemanal", "Ahorro Semanal");
-            //dataGridView1.Columns.Add("AhorroMensual", "Ahorro Mensual");
+            ConfigurarDataGridView();
+            CargarMetasAhorro();
         }
 
-        //private void Nuevo_Click(object sender, EventArgs e)
-        //{
-        //    if (!string.IsNullOrEmpty(monto.Text) && !string.IsNullOrEmpty(Meta.Text))
-        //    {
-        //        double montoTotal;
-        //        if (!double.TryParse(monto.Text, out montoTotal) || montoTotal <= 0)
-        //        {
-        //            MessageBox.Show("Por favor, ingrese un monto válido.");
-        //            return;
-        //        }
-
-        //        DateTime fechaLimite = fecha.Value;
-        //        if (fechaLimite <= DateTime.Now)
-        //        {
-        //            MessageBox.Show("La fecha límite debe ser mayor que la fecha actual.");
-        //            return;
-        //        }
-
-        //        TimeSpan diferencia = fechaLimite - DateTime.Now;
-        //        int diasDisponibles = (int)diferencia.TotalDays;
-
-        //        double ahorroDiario = montoTotal / diasDisponibles;
-        //        double ahorroSemanal = ahorroDiario * 7;
-
-        //        string ahorroMensual = "N/A";
-        //        if (diasDisponibles > 90)
-        //        {
-        //            double mesesDisponibles = diasDisponibles / 30.0;
-        //            ahorroMensual = (montoTotal / mesesDisponibles).ToString("C");
-        //        }
-
-        //        dataGridView1.Rows.Add(montoTotal.ToString("C"), "0", Meta.Text, fechaLimite.ToString("yyyy-MM-dd"), ahorroDiario.ToString("C"), ahorroSemanal.ToString("C"), ahorroMensual);
-
-        //        LimpiarControles();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Por favor, complete todos los campos.");
-        //    }
-        //}
-
-        private void Editar_Click(object sender, EventArgs e)
+        private void ConfigurarDataGridView()
         {
-            //if (dataGridView1.SelectedRows.Count > 0)
-            //{
-            //    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            guna2DataGridView1.Columns.Clear();
 
-            //    double montoTotal;
-            //    if (!double.TryParse(monto.Text, out montoTotal) || montoTotal <= 0)
-            //    {
-            //        MessageBox.Show("Por favor, ingrese un monto válido.");
-            //        return;
-            //    }
+            guna2DataGridView1.Columns.Add("Meta", "Meta");
+            guna2DataGridView1.Columns.Add("MontoObjetivo", "Monto Objetivo");
+            guna2DataGridView1.Columns.Add("MontoAhorrado", "Monto Ahorrado");
+            guna2DataGridView1.Columns.Add("FechaObjetivo", "Fecha Objetivo");
+            guna2DataGridView1.Columns.Add("DiasRestantes", "Días Restantes");
+            guna2DataGridView1.Columns.Add("Progreso", "Progreso");
 
-            //    DateTime fechaLimite = fecha.Value;
-            //    if (fechaLimite <= DateTime.Now)
-            //    {
-            //        MessageBox.Show("La fecha límite debe ser mayor que la fecha actual.");
-            //        return;
-            //    }
+            guna2DataGridView1.Columns["MontoObjetivo"].DefaultCellStyle.Format = "C";
+            guna2DataGridView1.Columns["MontoAhorrado"].DefaultCellStyle.Format = "C";
+            guna2DataGridView1.Columns["Progreso"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
 
-            //    TimeSpan diferencia = fechaLimite - DateTime.Now;
-            //    int diasDisponibles = (int)diferencia.TotalDays;
+        private void CargarMetasAhorro()
+        {
+            try
+            {
+                guna2DataGridView1.Rows.Clear();
 
-            //    double ahorroDiario = montoTotal / diasDisponibles;
-            //    double ahorroSemanal = ahorroDiario * 7;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
-            //    string ahorroMensual = "N/A";
-            //    if (diasDisponibles > 90)
-            //    {
-            //        double mesesDisponibles = diasDisponibles / 30.0;
-            //        ahorroMensual = (montoTotal / mesesDisponibles).ToString("C");
-            //    }
+                    string query = "SELECT NombreMeta, MontoObjetivo, MontoAhorrado, FechaObjetivo FROM MetasAhorro ORDER BY FechaObjetivo";
 
-            //    selectedRow.Cells["Monto"].Value = montoTotal.ToString("C");
-            //    selectedRow.Cells["Meta"].Value = Meta.Text;
-            //    selectedRow.Cells["Fecha"].Value = fechaLimite.ToString("yyyy-MM-dd");
-            //    selectedRow.Cells["AhorroDiario"].Value = ahorroDiario.ToString("C");
-            //    selectedRow.Cells["AhorroSemanal"].Value = ahorroSemanal.ToString("C");
-            //    selectedRow.Cells["AhorroMensual"].Value = ahorroMensual;
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string meta = reader["NombreMeta"].ToString();
+                            decimal monto = Convert.ToDecimal(reader["MontoObjetivo"]);
+                            decimal ahorrado = Convert.ToDecimal(reader["MontoAhorrado"]);
+                            DateTime fecha = Convert.ToDateTime(reader["FechaObjetivo"]);
 
-            //    LimpiarControles();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Por favor, seleccione una fila para editar.");
-            //}
+                            int diasRestantes = (fecha - DateTime.Today).Days;
+                            diasRestantes = diasRestantes > 0 ? diasRestantes : 0;
+
+                            decimal porcentaje = monto > 0 ? (ahorrado / monto) * 100 : 0;
+                            porcentaje = porcentaje > 100 ? 100 : porcentaje;
+
+                            guna2DataGridView1.Rows.Add(
+                                meta,
+                                monto,
+                                ahorrado,
+                                fecha.ToString("yyyy-MM-dd"),
+                                diasRestantes,
+                                porcentaje.ToString("0.00") + "%"
+                            );
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar metas: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void roundButton3_Click(object sender, EventArgs e)
+        {
+            if (formAhorro == null || formAhorro.IsDisposed)
+            {
+                formAhorro = new FormAhorro();
+                formAhorro.DatosGuardados += CargarMetasAhorro;
+                formAhorro.Show();
+            }
+            else
+            {
+                formAhorro.BringToFront();
+            }
+        }
+
+        private void roundButton5_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+
+                string nombreMeta = selectedRow.Cells["Meta"].Value.ToString();
+                decimal montoObjetivo = Convert.ToDecimal(selectedRow.Cells["MontoObjetivo"].Value);
+                decimal montoAhorrado = Convert.ToDecimal(selectedRow.Cells["MontoAhorrado"].Value);
+                DateTime fechaObjetivo = Convert.ToDateTime(selectedRow.Cells["FechaObjetivo"].Value);
+
+                FormAhorro formEdicion = new FormAhorro();
+                formEdicion.ModoEdicion = true;
+                formEdicion.MetaOriginal = nombreMeta;
+                formEdicion.CargarDatosParaEdicion(nombreMeta, montoObjetivo, montoAhorrado, fechaObjetivo);
+                formEdicion.DatosGuardados += CargarMetasAhorro;
+                formEdicion.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione una meta para editar", "Advertencia",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void Eliminar_Click(object sender, EventArgs e)
         {
             if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                guna2DataGridView1.Rows.Remove(guna2DataGridView1.SelectedRows[0]);
-                LimpiarControles();
+                var confirmResult = MessageBox.Show("¿Está seguro de eliminar esta meta de ahorro?",
+                                                   "Confirmar Eliminación",
+                                                   MessageBoxButtons.YesNo,
+                                                   MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string meta = guna2DataGridView1.SelectedRows[0].Cells["Meta"].Value.ToString();
+
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+
+                            string query = "DELETE FROM MetasAhorro WHERE NombreMeta = @NombreMeta";
+
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@NombreMeta", meta);
+                                int result = command.ExecuteNonQuery();
+
+                                if (result > 0)
+                                {
+                                    MessageBox.Show("Meta eliminada correctamente", "Éxito",
+                                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    CargarMetasAhorro();
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al eliminar: {ex.Message}", "Error",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione una fila para eliminar.");
+                MessageBox.Show("Por favor, seleccione una fila para eliminar.", "Advertencia",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void Ahorro_Activated(object sender, EventArgs e)
         {
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-            //    monto.Text = row.Cells["Monto"].Value.ToString().Replace("$", "").Replace(",", "");
-            //    Meta.Text = row.Cells["Meta"].Value.ToString();
-            //    fecha.Value = DateTime.Parse(row.Cells["Fecha"].Value.ToString());
-            //}
+            CargarMetasAhorro();
         }
 
-        private void LimpiarControles()
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //monto.Clear();
-            //Meta.Clear();
-            //fecha.Value = DateTime.Now;
+            // Lógica adicional para clicks en celdas si es necesario
         }
 
-        private void roundButton1_Click(object sender, EventArgs e)
+        private void roundButton4_Click(object sender, EventArgs e)
         {
+            // Verificar que haya una fila seleccionada
+            if (guna2DataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor seleccione una meta para eliminar", "Advertencia",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Obtener la meta seleccionada
+            string nombreMeta = guna2DataGridView1.SelectedRows[0].Cells["Meta"].Value.ToString();
+
+            // Pedir confirmación
+            var confirmResult = MessageBox.Show($"¿Está seguro que desea eliminar la meta '{nombreMeta}'?",
+                                              "Confirmar Eliminación",
+                                              MessageBoxButtons.YesNo,
+                                              MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        string query = "DELETE FROM MetasAhorro WHERE NombreMeta = @NombreMeta";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@NombreMeta", nombreMeta);
+                            int result = command.ExecuteNonQuery();
+
+                            if (result > 0)
+                            {
+                                MessageBox.Show("Meta eliminada correctamente", "Éxito",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                CargarMetasAhorro(); // Refrescar el DataGridView
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró la meta para eliminar", "Advertencia",
+                                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+                catch (SqlException sqlEx)
+                {
+                    string errorMessage = "Error al eliminar la meta:\n";
+
+                    // Manejo específico de errores comunes
+                    if (sqlEx.Number == 547) // Error de restricción FK
+                    {
+                        errorMessage += "No se puede eliminar porque tiene registros relacionados.";
+                    }
+                    else
+                    {
+                        errorMessage += sqlEx.Message;
+                    }
+
+                    MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-
-       
     }
 }

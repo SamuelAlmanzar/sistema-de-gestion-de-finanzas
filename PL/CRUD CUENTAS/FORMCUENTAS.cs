@@ -150,5 +150,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void roundButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
