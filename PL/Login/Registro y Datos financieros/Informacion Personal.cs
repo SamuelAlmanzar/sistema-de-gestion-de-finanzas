@@ -13,12 +13,20 @@ namespace ProyectoFinalMargarita
         private string _codigoVerificacion;
         private int _idClienteTemporal;
 
+        // Evento para notificar registro exitoso
+        public event EventHandler RegistroExitoso;
+
         public Registro()
         {
             InitializeComponent();
             rjTexbox3.KeyPress += new KeyPressEventHandler(rjTexbox3_KeyPress);
             rjTexbox5.PasswordChar = true;
             rjTexbox5.PlaceholderText = "";
+        }
+
+        protected virtual void OnRegistroExitoso()
+        {
+            RegistroExitoso?.Invoke(this, EventArgs.Empty);
         }
 
         private void MostrarError(string mensaje, Control control)
@@ -94,7 +102,7 @@ namespace ProyectoFinalMargarita
                                 transaction.Commit();
 
                                 // Mostrar código al usuario
-                                MessageBox.Show($"¡Registro exitoso!\n\nTu código de verificación es: {_codigoVerificacion}\n\nPor favor ingrésalo en la siguiente ventana para completar tu registro.",
+                                MessageBox.Show($"¡Registro exitoso!\n\nTu código de verificación es: {_codigoVerificacion}",
                                               "Código de Verificación",
                                               MessageBoxButtons.OK,
                                               MessageBoxIcon.Information);
@@ -105,8 +113,9 @@ namespace ProyectoFinalMargarita
 
                                 if (formVerificacion.ShowDialog() == DialogResult.OK)
                                 {
-                                    MessageBox.Show("¡Verificación completada con éxito!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    new InformacionFinanciera().Show();
+                                    // Notificar que el registro fue exitoso
+                                    OnRegistroExitoso();
+                                    this.DialogResult = DialogResult.OK;
                                     this.Close();
                                 }
                                 else
@@ -253,6 +262,7 @@ namespace ProyectoFinalMargarita
 
         private void roundButton1_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

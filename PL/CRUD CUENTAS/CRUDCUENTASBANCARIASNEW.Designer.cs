@@ -163,7 +163,6 @@
             roundButton3.TabIndex = 51;
             roundButton3.TextColor = Color.Black;
             roundButton3.UseVisualStyleBackColor = false;
-            roundButton3.Click += roundButton3_Click;
             // 
             // roundButton4
             // 
@@ -301,6 +300,7 @@
             Margin = new Padding(2);
             Name = "CRUDCUENTASBANCARIASNEW";
             Text = "CRUDCUENTASBANCARIASNEW";
+            Load += CRUDCUENTASBANCARIASNEW_Load;
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
