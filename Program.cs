@@ -34,7 +34,7 @@ namespace ProyectoFinalMargarita
             }
             else
             {
-                Application.Run(new Registro()); // Si no hay sesión, muestra el login
+                Application.Run(new oldpassword()); // Si no hay sesión, muestra el login
             }
         }
 

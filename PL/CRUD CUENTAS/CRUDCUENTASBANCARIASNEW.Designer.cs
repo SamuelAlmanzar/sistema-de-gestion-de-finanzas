@@ -68,6 +68,7 @@
             roundButton1.TabIndex = 29;
             roundButton1.TextColor = Color.Black;
             roundButton1.UseVisualStyleBackColor = false;
+            roundButton1.Click += roundButton1_Click;
             // 
             // label6
             // 

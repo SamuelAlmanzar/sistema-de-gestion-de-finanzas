@@ -248,5 +248,10 @@ namespace ProyectoFinalMargarita.PL
                 rjTexbox3.Texts = "";
             }
         }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
