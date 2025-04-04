@@ -12,21 +12,22 @@ namespace ProyectoFinalMargarita
 {
     internal static class Program
     {
-        private static HubConnection connection; // Conexión con el servidor SignalR
-        private static readonly string filePath = "Relogin.json"; // Archivo JSON para sesión
+        private static HubConnection connection; // Conexiï¿½n con el servidor SignalR
+        private static readonly string filePath = "Relogin.json"; // Archivo JSON para sesiï¿½n
 
         [STAThread]
         static void Main()
         {
-            // Configuración de la aplicación
+            // Configuraciï¿½n de la aplicaciï¿½n
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Iniciar la conexión SignalR
+            // Iniciar la conexiï¿½n SignalR
             InitializeSignalR().ConfigureAwait(false);
 
-            // Verificar si hay una sesión guardada
+
+            // Verificar si hay una sesiï¿½n guardada
             if (SesionActiva())
             {
                 string usuarioGuardado = ObtenerUsuarioGuardado();
@@ -34,7 +35,7 @@ namespace ProyectoFinalMargarita
             }
             else
             {
-                Application.Run(new oldpassword()); // Si no hay sesión, muestra el login
+                Application.Run(new oldpassword()); // Si no hay sesiï¿½n, muestra el login
             }
         }
 
@@ -56,9 +57,13 @@ namespace ProyectoFinalMargarita
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error al leer el archivo de sesión: " + ex.Message);
+                Console.WriteLine("Error al leer el archivo de sesiï¿½n: " + ex.Message);
             }
             return null;
+
+            // Ejecutar el formulario principal
+            //El Form de informacion personal se llama Registro
+            Application.Run(new Registro());
         }
 
         private static async Task InitializeSignalR()

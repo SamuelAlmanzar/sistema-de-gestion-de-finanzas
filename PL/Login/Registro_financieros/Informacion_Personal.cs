@@ -120,7 +120,7 @@ namespace ProyectoFinalMargarita
         }
 
 
-  
+
         private void Numerodoc_personal_Leave_1(object sender, EventArgs e)
         {
             Regex regex = new Regex(@"(\w{3})(\w{4})");
@@ -131,7 +131,7 @@ namespace ProyectoFinalMargarita
 
             foreach (Match match in matches)
             {
-    
+
                 builder.Append($"{match.Value}-");
             }
 
@@ -147,6 +147,11 @@ namespace ProyectoFinalMargarita
             {
                 e.Handled = true;
             }
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
