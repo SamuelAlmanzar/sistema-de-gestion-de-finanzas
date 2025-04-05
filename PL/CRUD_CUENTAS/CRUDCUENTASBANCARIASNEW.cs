@@ -107,24 +107,24 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             CargarDatosClientes();
         }
 
-        private void roundButton3_Click(object sender, EventArgs e)
-        {
-            var formUsuarios = new CRUDUSUARIOS();
+        //private void roundButton3_Click(object sender, EventArgs e)
+        //{
+        //    var formUsuarios = new CRUDUSUARIOS();
 
             // Suscribirse al evento de registro exitoso
-            formUsuarios.UsuarioRegistrado += (s, ev) =>
-            {
-                // Esto se ejecutará cuando se registre un nuevo usuario
-                this.Invoke((MethodInvoker)delegate
-                {
-                    CargarDatosClientes();
-                    MessageBox.Show("Cliente registrado correctamente. Los datos se han actualizado.", "Éxito",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-                });
-            };
+        //    formUsuarios.UsuarioRegistrado += (s, ev) =>
+        //    {
+        //        // Esto se ejecutará cuando se registre un nuevo usuario
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            CargarDatosClientes();
+        //            MessageBox.Show("Cliente registrado correctamente. Los datos se han actualizado.", "Éxito",
+        //                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        });
+        //    };
 
-            formUsuarios.Show();
-        }
+        //    formUsuarios.Show();
+        //}
 
         private void roundButton4_Click_1(object sender, EventArgs e)
         {
