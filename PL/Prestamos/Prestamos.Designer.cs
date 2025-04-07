@@ -1,6 +1,6 @@
-﻿namespace ProyectoFinalMargarita
+﻿namespace ProyectoFinalMargarita.PL.Prestamos
 {
-    partial class MisTransferencias
+    partial class Prestamos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // MisTransferencias
+            // Prestamos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1055);
-            Name = "MisTransferencias";
-            Text = "MisTransferencias";
+            ClientSize = new Size(1254, 634);
+            Name = "Prestamos";
+            Text = "Prestamos";
             ResumeLayout(false);
         }
 

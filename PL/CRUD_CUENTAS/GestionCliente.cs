@@ -29,19 +29,21 @@ namespace ProyectoFinalMargarita.PL
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 adapter = new SqlDataAdapter(query, connection);
-                commandBuilder = new SqlCommandBuilder(adapter);
+                commandBuilder = new SqlCommandBuilder(adapter); // Esto crea los comandos de actualización necesarios
                 dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 guna2DataGridView1.DataSource = dataTable;
 
-                guna2DataGridView1.Columns["ID"].Visible = false;
-                guna2DataGridView1.ReadOnly = false;
+                // Configuración del DataGridView
+                guna2DataGridView1.Columns["ID"].Visible = false; // Ocultar columna ID
+                guna2DataGridView1.ReadOnly = false; // Habilitar la edición de celdas
                 guna2DataGridView1.AllowUserToAddRows = false;
                 guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                guna2DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2;
+                guna2DataGridView1.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2; // Permitir edición al presionar F2 o escribir
             }
         }
 
+        // Este evento se activa después de que se edita una celda
         private void guna2DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             GuardarCambios();
@@ -53,6 +55,7 @@ namespace ProyectoFinalMargarita.PL
             {
                 if (dataTable != null)
                 {
+                    // Usamos el SqlDataAdapter para actualizar los cambios en la base de datos
                     adapter.Update(dataTable);
                     MessageBox.Show("Cambios guardados correctamente.", "Actualización", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -75,7 +78,7 @@ namespace ProyectoFinalMargarita.PL
                 if (result == DialogResult.Yes)
                 {
                     EliminarCliente(idCliente);
-                    CargarClientes();
+                    CargarClientes(); // Refrescar el DataGridView
                 }
             }
             else
@@ -101,30 +104,12 @@ namespace ProyectoFinalMargarita.PL
 
         private void roundButton5_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
 
-                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                string nombres = selectedRow.Cells["Nombres"].Value.ToString();
-                string apellidos = selectedRow.Cells["Apellidos"].Value.ToString();
-                string genero = selectedRow.Cells["Genero"].Value.ToString();
-                DateTime fechaNacimiento = Convert.ToDateTime(selectedRow.Cells["FechaNacimiento"].Value);
-                string tipoDocumento = selectedRow.Cells["TipoDocumento"].Value.ToString();
-                string numeroDocumento = selectedRow.Cells["NumeroDocumento"].Value.ToString();
-                string correo = selectedRow.Cells["CorreoElectronico"].Value.ToString();
-                string telefono = selectedRow.Cells["Telefono"].Value.ToString();
+        }
 
-                var formEditar = new ProyectoFinalMargarita.PL.CRUD_CUENTAS.CRUDUSUARIOS();
-                formEditar.LlenarDatosParaEditar(id, nombres, apellidos, genero, fechaNacimiento, tipoDocumento, numeroDocumento, correo, telefono);
-                formEditar.ShowDialog();
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-                CargarClientes();
-            }
-            else
-            {
-                MessageBox.Show("Seleccione una fila para editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
     }
 }

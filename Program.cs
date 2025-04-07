@@ -15,6 +15,8 @@ namespace ProyectoFinalMargarita
         private static HubConnection connection; // Conexión con el servidor SignalR
         private static readonly string filePath = "Relogin.json"; // Archivo JSON para sesión
 
+
+
         [STAThread]
         static void Main()
         {
@@ -34,7 +36,7 @@ namespace ProyectoFinalMargarita
             }
             else
             {
-                Application.Run(new oldpassword()); // Si no hay sesión, muestra el login
+                Application.Run(new Ahorro()); // Si no hay sesión, muestra el login
             }
         }
 

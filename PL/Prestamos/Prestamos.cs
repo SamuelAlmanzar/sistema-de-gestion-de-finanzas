@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoFinalMargarita
+namespace ProyectoFinalMargarita.PL.Prestamos
 {
-    public partial class MisTransferencias : Form
+    public partial class Prestamos : Form
     {
-        public MisTransferencias()
+        public Prestamos()
         {
             InitializeComponent();
         }
