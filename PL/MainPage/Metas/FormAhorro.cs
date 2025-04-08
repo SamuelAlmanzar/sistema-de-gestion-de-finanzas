@@ -6,7 +6,7 @@ namespace ProyectoFinalMargarita.PL
 {
     public partial class FormAhorro : Form
     {
-        private readonly string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;";
+        private readonly string connectionString = "Data Source=localhost;Initial Catalog=BancoDB;Integrated Security=True;";
         public event Action DatosGuardados;
         public bool ModoEdicion { get; set; } = false;
         public string MetaOriginal { get; set; }

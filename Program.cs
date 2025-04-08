@@ -15,6 +15,8 @@ namespace ProyectoFinalMargarita
         private static HubConnection connection; // Conexi�n con el servidor SignalR
         private static readonly string filePath = "Relogin.json"; // Archivo JSON para sesi�n
 
+
+
         [STAThread]
         static void Main()
         {

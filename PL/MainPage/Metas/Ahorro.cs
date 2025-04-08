@@ -8,7 +8,7 @@ namespace ProyectoFinalMargarita
     public partial class Ahorro : Form
     {
         private FormAhorro formAhorro;
-        private readonly string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;";
+        private readonly string connectionString = "Data Source=localhost;Initial Catalog=BancoDB;Integrated Security=True;";
 
         public Ahorro()
         {
@@ -252,6 +252,11 @@ namespace ProyectoFinalMargarita
                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
