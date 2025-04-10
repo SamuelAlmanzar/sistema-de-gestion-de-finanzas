@@ -61,5 +61,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
                 guna2DataGridView1.DataSource = dataTable;
             }
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

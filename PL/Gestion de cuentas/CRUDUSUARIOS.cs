@@ -194,5 +194,10 @@ namespace ProyectoFinalMargarita.PL.CRUD_CUENTAS
             GestionCliente gestionClienteForm = new GestionCliente();
             gestionClienteForm.Show();
         }
+
+        private void roundButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
