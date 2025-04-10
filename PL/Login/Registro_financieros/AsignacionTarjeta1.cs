@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoFinalMargarita.Clases.Class_registro;
+using System;
+using System.Text.Json;
 using System.Windows.Forms;
 
 
@@ -38,5 +40,12 @@ namespace ProyectoFinalMargarita
         {
             // Puedes añadir lógica adicional cuando cambia el estado del checkbox si es necesario
         }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

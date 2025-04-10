@@ -69,11 +69,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.White;
-            label5.Font = new Font("Inter Medium", 9F, FontStyle.Bold);
+            label5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
             label5.ForeColor = Color.FromArgb(175, 175, 180);
             label5.Location = new Point(263, 262);
             label5.Name = "label5";
-            label5.Size = new Size(678, 42);
+            label5.Size = new Size(623, 44);
             label5.TabIndex = 31;
             label5.Text = "Ingrese los datos de forma correcta para poder entender su objetivo \r\n                                      dentro de nuestro banco\r\n";
             // 
@@ -81,11 +81,11 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.White;
-            label6.Font = new Font("Inter Black", 14F, FontStyle.Bold);
+            label6.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold);
             label6.ForeColor = Color.Black;
             label6.Location = new Point(450, 219);
             label6.Name = "label6";
-            label6.Size = new Size(338, 34);
+            label6.Size = new Size(333, 32);
             label6.TabIndex = 30;
             label6.Text = " Propósito de la Cuenta";
             // 
@@ -104,11 +104,11 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.White;
-            label8.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.Black;
             label8.Location = new Point(157, 432);
             label8.Name = "label8";
-            label8.Size = new Size(305, 26);
+            label8.Size = new Size(295, 26);
             label8.TabIndex = 32;
             label8.Text = "Motivo para abrir la cuenta";
             // 
@@ -116,11 +116,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.White;
-            label1.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
             label1.Location = new Point(665, 432);
             label1.Name = "label1";
-            label1.Size = new Size(446, 26);
+            label1.Size = new Size(433, 26);
             label1.TabIndex = 32;
             label1.Text = "Frecuencia de transacciones esperadas";
             // 
@@ -128,17 +128,17 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.White;
-            label2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
             label2.Location = new Point(157, 575);
             label2.Name = "label2";
-            label2.Size = new Size(435, 26);
+            label2.Size = new Size(418, 26);
             label2.TabIndex = 32;
             label2.Text = "Monto promedio de depósitos y retiros";
             // 
             // MontoPromedioRetiros
             // 
-            MontoPromedioRetiros.Font = new Font("Inter", 11F, FontStyle.Bold);
+            MontoPromedioRetiros.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
             MontoPromedioRetiros.ForeColor = Color.Black;
             MontoPromedioRetiros.Location = new Point(157, 604);
             MontoPromedioRetiros.Multiline = true;
@@ -148,7 +148,7 @@
             // 
             // Motivo_cuenta
             // 
-            Motivo_cuenta.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Motivo_cuenta.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Motivo_cuenta.ForeColor = Color.Black;
             Motivo_cuenta.FormattingEnabled = true;
             Motivo_cuenta.Items.AddRange(new object[] { "Ahorro y gestión financiera", "Pagos y transacciones", "Recepción de ingresos ", "Créditos y financiamiento", "Negocios y emprendimientos" });
@@ -156,11 +156,10 @@
             Motivo_cuenta.Name = "Motivo_cuenta";
             Motivo_cuenta.Size = new Size(405, 34);
             Motivo_cuenta.TabIndex = 80;
-            Motivo_cuenta.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // Frecuencia_Transacciones
             // 
-            Frecuencia_Transacciones.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Frecuencia_Transacciones.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Frecuencia_Transacciones.ForeColor = Color.Black;
             Frecuencia_Transacciones.FormattingEnabled = true;
             Frecuencia_Transacciones.Items.AddRange(new object[] { "Diaria", "Semanal", "Mensual" });
@@ -168,23 +167,22 @@
             Frecuencia_Transacciones.Name = "Frecuencia_Transacciones";
             Frecuencia_Transacciones.Size = new Size(405, 34);
             Frecuencia_Transacciones.TabIndex = 80;
-            Frecuencia_Transacciones.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.White;
-            label3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
             label3.Location = new Point(665, 549);
             label3.Name = "label3";
-            label3.Size = new Size(412, 52);
+            label3.Size = new Size(407, 52);
             label3.TabIndex = 32;
             label3.Text = "¿Usará la cuenta para transacciones \r\ninternacionales?";
             // 
             // Transacciones_internacionales
             // 
-            Transacciones_internacionales.Font = new Font("Inter", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Transacciones_internacionales.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Transacciones_internacionales.ForeColor = Color.Black;
             Transacciones_internacionales.FormattingEnabled = true;
             Transacciones_internacionales.Items.AddRange(new object[] { "Si ", "No" });
@@ -192,7 +190,6 @@
             Transacciones_internacionales.Name = "Transacciones_internacionales";
             Transacciones_internacionales.Size = new Size(405, 34);
             Transacciones_internacionales.TabIndex = 80;
-            Transacciones_internacionales.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // roundButton3
             // 
@@ -206,7 +203,7 @@
             roundButton3.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
             roundButton3.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
             roundButton3.FlatStyle = FlatStyle.Flat;
-            roundButton3.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            roundButton3.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton3.ForeColor = Color.White;
             roundButton3.Location = new Point(157, 905);
             roundButton3.Name = "roundButton3";
@@ -215,6 +212,7 @@
             roundButton3.Text = "Atras";
             roundButton3.TextColor = Color.White;
             roundButton3.UseVisualStyleBackColor = false;
+            roundButton3.Click += roundButton3_Click;
             // 
             // roundButton2
             // 
@@ -228,7 +226,7 @@
             roundButton2.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 120, 87);
             roundButton2.FlatAppearance.MouseOverBackColor = Color.FromArgb(4, 120, 87);
             roundButton2.FlatStyle = FlatStyle.Flat;
-            roundButton2.Font = new Font("Inter Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            roundButton2.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             roundButton2.ForeColor = Color.White;
             roundButton2.Location = new Point(804, 905);
             roundButton2.Name = "roundButton2";
@@ -237,6 +235,7 @@
             roundButton2.Text = "Siguiente";
             roundButton2.TextColor = Color.White;
             roundButton2.UseVisualStyleBackColor = false;
+            roundButton2.Click += roundButton2_Click;
             // 
             // Proposito_de_Cuenta
             // 
@@ -259,7 +258,6 @@
             Controls.Add(roundButton1);
             Name = "Proposito_de_Cuenta";
             Text = "Informacion_de_Cuenta";
-            Load += Proposito_de_Cuenta_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

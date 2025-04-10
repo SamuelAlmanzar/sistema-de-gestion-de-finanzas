@@ -1,224 +1,220 @@
-﻿using System;
+﻿using ProyectoFinalMargarita.Clases.Class_registro;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using ProyectoFinalMargarita.PL.Login.Registro_y_Datos_financieros;
 
 namespace ProyectoFinalMargarita
 {
     public partial class InformacionFinanciera : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=FINANCETRACK;Integrated Security=True;Connect Timeout=30;";
 
         public InformacionFinanciera()
         {
             InitializeComponent();
-            ConfigureControls();
+
+            // Configurar el formato de moneda
+            Ingreso_mensual.TextChanged += Ingreso_mensual_TextChanged;
+
+            // Cargar datos existentes si los hay
+            CargarDatosExistente();
         }
 
-        private void ConfigureControls()
+
+
+        private void CargarDatosExistente()
         {
-
-            // Configurar eventos para el campo de ingreso mensual
-            Ingreso_mensual.Leave += rjTexbox1_Leave;
-            Ingreso_mensual.Enter += rjTexbox1_Enter;
-            Ingreso_mensual.KeyPress += rjTexbox1_KeyPress;
-
-            // Configurar valores por defecto para los combobox
-            Deudas_Activas.SelectedIndex = -1;
-            Cargo.SelectedIndex = -1;
-        }
-
-        private void rjTexbox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir solo números, punto decimal y teclas de control
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (DatosTemporales.InfoFinanciera != null)
             {
-                e.Handled = true;
-            }
+                Nombre_Empresa.Text = DatosTemporales.InfoFinanciera.NombreEmpresa;
 
-            // Permitir solo un punto decimal
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
+                if (!string.IsNullOrEmpty(DatosTemporales.InfoFinanciera.Cargo))
+                    Cargo_Empresa.SelectedItem = DatosTemporales.InfoFinanciera.Cargo;
 
-        private void rjTexbox1_Leave(object sender, EventArgs e)
-        {
-            // Formatear como moneda al salir del campo
-            if (decimal.TryParse(Ingreso_mensual.Text, NumberStyles.Currency, CultureInfo.InvariantCulture, out decimal valor))
-            {
-                Ingreso_mensual.Text = valor.ToString("C", CultureInfo.CurrentCulture);
+                if (DatosTemporales.InfoFinanciera.TiempoEnEmpresa > 0)
+                {
+                    string tiempoTexto = ConvertirTiempoATexto(DatosTemporales.InfoFinanciera.TiempoEnEmpresa);
+                    Tiempo_Empresa.SelectedItem = tiempoTexto;
+                }
+
+                if (DatosTemporales.InfoFinanciera.IngresoMensualEstimado > 0)
+                    Ingreso_mensual.Text = DatosTemporales.InfoFinanciera.IngresoMensualEstimado.ToString("C");
+
+                Deudas_Activas.SelectedIndex = DatosTemporales.InfoFinanciera.DeudasActivas ? 1 : 0;
+                Credito_Antes.SelectedIndex = DatosTemporales.InfoFinanciera.HaTenidoCredito ? 1 : 0;
             }
         }
 
-        private void rjTexbox1_Enter(object sender, EventArgs e)
+        private string ConvertirTiempoATexto(int años)
         {
-            // Quitar formato de moneda al entrar al campo
-            string text = Ingreso_mensual.Text.Replace("$", "").Replace(",", "").Trim();
-            if (decimal.TryParse(text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal valor))
+            if (años < 1) return "Menos de 1 año";
+            if (años <= 3) return "1-3 años";
+            if (años <= 5) return "3-5 años";
+            if (años <= 10) return "5-10 años";
+            return "Más de 10 años";
+        }
+
+        private int ConvertirTextoATiempo(string texto)
+        {
+            switch (texto)
             {
-                Ingreso_mensual.Text = valor.ToString(CultureInfo.InvariantCulture);
+                case "Menos de 1 año": return 0;
+                case "1-3 años": return 2;
+                case "3-5 años": return 4;
+                case "5-10 años": return 7;
+                case "Más de 10 años": return 11;
+                default: return 0;
             }
+        }
+
+        private void Ingreso_mensual_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Ingreso_mensual.Text)) return;
+
+            // Eliminar el evento temporalmente para evitar bucles
+            Ingreso_mensual.TextChanged -= Ingreso_mensual_TextChanged;
+
+            try
+            {
+                // Obtener solo dígitos
+                string digits = new string(Ingreso_mensual.Text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+
+                if (decimal.TryParse(digits, out decimal valor))
+                {
+                    // Formatear como moneda
+                    Ingreso_mensual.Text = valor.ToString("C");
+                    Ingreso_mensual.SelectionStart = Ingreso_mensual.Text.Length;
+
+                    // Guardar el valor numérico
+                    DatosTemporales.InfoFinanciera.IngresoMensualEstimado = valor;
+                }
+            }
+            finally
+            {
+                // Volver a habilitar el evento
+                Ingreso_mensual.TextChanged += Ingreso_mensual_TextChanged;
+            }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void roundButton3_Click(object sender, EventArgs e)
+        {
+            // Guardar datos antes de volver (aunque no estén validados)
+            DatosTemporales.InfoFinanciera.NombreEmpresa = Nombre_Empresa.Text;
+            if (Cargo_Empresa.SelectedIndex != -1)
+                DatosTemporales.InfoFinanciera.Cargo = Cargo_Empresa.SelectedItem.ToString();
+            if (Tiempo_Empresa.SelectedIndex != -1)
+                DatosTemporales.InfoFinanciera.TiempoEnEmpresa = ConvertirTextoATiempo(Tiempo_Empresa.SelectedItem.ToString());
+
+            decimal ingreso;
+            if (decimal.TryParse(Ingreso_mensual.Text, NumberStyles.Currency, null, out ingreso))
+                DatosTemporales.InfoFinanciera.IngresoMensualEstimado = ingreso;
+
+            DatosTemporales.InfoFinanciera.DeudasActivas = Deudas_Activas.SelectedIndex == 1;
+            DatosTemporales.InfoFinanciera.HaTenidoCredito = Credito_Antes.SelectedIndex == 1;
+
+            Login lo = new Login();
+            lo.Show();
+            this.Hide();
+
+
         }
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if (string.IsNullOrWhiteSpace(Nombre_Empresa.Text))
+            {
+                MessageBox.Show("Por favor ingrese el nombre de la empresa");
+                Nombre_Empresa.Focus();
+                return;
+            }
+
+            if (Cargo_Empresa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione su cargo en la empresa");
+                Cargo_Empresa.Focus();
+                return;
+            }
+
+            if (Tiempo_Empresa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor seleccione su tiempo en la empresa");
+                Tiempo_Empresa.Focus();
+                return;
+            }
+
+            if (DatosTemporales.InfoFinanciera.IngresoMensualEstimado <= 0)
+            {
+                MessageBox.Show("Por favor ingrese un ingreso mensual válido");
+                Ingreso_mensual.Focus();
+                return;
+            }
+
+            // Guardar todos los datos
+            DatosTemporales.InfoFinanciera.NombreEmpresa = Nombre_Empresa.Text;
+            DatosTemporales.InfoFinanciera.Cargo = Cargo_Empresa.SelectedItem.ToString();
+            DatosTemporales.InfoFinanciera.TiempoEnEmpresa = ConvertirTextoATiempo(Tiempo_Empresa.SelectedItem.ToString());
+            DatosTemporales.InfoFinanciera.DeudasActivas = Deudas_Activas.SelectedIndex == 1;
+            DatosTemporales.InfoFinanciera.HaTenidoCredito = Credito_Antes.SelectedIndex == 1;
+
+            this.Hide();
+            Proposito_de_Cuenta  proposito = new Proposito_de_Cuenta();
+            proposito.Show();
+
+        }
+
+        private void entrar()
+        {
+
+        }
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InformacionFinanciera_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AbrirFormularioRegistro()
+        {
             try
             {
-                // Validar campos antes de proceder
-                if (!ValidarCampos())
-                    return;
+                // Verifica si ya existe una instancia del formulario
+                Form formularioExistente = Application.OpenForms["Registro"];
 
-                // Mostrar confirmación antes de guardar
-                DialogResult confirmacion = MessageBox.Show("¿Está seguro que desea guardar su información financiera?",
-                                                          "Confirmar",
-                                                          MessageBoxButtons.YesNo,
-                                                          MessageBoxIcon.Question);
-
-                new AsignacionTarjeta1().Show();
-
-
-                if (confirmacion != DialogResult.Yes)
-                    return;
-
-                // Guardar la información
-                if (GuardarInformacionFinanciera())
+                if (formularioExistente != null)
                 {
-                    MessageBox.Show("Información financiera guardada exitosamente.", "Éxito",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarFormulario();
+                    // Si existe, lo trae al frente
+                    formularioExistente.BringToFront();
+                    formularioExistente.WindowState = FormWindowState.Normal;
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo guardar la información financiera.", "Error",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Si no existe, crea una nueva instancia
+                    Registro nuevoFormulario = new Registro();
+                    nuevoFormulario.Show();
                 }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show($"Error de base de datos: {ex.Message}\n\nVerifique que todos los datos sean correctos.",
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("El formato del ingreso mensual no es válido.", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-           
-            
+                MessageBox.Show($"Error al abrir el formulario: {ex.Message}",
+                              "Error",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
             }
-
-            //new Verificación().Show();
-        }
-
-        private bool ValidarCampos()
-        {
-            // Validación del ingreso mensual
-            string ingresoText = Ingreso_mensual.Text.Replace("$", "").Replace(",", "").Trim();
-
-            if (string.IsNullOrWhiteSpace(ingresoText))
-            {
-                MostrarError("Por favor ingrese su ingreso mensual estimado.", Ingreso_mensual);
-                return false;
-            }
-
-            // Validar que sea un número válido
-            if (!decimal.TryParse(ingresoText, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal ingreso) || ingreso <= 0)
-            {
-                MostrarError("El ingreso mensual debe ser un número positivo mayor que cero.", Ingreso_mensual);
-                return false;
-            }
-
-            // Validar fuente de ingreso
-            if (Cargo.SelectedIndex == -1)
-            {
-                MostrarError("Por favor seleccione una fuente de ingreso.", Cargo);
-                return false;
-            }
-
-            // Validar tipo de tarjeta preferida
-            if (Deudas_Activas.SelectedIndex == -1)
-            {
-                MostrarError("Por favor seleccione un tipo de tarjeta preferida.", Deudas_Activas);
-                return false;
-            }
-
-            
-            return true;
-        }
-
-        private void MostrarError(string mensaje, Control control)
-        {
-            MessageBox.Show(mensaje, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            control.Focus();
-            if (control is TextBox)
-                ((TextBox)control).SelectAll();
-        }
-
-        private bool GuardarInformacionFinanciera()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    connection.Open();
-
-                    string query = @"INSERT INTO InformacionFinanciera 
-                                    (IngresoMensualEstimado, FuenteIngreso, TipoTarjetaPreferida, 
-                                     UsaTransferenciaBancaria, UsaPagosEnLinea, UsaCajeroAutomatico, UsuarioRegistro)
-                                    VALUES 
-                                    (@IngresoMensual, @FuenteIngreso, @TipoTarjeta, 
-                                     @Transferencia, @PagosOnline, @CajeroAutomatico, @Usuario)";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Convertir el ingreso mensual a decimal
-                        string ingresoText = Ingreso_mensual.Text.Replace("$", "").Replace(",", "").Trim();
-                        decimal ingresoMensual = decimal.Parse(ingresoText, CultureInfo.InvariantCulture);
-
-                        // Configurar parámetros con tipos específicos
-                        command.Parameters.Add("@IngresoMensual", SqlDbType.Decimal).Value = ingresoMensual;
-                        command.Parameters["@IngresoMensual"].Precision = 18;
-                        command.Parameters["@IngresoMensual"].Scale = 2;
-
-                        
-                        int result = command.ExecuteNonQuery();
-                        return result > 0;
-                    }
-                }
-                finally
-                {
-                    if (connection.State == ConnectionState.Open)
-                        connection.Close();
-                }
-            }
-        }
-
-        private void LimpiarFormulario()
-        {
-            Ingreso_mensual.Text = "";
-            Deudas_Activas.SelectedIndex = -1;
-            Cargo.SelectedIndex = -1;
-           
-        }
-
-        // Eventos restantes
-        private void label6_Click(object sender, EventArgs e) { }
-        private void roundButton1_Click(object sender, EventArgs e) { }
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) { }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) { }
-
-        private void rjTexbox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
